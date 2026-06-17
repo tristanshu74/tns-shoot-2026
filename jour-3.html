@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="theme-color" content="#1e6fbf">
+<title>Mbappé Shoot — J3 — Mercredi 24 juin 2026</title>
+<style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#1e6fbf;--card:#fff;--border:#d8d8d8;--code:#f0f0f0;
+--day-1:#1e6fbf;--day-2:#0a9a4f;--day-3:#d97706;--day-4:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#e8e8e8;--muted:#aaa;--accent:#5fa8e8;--card:#1c1c1c;--border:#333;--code:#222}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:60px}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+@media(min-width:768px){body{font-size:17px}}
+.topbar{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:2px solid var(--accent);padding:8px 14px;display:flex;align-items:center;gap:10px;min-height:48px}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;font-size:.95em}
+.topbar a:hover{background:var(--code)}
+.topbar .home-lbl{display:inline}
+@media(max-width:600px){.topbar .home-lbl,.topbar .day-jumps{display:none}}
+.topbar .spacer{flex:1}
+.topbar .btn-maps[data-state="pending"]{opacity:.5;pointer-events:none}
+.topbar .day-title{font-weight:600;font-size:.95em;color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:12px 16px 80px}
+header.day-hd{padding:14px 0 12px;margin:0 0 16px;border-bottom:3px solid var(--accent)}
+header.day-hd h1{margin:0;font-size:1.25em;line-height:1.25}
+header.day-hd .crumbs{font-size:.88em;color:var(--muted);margin-top:6px}
+header.day-hd .crumbs a{color:var(--accent);text-decoration:none;margin-right:10px}
+.maps-crumb{display:inline-block;background:var(--accent);color:#fff!important;padding:3px 10px;border-radius:14px;font-weight:600;font-size:.88em;margin-left:4px}
+.maps-crumb:hover{opacity:.85}
+.toolbar{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
+.toolbar button{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-size:.92em;cursor:pointer;font-weight:500;min-height:40px}
+.toolbar button:hover{background:var(--code);border-color:var(--accent)}
+.toolbar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* All <details> uniform picto + tap target */
+details{margin:10px 0;border:1px solid var(--border);border-radius:8px;background:var(--card);overflow:hidden}
+details>summary{padding:12px 14px;cursor:pointer;font-weight:600;list-style:none;font-size:1em;min-height:44px;display:flex;align-items:center;gap:8px;user-select:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";color:var(--muted);font-size:.85em;flex-shrink:0;transition:none;display:inline-block;width:1em;text-align:center}
+details[open]>summary::before{content:"▾"}
+details[open]>summary{background:var(--code);border-bottom:1px solid var(--border)}
+details .body{padding:12px 14px 14px}
+details .body>:first-child{margin-top:0}
+details .body>:last-child{margin-bottom:0}
+
+/* Specific styling */
+details.spot{margin:18px 0;border:2px solid var(--border);border-radius:10px;background:var(--card)}
+details.spot>summary{font-size:1.08em;padding:14px 16px;min-height:52px;background:var(--card);border-bottom:0}
+details.spot[open]>summary{border-bottom:1px solid var(--border);background:var(--code)}
+details.spot .body{padding:14px 16px 18px}
+details.brief>summary,details.light>summary,details.inspi>summary{font-size:.95em;background:transparent}
+
+/* Hierarchy: nested details inside a spot are indented + colored left border */
+details.spot .body{padding-left:18px;border-left:3px solid var(--accent);margin-left:6px}
+details.spot details{margin-left:0;border-left:2px solid var(--border)}
+details.spot details.brief{border-left-color:#8a8a8a}
+details.spot details.light{border-left-color:#d97706}
+details.spot details.photo-card{border-left-color:var(--accent)}
+details.spot details.photo-card details.inspi{margin-left:14px;border-left:2px solid #8a8a8a}
+@media(max-width:600px){details.spot .body{padding-left:10px}details.spot details.photo-card details.inspi{margin-left:8px}}
+details.photo-card{margin:8px 0;border:1px solid var(--border)}
+details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
+
+.summary-meta{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;line-height:1.4}
+.chip-day{color:#fff}
+.chip-status{background:var(--code);color:var(--muted);border:1px solid var(--border)}
+.chip-focal{background:var(--accent);color:#fff}
+.chip-tag{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.count-badge{color:var(--muted);font-weight:400;font-size:.85em;margin-left:6px}
+
+/* Photo-strip overview */
+.photo-strip{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.9em;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.photo-strip th{background:var(--code);text-align:left;padding:8px 10px;font-weight:600;font-size:.82em;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;border-bottom:1px solid var(--border)}
+.photo-strip td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.photo-strip tr:last-child td{border-bottom:0}
+.photo-strip tr:hover td{background:var(--code)}
+.photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
+.photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
+.photo-strip .ps-status{white-space:nowrap}
+.photo-strip .ps-tag{color:var(--muted);font-size:.88em}
+
+nav.toc{margin:8px 0 24px;padding:0}
+nav.toc ul{margin:0;padding:0 16px 12px;list-style:none}
+nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
+nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
+nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
+nav.toc li > .day-line a{display:inline}
+nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
+nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
+nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
+
+ul,ol{padding-left:20px}
+li{margin:4px 0}
+strong{color:var(--fg)}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-size:.92em}
+blockquote{margin:12px 0;padding:10px 14px;background:var(--code);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.95em}
+hr{border:0;border-top:1px solid var(--border);margin:24px 0}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92em}
+table th,table td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table th{background:var(--code);font-weight:600}
+td[data-day]::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+td[data-day="J1"]::before{background:var(--day-1)} td[data-day="J2"]::before{background:var(--day-2)}
+td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{background:var(--day-4)}
+
+.shoot-img{max-width:560px;width:100%;height:auto;display:block;margin:14px auto;border-radius:4px}
+@media(max-width:768px){.shoot-img{max-width:100%}}
+
+.back{position:fixed;bottom:14px;right:14px;background:var(--accent);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.2em;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:50;opacity:.75}
+.back:hover{opacity:1}
+.ref-internal{color:var(--muted);font-size:.85em;cursor:help}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center}
+.stat-card .num{font-size:1.6em;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-card .lbl{font-size:.82em;color:var(--muted);margin-top:2px}
+
+@media print{
+  body{font-size:11pt;background:#fff;color:#000}
+  .topbar,nav.toc,.back,.toolbar{display:none!important}
+  details,details.spot{break-inside:avoid;page-break-inside:avoid}
+  details>summary::before,details>summary{cursor:default}
+  details .body,details{display:block!important}
+  details>summary{background:transparent!important;border-bottom:1px solid #ccc!important}
+  details.spot{page-break-before:always}
+  .shoot-img{max-width:400px}
+}
+</style>
+</head><body data-day="J3">
+<div class="topbar"><a href="index.html">🏠 <span class="home-lbl">Index</span></a><span class="day-title">J3 — Mercredi 24 juin 2026</span><div class="spacer"></div><span class="day-jumps"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-4.html">J4</a></span><a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" class="btn-maps" data-state="live" target="_blank">🗺️ Maps</a></div>
+<main>
+<a id="top"></a>
+<header class="day-hd"><h1><span class="chip chip-day" style="background:#d97706">J3</span> J3 — Mercredi 24 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(3)</span></summary><div class="body"><ul><li><a href="#spot-7"><strong>Spot 7 — Passerelle Debilly</strong><small>🕒 Mer 24/06 04h30</small></a></li><li><a href="#spot-8"><strong>Spot 8 — Olympiades + Simone</strong><small>🕒 Mer 24/06 08h-12h</small></a></li><li><a href="#spot-9"><strong>Spot 9 — Parking Clauzel</strong><small>🕒 Mer 24/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-7">
+<summary><strong>Spot 7 — Passerelle Debilly</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mer 24/06 04h30</span> <span class="count-badge">4 photos</span> </span></summary>
+<div class="body">
+<h3>🌉 SPOT 7 — PASSERELLE DEBILLY</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-7-1">7.1</a></td>
+<td><a href="#photo-7-1">Johan sur la structure du pont (illégal, zone grise) ⚠️ Zone</a></td>
+<td class="ps-status">✅ ACTÉE (majoritairement ça)</td>
+<td class="ps-focal">à arbitrer</td>
+<td class="ps-tag">Zone grise (dangereux) + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-7-2">7.2</a></td>
+<td><a href="#photo-7-2">Depuis les quais : Péniche + Pont + Tour Eiffel</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">à arbitrer</td>
+<td class="ps-tag">Beauty (composition épurée signatur</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-7-3">7.3</a></td>
+<td><a href="#photo-7-3">Depuis bateau</a></td>
+<td class="ps-status">✅ ACTÉE (1-2 angles)</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (angle inédit)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-7-4">7.4</a></td>
+<td><a href="#photo-7-4">Tristan sur le pont (grand angle ou autre focale) 🟡 WIP</a></td>
+<td class="ps-status">🟡 WIP (à arbitrer terrain)</td>
+<td class="ps-focal">35mm grand angle OU autre foca</td>
+<td class="ps-tag">Beauty (zone d&#x27;action proche)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌅 <strong>24/06 04H30 → 06H00</strong> (aube) — sauf si bateau le 25
+📍 <strong><a href="https://maps.app.goo.gl/GMfcG8vmFwSGJQA2A">Google Maps — Passerelle Debilly</a></strong><br />
+📮 <em>Passerelle Debilly, 75007 Paris</em></p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE aube</li>
+<li><strong>Status spot</strong> : ⚠️ <strong>Zone grise</strong> — structure rappelle Tour Eiffel, Johan monte dessus (2 secondes, complètement interdit). Demande autorisation shoot mais SANS dire que Johan monte au-dessus.</li>
+<li><strong>Statut</strong> : <strong>décor MAJEUR Tour Eiffel</strong> — pendant Bir-Hakeim sans ses contraintes</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu (sol + simulation angles bateau depuis quais)</li>
+</ul>
+</div>
+</details>
+<details class="photo-card" id="photo-7-1">
+<summary>📷 Photo 7.1 — Johan sur la structure du pont (illégal, zone grise) ⚠️ Zone grise (dangereux)</summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux) + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (majoritairement ça)</li>
+<li><strong>Position Tristan</strong> : depuis le pont à côté/derrière Johan</li>
+<li><strong>Action Johan</strong> : <strong>dans le ciel</strong> → backflip ou sauts gracieux sur structure</li>
+<li><strong>Sécurité</strong> : briefer cordistes pour assurage Johan</li>
+<li><strong>Focale</strong> : à arbitrer</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1683_22a9eac64d72.avif"><source type="image/webp" srcset="img/IMG_1683_22a9eac64d72.webp"><img src="img/IMG_1683_22a9eac64d72.jpg" alt="7.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1682_fb1b1b901b5d.avif"><source type="image/webp" srcset="img/IMG_1682_fb1b1b901b5d.webp"><img src="img/IMG_1682_fb1b1b901b5d.jpg" alt="7.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1680_e7c61152e029.avif"><source type="image/webp" srcset="img/IMG_1680_e7c61152e029.webp"><img src="img/IMG_1680_e7c61152e029.jpg" alt="7.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-7-2">
+<summary>📷 Photo 7.2 — Depuis les quais : Péniche + Pont + Tour Eiffel</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (composition épurée signature)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> :</li>
+<li>1er plan : <strong>péniche</strong> (à défaut zoom un peu)</li>
+<li>Plan milieu : <strong>pont qui se détache</strong></li>
+<li>Arrière-plan : <strong>Tour Eiffel très lisible</strong></li>
+<li><strong>Focale</strong> : à arbitrer</li>
+<li><strong>Action Johan</strong> : sur structure dans le ciel</li>
+<li><strong>Mood</strong> : épuré, ombres chinoises</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1688_1837cc17db0d.avif"><source type="image/webp" srcset="img/IMG_1688_1837cc17db0d.webp"><img src="img/IMG_1688_1837cc17db0d.jpg" alt="7.2 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1686_18e2515d6375.avif"><source type="image/webp" srcset="img/IMG_1686_18e2515d6375.webp"><img src="img/IMG_1686_18e2515d6375.jpg" alt="7.2 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-7-3">
+<summary>📷 Photo 7.3 — Depuis bateau (contre-jour OU sens lumière)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (angle inédit)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (1-2 angles)</li>
+<li><strong>Position</strong> : depuis l'eau</li>
+<li><strong>2 versions</strong> : à contre-jour OU dans le sens de la lumière</li>
+<li><strong>Débloque</strong> : angles jamais shootés</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1684_95ad75b9e02d.avif"><source type="image/webp" srcset="img/IMG_1684_95ad75b9e02d.webp"><img src="img/IMG_1684_95ad75b9e02d.jpg" alt="7.3 - ref" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-7-4">
+<summary>📷 Photo 7.4 — Tristan sur le pont (grand angle ou autre focale) 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (zone d'action proche)</li>
+<li><strong>Statut</strong> : 🟡 WIP (à arbitrer terrain)</li>
+<li><strong>Focale</strong> : 35mm grand angle OU autre focale en se reculant un peu</li>
+</ul>
+</details>
+<p><strong>Récap Debilly = 3-4 photos identifiées</strong> (zone grise + quais péniche + bateau + pont grand angle) — Beauty : 2-3 · Zone grise : 1</p>
+<hr />
+</div>
+</details><details class="spot" id="spot-8">
+<summary><strong>Spot 8 — Olympiades + Simone</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mer 24/06 08h-12h</span> <span class="count-badge">10 photos</span> </span></summary>
+<div class="body">
+<h3>🏟️ SPOT 8 — DALLE DES OLYMPIADES Paris 13ᵉ <strong>+ Passerelle Simone-de-Beauvoir</strong> (session matinale couplée)</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-8-1">8.1</a></td>
+<td><a href="#photo-8-1">Saut entre 2 murets dalle + tour arrière-plan</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">24-35mm wide</td>
+<td class="ps-tag">Beauty + Perf + Hommage parkour bru</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-2">8.2</a></td>
+<td><a href="#photo-8-2">Escalier 56 marches contre-plongée</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">35mm</td>
+<td class="ps-tag">Beauty (graphique architectural)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-3">8.3</a></td>
+<td><a href="#photo-8-3">Sous passerelle béton + silhouette + lumière rasante</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">50mm</td>
+<td class="ps-tag">Beauty (cinéma émotionnel)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-4">8.4</a></td>
+<td><a href="#photo-8-4">Pagode concave + tour + Johan équilibre muret</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">24mm</td>
+<td class="ps-tag">Beauty (Paris asiatique signature)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-5">8.5</a></td>
+<td><a href="#photo-8-5">Top dalle plein cadre béton vide + Johan figure courbe</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">35mm</td>
+<td class="ps-tag">Beauty (minimalisme Vanity Fair édi</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-6">8.6</a></td>
+<td><a href="#photo-8-6">Lentille silhouette contre lever soleil ⚠️ idée IA non valid</a></td>
+<td class="ps-status"></td>
+<td class="ps-focal">à arbitrer terrain</td>
+<td class="ps-tag">Beauty (silhouette graphique iconiq</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-7">8.7</a></td>
+<td><a href="#photo-8-7">Johan saut entre 2 niveaux + ciel ⚠️ idée IA non validée</a></td>
+<td class="ps-status"></td>
+<td class="ps-focal">grand angle</td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-8">8.8</a></td>
+<td><a href="#photo-8-8">Profil passerelle entière + Johan run au centre ⚠️ idée IA n</a></td>
+<td class="ps-status"></td>
+<td class="ps-focal">50-85mm</td>
+<td class="ps-tag">Beauty (architectural éditorial)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-9">8.9</a></td>
+<td><a href="#photo-8-9">Johan parkour rampes inclinées + reflets Seine ⚠️ idée IA no</a></td>
+<td class="ps-status"></td>
+<td class="ps-focal">à arbitrer terrain</td>
+<td class="ps-tag">Beauty + Perf (action urbaine)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-8-10">8.10</a></td>
+<td><a href="#photo-8-10">Johan figure courbe arches métalliques ⚠️ idée IA non validé</a></td>
+<td class="ps-status"></td>
+<td class="ps-focal">grand angle</td>
+<td class="ps-tag">Beauty (tunnel optique émotionnel)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(13 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌅 <strong>24/06 08H00 → 12H00</strong> (session matinée — couvre Olympiades + Simone-de-Beauvoir à côté)
+📍 <strong><a href="https://maps.app.goo.gl/9GDsCqRHAQFgtQPt6">Google Maps — Dalle des Olympiades</a></strong><br />
+📮 <em>Olympiades Esplanade — 64 Rue du Javelot 8, 75013 Paris</em>
+📍 <strong><a href="https://maps.app.goo.gl/j44tppRdB45gjYWu7">Google Maps — Passerelle Simone-de-Beauvoir</a></strong><br />
+📮 <em>Passerelle Simone-de-Beauvoir, 75012 Paris</em> <em>(juste à côté, on enchaîne)</em></p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE matinée 08h-12h (rasant ombres tours = graphique brutaliste pur &gt; golden hour ; Simone-de-Beauvoir bénéficie lumière latérale jusqu'à midi)</li>
+<li><strong>Status spot</strong> : ✅ ACTÉ — Olympiades : esplanade béton suspendue 8-10m + 8 tours villes JO + brutalisme 70s · Simone-de-Beauvoir : passerelle bois Feichtinger 2006 (BNF ↔ Parc Bercy)</li>
+<li><strong>Accès</strong> : Métro Olympiades ligne 14 + 103-105 rue de Tolbiac (13ᵉ)</li>
+<li><strong>Autorisation</strong> : « voie privée ouverte au public » — pas autorisation requise piétons + discrétion = ami (sécurité ASL peut refouler si matos volumineux)</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu — <strong>nécessaire pour valider angles réels</strong> (cf disclaimer ci-dessous)</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Disclaimer photos identifiées</strong> : les 5 photos Olympiades + section Simone-de-Beauvoir ci-dessous sont des <strong>suggestions Claude basées sur DR L1</strong> — Tristan n'a <strong>pas vu les spots empiriquement</strong>. Le repérage 21/06 avec Mathurin va confirmer / réviser / élargir cette liste sur le terrain.</p>
+</blockquote>
+<h3>Mood directeur DA</h3>
+<p><strong>« Yamakasi 2026 grandi en éditorial »</strong> — pas reportage parkour, portrait performatif.
+Référence Annie Leibovitz × brutalisme Tadao Ando.</p>
+<h3>Architecture détaillée</h3>
+<ul>
+<li>Esplanade béton multi-niveaux (2 sous-sols + dalle + tours)</li>
+<li>8 tours villes JO max 100m (Mexico, Sapporo, Athènes...)</li>
+<li><strong>Pagodes</strong> concaves sur la dalle (ex-marchés couverts asiatiques)</li>
+<li>Escaliers <strong>56 marches + 28 marches</strong> + passerelles béton + planters cassés</li>
+<li>Accès escalators entre 2 murs rouges</li>
+<li>Vieillissement + graffitis + ambiance science-fiction brutaliste 70s</li>
+</ul>
+</div>
+</details>
+<details class="photo-card" id="photo-8-1">
+<summary>📷 Photo 8.1 — Saut entre 2 murets dalle + tour arrière-plan</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf + Hommage parkour brutalisme</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 24-35mm wide</li>
+<li><strong>Composition</strong> : Johan saut entre 2 murets dalle, plongée tour Mexico OU Helsinki en arrière-plan</li>
+<li><strong>Lumière</strong> : rasante matinale</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-2">
+<summary>📷 Photo 8.2 — Escalier 56 marches contre-plongée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (graphique architectural)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 35mm</li>
+<li><strong>Composition</strong> : contre-plongée Johan plein mouvement dans escalier 56 marches</li>
+<li><strong>Mood</strong> : graphique pur</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-3">
+<summary>📷 Photo 8.3 — Sous passerelle béton + silhouette + lumière rasante</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (cinéma émotionnel)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 50mm</li>
+<li><strong>Composition</strong> : silhouette Johan saut sous passerelle béton + lumière rasante derrière</li>
+<li><strong>Mood</strong> : claque émotionnelle, cinématographique</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-4">
+<summary>📷 Photo 8.4 — Pagode concave + tour + Johan équilibre muret</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (Paris asiatique signature)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 24mm</li>
+<li><strong>Composition</strong> : pagode concave + tour, Johan équilibre sur muret 1er plan</li>
+<li><strong>Signature</strong> : seul spot Paris asiatique × brutalisme du shoot</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-5">
+<summary>📷 Photo 8.5 — Top dalle plein cadre béton vide + Johan figure courbe</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (minimalisme Vanity Fair éditorial)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 35mm</li>
+<li><strong>Composition</strong> : top dalle, plein cadre béton vide minimaliste + Johan figure courbe</li>
+<li><strong>Mood</strong> : minimalisme INTJ Vanity Fair éditorial</li>
+</ul>
+</details>
+<p><strong>Récap Olympiades = 5 photos identifiées</strong> — Beauty : 4 · Perf : 1 (8.1 saut)</p>
+<hr />
+<h3>🌉 Sous-section — Passerelle Simone-de-Beauvoir (sol, juste après Olympiades)</h3>
+<blockquote>
+<p><strong>Workflow matinée</strong> : Olympiades 08h-10h30 → marche/métro 10 min → Simone-de-Beauvoir 10h30-12h.
+Les angles <strong>depuis bateau aube</strong> restent à faire le 25/06 (cf spot 10 — photos 10.3, 10.4, 10.5, 10.7).</p>
+</blockquote>
+<h4>Mood directeur Simone</h4>
+<p>« <strong>Parkour-architecte</strong> » — Johan extension cinétique de l'œuvre Feichtinger. Référence Iwan Baan + Yann Arthus-Bertrand × action.</p>
+<h4>Architecture détaillée</h4>
+<ul>
+<li>Lentille 106m × 12m plancher chêne entre BNF + Parc Bercy</li>
+<li>Architecte Dietmar Feichtinger (2006)</li>
+<li>Azimut empirique du pont : 18° (NNE) — soleil ENE → lumière latérale rasante, pas axe frontal</li>
+<li>Rampes inclinées + arches métalliques + dalle bois centrale</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Disclaimer renforcé</strong> : TOUTES les photos Simone-de-Beauvoir ci-dessous sont des <strong>idées IA (Claude) NON validées empiriquement par Tristan</strong>. À aller voir sur place le 24/06 matin pour confirmer/réviser/élargir.</p>
+</blockquote>
+<details class="photo-card" id="photo-8-6">
+<summary>📷 Photo 8.6 — Lentille silhouette contre lever soleil ⚠️ idée IA non validée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (silhouette graphique iconique)</li>
+<li><strong>Position</strong> : sol côté aval Bercy face SW (ex-bateau, désormais sol uniquement)</li>
+<li><strong>Focale</strong> : à arbitrer terrain</li>
+<li><strong>Mood</strong> : silhouette graphique iconique</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-7">
+<summary>📷 Photo 8.7 — Johan saut entre 2 niveaux + ciel ⚠️ idée IA non validée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Position</strong> : sous lentille, contre-plongée depuis sol</li>
+<li><strong>Focale</strong> : grand angle</li>
+<li><strong>Mood</strong> : vertige + scale</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-8">
+<summary>📷 Photo 8.8 — Profil passerelle entière + Johan run au centre ⚠️ idée IA non validée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (architectural éditorial)</li>
+<li><strong>Position</strong> : sol latéral plein travers</li>
+<li><strong>Focale</strong> : 50-85mm</li>
+<li><strong>Mood</strong> : architectural éditorial</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-9">
+<summary>📷 Photo 8.9 — Johan parkour rampes inclinées + reflets Seine ⚠️ idée IA non validée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf (action urbaine)</li>
+<li><strong>Position</strong> : quai bas Bercy</li>
+<li><strong>Focale</strong> : à arbitrer terrain</li>
+<li><strong>Mood</strong> : action urbaine</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-8-10">
+<summary>📷 Photo 8.10 — Johan figure courbe arches métalliques ⚠️ idée IA non validée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (tunnel optique émotionnel)</li>
+<li><strong>Position</strong> : top passerelle, dalle bois centre, ras du sol</li>
+<li><strong>Focale</strong> : grand angle</li>
+<li><strong>Mood</strong> : tunnel optique émotionnel — Johan extension cinétique arches</li>
+</ul>
+</details>
+<p><strong>Récap Simone-de-Beauvoir SOL = 5 photos à explorer (toutes idées IA, validation terrain 24/06 matin)</strong></p>
+<hr />
+<h3>Hashtags inspiration à poncer</h3>
+<ul>
+<li><code>#olympiades</code> · <code>#parkourparis</code> · <code>#frenchfreerunfamily</code></li>
+<li>YouTube : "Lucka Ndaye Parkour aux Olympiades et Dunois"</li>
+<li>Campagne mode Song for the Mute Olympiades (Creative Boom) = référence éditoriale brutaliste</li>
+</ul>
+<p><strong>Cross-réf DR L1 complet</strong> : <code>02- MEMORY_LOGS/DEEP_RESEARCH_REPORTS/2026-06-05_olympiades_simone_beauvoir_DR_L1.md</code></p>
+<hr />
+</div>
+</details><details class="spot" id="spot-9">
+<summary><strong>Spot 9 — Parking Clauzel</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mer 24/06 20h00</span> <span class="count-badge">6 photos</span> </span></summary>
+<div class="body">
+<h3>🅿️ SPOT 9 — PARKING CLAUZEL</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-9-1">9.1</a></td>
+<td><a href="#photo-9-1">Tourelle blanche d&#x27;accès parking</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">variations multiples</td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-9-2">9.2</a></td>
+<td><a href="#photo-9-2">Coin parking petit muret + reflet flaques d&#x27;eau 🎯 KEY</a></td>
+<td class="ps-status">✅ ACTÉE (KEY photo de Tristan)</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (miroir signature)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-9-3">9.3</a></td>
+<td><a href="#photo-9-3">Zone centrale en hauteur</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">grand angle privilégié</td>
+<td class="ps-tag">Beauty</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-9-4">9.4</a></td>
+<td><a href="#photo-9-4">Suspension cour bâtiment (pendant Terrass&#x27;Hôtel 4.1) ⚠️ Zone</a></td>
+<td class="ps-status">✅ ACTÉE (assumée par Tristan +</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Zone grise (dangereux) (« qui fait </td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-9-5">9.5</a></td>
+<td><a href="#photo-9-5">Zone bordure parking penché + horizon volontairement non res</a></td>
+<td class="ps-status">✅ ACTÉE (idée Johan apportée)</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Zone grise (dangereux) (très penché</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-9-6">9.6</a></td>
+<td><a href="#photo-9-6">Cheminées toits mode Assassin&#x27;s Creed Portrait Beauty 🟡 WIP</a></td>
+<td class="ps-status">🟡 WIP (Tristan se rappelle vag</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty + Lifestyle/Portrait</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(7 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌇 <strong>24/06 20H00 → 23H00</strong> (coucher de soleil)
+📍 <strong><a href="https://maps.app.goo.gl/L5rvtJyubsABzbeRA">Google Maps — Parking Clauzel</a></strong><br />
+📮 <em>Saint-Georges, 75009 Paris</em></p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE coucher de soleil</li>
+<li><strong>Status spot</strong> : ✅ ACTÉ — <strong>plus de monuments identifiables rapidement</strong> + facilité travail réa/photo</li>
+<li><strong>Setup spécial</strong> :</li>
+<li>🚰 <strong>REQUIS</strong> : jerricans d'eau + voir avec gardiens parking pour <strong>tuyau d'arrosage</strong> → reflets flaques (sol moche valorisé)</li>
+<li>🛡️ Pas dangereux (vs Terrass'Hôtel), liberté de déplacement grand angle ↔ télé</li>
+<li><strong>Doctrine</strong> : ramener beaucoup d'eau, créer les flaques nous-mêmes pour effet miroir</li>
+</ul>
+</div>
+</details>
+<details class="light">
+<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1717_e675a9f22b5c.avif"><source type="image/webp" srcset="img/IMG_1717_e675a9f22b5c.webp"><img src="img/IMG_1717_e675a9f22b5c.jpg" alt="Clauzel - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1062"></picture></p>
+</div>
+</details>
+<details class="photo-card" id="photo-9-1">
+<summary>📷 Photo 9.1 — Tourelle blanche d'accès parking</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Johan prend appui sur tourelle → multiples jumps et cabrioles</li>
+<li><strong>Arrière-plan</strong> : vue directe Tour Eiffel</li>
+<li><strong>Focale</strong> : variations multiples</li>
+<li><strong>Liberté</strong> : grand angle ↔ télé selon angle</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-9-2">
+<summary>📷 Photo 9.2 — Coin parking petit muret + reflet flaques d'eau 🎯 KEY</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (miroir signature)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (<strong>KEY photo de Tristan</strong>)</li>
+<li><strong>Composition</strong> : Johan sur petit muret délimitation parking → backflips → <strong>eau au sol pour reflet</strong></li>
+<li><strong>Vue</strong> : Tour Eiffel + autres monuments</li>
+<li><strong>Effet</strong> : miroir flaque = transformation sol moche en signature visuelle</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-9-3">
+<summary>📷 Photo 9.3 — Zone centrale en hauteur (plans sol grand angle)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : zone au-dessus du parking sans muret → <strong>plans sol</strong> possibles</li>
+<li><strong>Focale</strong> : grand angle privilégié</li>
+<li><strong>Vue</strong> : Tour Eiffel + monuments Paris</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-9-4">
+<summary>📷 Photo 9.4 — Suspension cour bâtiment (pendant Terrass'Hôtel 4.1) ⚠️ Zone grise (dangereux)</summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux) (« qui fait peur »)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (assumée par Tristan + Johan)</li>
+<li><strong>Composition</strong> : Johan suspendu, cour de bâtiment à vide en dessous, composition entraîne vers lui</li>
+<li><strong>Sécurité</strong> : cordistes obligatoires</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-9-5">
+<summary>📷 Photo 9.5 — Zone bordure parking penché + horizon volontairement non respecté ⚠️ Zone grise (dangereux)</summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux) (très penché bord parking)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (idée Johan apportée)</li>
+<li><strong>Composition</strong> : zone bordure avec grip, Johan court dessus → <strong>effet perspective transformée</strong> + <strong>horizon volontairement penché</strong></li>
+<li><strong>Doctrine Johan</strong> : ne pas respecter l'horizon, le pencher volontairement pour effet visuel</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1715_3c156463f33a.avif"><source type="image/webp" srcset="img/IMG_1715_3c156463f33a.webp"><img src="img/IMG_1715_3c156463f33a.jpg" alt="9.5 - ref Tristan" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
+<picture><source type="image/avif" srcset="img/IMG_0747_a6cdb6bfda72.avif"><source type="image/webp" srcset="img/IMG_0747_a6cdb6bfda72.webp"><img src="img/IMG_0747_a6cdb6bfda72.jpg" alt="9.5 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-9-6">
+<summary>📷 Photo 9.6 — Cheminées toits mode Assassin's Creed Portrait Beauty 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Lifestyle/Portrait</li>
+<li><strong>Statut</strong> : 🟡 WIP (Tristan se rappelle vaguement zones cheminées)</li>
+<li><strong>Composition</strong> : Johan monte sur cheminée → portrait Beauty domine Paris + Tour Eiffel arrière-plan</li>
+<li><strong>Mode</strong> : Assassin's Creed (statique signature)</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1718_9215fe6e6cf0.avif"><source type="image/webp" srcset="img/IMG_1718_9215fe6e6cf0.webp"><img src="img/IMG_1718_9215fe6e6cf0.jpg" alt="9.6 - cheminées toits" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<blockquote>
+<p>📌 <strong>Autres photos à explorer sur place</strong> — au-delà des 6 identifiées ci-dessus, Tristan a repéré qu'il y a <strong>plus de photos potentielles à optimiser</strong> sur Clauzel (angles, zones, compositions non encore listés). À explorer/arbitrer <strong>le jour J 24/06 soir</strong> directement avec Johan + Cyril. Pas de repérage Mathurin prévu sur ce spot.</p>
+</blockquote>
+<p><strong>Récap Clauzel = 6 photos identifiées + N à explorer sur place</strong> — Beauty : 3-4 · Perf : 2 · Zone grise : 2 · Lifestyle : 1</p>
+<hr />
+</div>
+</details>
+</main>
+<a href="#top" class="back" aria-label="Retour haut">▲</a>
+<script>
+(function(){
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.from((r||document).querySelectorAll(s));}
+  window.toggleAll = function(open, sel){
+    sel = sel || 'details';
+    $$(sel).forEach(function(d){ d.open = !!open; });
+  };
+  // localStorage persistence per <details id="...">
+  function lsKey(id){ return 'mbappe:' + (document.body.dataset.day || 'idx') + ':' + id; }
+  function restoreState(){
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:' + (document.body.dataset.day || 'idx') + ':') === 0) {
+        var id = k.split(':').slice(2).join(':');
+        var el = document.getElementById(id);
+        if (el) el.open = true;
+      }
+    }
+  }
+  function bindToggleListeners(){
+    $$('details[id]').forEach(function(d){
+      d.addEventListener('toggle', function(){
+        var k = lsKey(d.id);
+        if (d.open) localStorage.setItem(k, '1');
+        else localStorage.removeItem(k);
+      });
+    });
+  }
+  function openHashTarget(){
+    if (!location.hash) return;
+    var t = document.querySelector(location.hash);
+    if (!t) return;
+    var el = t;
+    while (el && el !== document.body) {
+      if (el.tagName === 'DETAILS') el.open = true;
+      el = el.parentElement;
+    }
+    setTimeout(function(){ t.scrollIntoView({block:'start'}); }, 80);
+  }
+  window.resetState = function(){
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:') === 0) keys.push(k);
+    }
+    keys.forEach(function(k){ localStorage.removeItem(k); });
+    location.reload();
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    restoreState();
+    bindToggleListeners();
+    openHashTarget();
+    window.addEventListener('hashchange', openHashTarget);
+  });
+})();
+</script>
+</body></html>

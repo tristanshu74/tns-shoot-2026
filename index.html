@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="theme-color" content="#1e6fbf">
+<title>Mbappé Shoot — Index</title>
+<style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#1e6fbf;--card:#fff;--border:#d8d8d8;--code:#f0f0f0;
+--day-1:#1e6fbf;--day-2:#0a9a4f;--day-3:#d97706;--day-4:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#e8e8e8;--muted:#aaa;--accent:#5fa8e8;--card:#1c1c1c;--border:#333;--code:#222}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:60px}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+@media(min-width:768px){body{font-size:17px}}
+.topbar{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:2px solid var(--accent);padding:8px 14px;display:flex;align-items:center;gap:10px;min-height:48px}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;font-size:.95em}
+.topbar a:hover{background:var(--code)}
+.topbar .home-lbl{display:inline}
+@media(max-width:600px){.topbar .home-lbl,.topbar .day-jumps{display:none}}
+.topbar .spacer{flex:1}
+.topbar .btn-maps[data-state="pending"]{opacity:.5;pointer-events:none}
+.topbar .day-title{font-weight:600;font-size:.95em;color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:12px 16px 80px}
+header.day-hd{padding:14px 0 12px;margin:0 0 16px;border-bottom:3px solid var(--accent)}
+header.day-hd h1{margin:0;font-size:1.25em;line-height:1.25}
+header.day-hd .crumbs{font-size:.88em;color:var(--muted);margin-top:6px}
+header.day-hd .crumbs a{color:var(--accent);text-decoration:none;margin-right:10px}
+.maps-crumb{display:inline-block;background:var(--accent);color:#fff!important;padding:3px 10px;border-radius:14px;font-weight:600;font-size:.88em;margin-left:4px}
+.maps-crumb:hover{opacity:.85}
+.toolbar{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
+.toolbar button{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-size:.92em;cursor:pointer;font-weight:500;min-height:40px}
+.toolbar button:hover{background:var(--code);border-color:var(--accent)}
+.toolbar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* All <details> uniform picto + tap target */
+details{margin:10px 0;border:1px solid var(--border);border-radius:8px;background:var(--card);overflow:hidden}
+details>summary{padding:12px 14px;cursor:pointer;font-weight:600;list-style:none;font-size:1em;min-height:44px;display:flex;align-items:center;gap:8px;user-select:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";color:var(--muted);font-size:.85em;flex-shrink:0;transition:none;display:inline-block;width:1em;text-align:center}
+details[open]>summary::before{content:"▾"}
+details[open]>summary{background:var(--code);border-bottom:1px solid var(--border)}
+details .body{padding:12px 14px 14px}
+details .body>:first-child{margin-top:0}
+details .body>:last-child{margin-bottom:0}
+
+/* Specific styling */
+details.spot{margin:18px 0;border:2px solid var(--border);border-radius:10px;background:var(--card)}
+details.spot>summary{font-size:1.08em;padding:14px 16px;min-height:52px;background:var(--card);border-bottom:0}
+details.spot[open]>summary{border-bottom:1px solid var(--border);background:var(--code)}
+details.spot .body{padding:14px 16px 18px}
+details.brief>summary,details.light>summary,details.inspi>summary{font-size:.95em;background:transparent}
+
+/* Hierarchy: nested details inside a spot are indented + colored left border */
+details.spot .body{padding-left:18px;border-left:3px solid var(--accent);margin-left:6px}
+details.spot details{margin-left:0;border-left:2px solid var(--border)}
+details.spot details.brief{border-left-color:#8a8a8a}
+details.spot details.light{border-left-color:#d97706}
+details.spot details.photo-card{border-left-color:var(--accent)}
+details.spot details.photo-card details.inspi{margin-left:14px;border-left:2px solid #8a8a8a}
+@media(max-width:600px){details.spot .body{padding-left:10px}details.spot details.photo-card details.inspi{margin-left:8px}}
+details.photo-card{margin:8px 0;border:1px solid var(--border)}
+details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
+
+.summary-meta{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;line-height:1.4}
+.chip-day{color:#fff}
+.chip-status{background:var(--code);color:var(--muted);border:1px solid var(--border)}
+.chip-focal{background:var(--accent);color:#fff}
+.chip-tag{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.count-badge{color:var(--muted);font-weight:400;font-size:.85em;margin-left:6px}
+
+/* Photo-strip overview */
+.photo-strip{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.9em;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.photo-strip th{background:var(--code);text-align:left;padding:8px 10px;font-weight:600;font-size:.82em;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;border-bottom:1px solid var(--border)}
+.photo-strip td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.photo-strip tr:last-child td{border-bottom:0}
+.photo-strip tr:hover td{background:var(--code)}
+.photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
+.photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
+.photo-strip .ps-status{white-space:nowrap}
+.photo-strip .ps-tag{color:var(--muted);font-size:.88em}
+
+nav.toc{margin:8px 0 24px;padding:0}
+nav.toc ul{margin:0;padding:0 16px 12px;list-style:none}
+nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
+nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
+nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
+nav.toc li > .day-line a{display:inline}
+nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
+nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
+nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
+
+ul,ol{padding-left:20px}
+li{margin:4px 0}
+strong{color:var(--fg)}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-size:.92em}
+blockquote{margin:12px 0;padding:10px 14px;background:var(--code);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.95em}
+hr{border:0;border-top:1px solid var(--border);margin:24px 0}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92em}
+table th,table td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table th{background:var(--code);font-weight:600}
+td[data-day]::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+td[data-day="J1"]::before{background:var(--day-1)} td[data-day="J2"]::before{background:var(--day-2)}
+td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{background:var(--day-4)}
+
+.shoot-img{max-width:560px;width:100%;height:auto;display:block;margin:14px auto;border-radius:4px}
+@media(max-width:768px){.shoot-img{max-width:100%}}
+
+.back{position:fixed;bottom:14px;right:14px;background:var(--accent);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.2em;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:50;opacity:.75}
+.back:hover{opacity:1}
+.ref-internal{color:var(--muted);font-size:.85em;cursor:help}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center}
+.stat-card .num{font-size:1.6em;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-card .lbl{font-size:.82em;color:var(--muted);margin-top:2px}
+
+@media print{
+  body{font-size:11pt;background:#fff;color:#000}
+  .topbar,nav.toc,.back,.toolbar{display:none!important}
+  details,details.spot{break-inside:avoid;page-break-inside:avoid}
+  details>summary::before,details>summary{cursor:default}
+  details .body,details{display:block!important}
+  details>summary{background:transparent!important;border-bottom:1px solid #ccc!important}
+  details.spot{page-break-before:always}
+  .shoot-img{max-width:400px}
+}
+</style>
+</head><body data-day="idx">
+<div class="topbar"><div class="spacer"></div><a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" class="btn-maps" data-state="live" target="_blank">🗺️ Maps</a></div>
+<main>
+<a id="top"></a>
+<header class="day-hd"><h1>🎬 Mbappé Shoot — Plan 22-25 juin 2026</h1><div class="crumbs">Index master · 4 jours · 11 spots · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="dashboard"><div class="stat-card"><div class="num">4</div><div class="lbl">jours</div></div><div class="stat-card"><div class="num">11</div><div class="lbl">spots</div></div><div class="stat-card"><div class="num">58</div><div class="lbl">photos identifiées</div></div><div class="stat-card"><div class="num">3</div><div class="lbl">sessions aube</div></div><div class="stat-card"><div class="num">4</div><div class="lbl">sessions coucher</div></div></div><nav class="toc"><details id="nav-jours" open><summary>📅 Navigation par jour <span class="count-badge">(4 jours)</span></summary><div class="body"><ul><li><div class="day-line"><span class="chip chip-day" style="background:#1e6fbf">J1</span> <a href="jour-1.html"><strong>J1 — Lundi 22 juin 2026</strong></a> <span class="count-badge">(4 spots)</span></div><ul class="spot-links"><li><a href="jour-1.html#spot-1">→ Spot 1 — Trocadéro</a></li><li><a href="jour-1.html#spot-2">→ Spot 2 — Passage Camoëns</a></li><li><a href="jour-1.html#spot-3">→ Spot 3 — Pont Bir-Hakeim</a></li><li><a href="jour-1.html#spot-4">→ Spot 4 — Terrass&#x27;Hôtel</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#0a9a4f">J2</span> <a href="jour-2.html"><strong>J2 — Mardi 23 juin 2026</strong></a> <span class="count-badge">(2 spots)</span></div><ul class="spot-links"><li><a href="jour-2.html#spot-5">→ Spot 5 — MPP</a></li><li><a href="jour-2.html#spot-6">→ Spot 6 — Garage Abbeville</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#d97706">J3</span> <a href="jour-3.html"><strong>J3 — Mercredi 24 juin 2026</strong></a> <span class="count-badge">(3 spots)</span></div><ul class="spot-links"><li><a href="jour-3.html#spot-7">→ Spot 7 — Passerelle Debilly</a></li><li><a href="jour-3.html#spot-8">→ Spot 8 — Olympiades + Simone</a></li><li><a href="jour-3.html#spot-9">→ Spot 9 — Parking Clauzel</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#c0392b">J4</span> <a href="jour-4.html"><strong>J4 — Jeudi 25 juin 2026</strong></a> <span class="count-badge">(2 spots)</span></div><ul class="spot-links"><li><a href="jour-4.html#spot-10">→ Spot 10 — Bateau</a></li><li><a href="jour-4.html#spot-11">→ Spot 11 — Châtelet</a></li></ul></li></ul></div></details></nav><hr><details id="planning-overview" markdown="1"><summary>📋 Vue d'ensemble du planning</summary><div class="body">
+<hr />
+<h2>🗓️ PLANNING SHOOT 22-25 JUIN 2026</h2>
+
+<table>
+<thead>
+<tr>
+<th>Jour</th>
+<th>Heure</th>
+<th>Spot</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🌅 Dim 22/06</strong></td>
+<td><strong>04H30</strong></td>
+<td><a href="jour-1.html#spot-1"><strong>Trocadéro</strong></a></td>
+<td>Aube bleue + parvis vidé</td>
+</tr>
+<tr>
+<td data-day="J1">22/06</td>
+<td>09H00</td>
+<td><a href="jour-1.html#spot-2">Pont de Bir-Hakeim / Avenue Camoëns</a></td>
+<td>Transition matinale</td>
+</tr>
+<tr>
+<td data-day="J1">22/06</td>
+<td>12H00 → 19H00</td>
+<td>REPOS</td>
+<td>—</td>
+</tr>
+<tr>
+<td data-day="J1">22/06</td>
+<td><strong>19H00</strong></td>
+<td><a href="jour-1.html#spot-4"><strong>Terrass'Hôtel</strong></a></td>
+<td>Coucher de soleil + toit + restaurant</td>
+</tr>
+<tr>
+<td><strong>🌅 Lun 23/06</strong></td>
+<td>04H30</td>
+<td><a href="jour-1.html#spot-4"><em>Back-up Terrass'Hôtel si pluie veille — sinon RIEN</em></a></td>
+<td>Réserve météo</td>
+</tr>
+<tr>
+<td data-day="J2">23/06</td>
+<td><strong>10H00 → 13H00</strong></td>
+<td><a href="jour-2.html#spot-5"><strong>MPP</strong></a></td>
+<td>Intérieur + tunnel (lumière peu critique)</td>
+</tr>
+<tr>
+<td data-day="J2">23/06</td>
+<td>14H00 → 20H00</td>
+<td>REPOS</td>
+<td>—</td>
+</tr>
+<tr>
+<td data-day="J2">23/06</td>
+<td><strong>20H00 → 23H00</strong></td>
+<td><a href="jour-2.html#spot-6"><strong>Garage d'Abbeville</strong></a></td>
+<td>Coucher de soleil + toits autour</td>
+</tr>
+<tr>
+<td><strong>🌅 Mar 24/06</strong></td>
+<td><strong>04H30 → 06H00</strong></td>
+<td><a href="jour-3.html#spot-7"><strong>Passerelle Debilly</strong></a></td>
+<td><a href="jour-4.html#spot-10">Aube — <em>sauf si bateau le 25</em></a></td>
+</tr>
+<tr>
+<td data-day="J3">24/06</td>
+<td><strong>08H00 → 09H00</strong></td>
+<td><a href="jour-3.html#spot-8"><strong>Olympiades</strong></a></td>
+<td>Si Zenzel OK (demande Johan)</td>
+</tr>
+<tr>
+<td data-day="J3">24/06</td>
+<td>10H00 → 20H00</td>
+<td>REPOS</td>
+<td>—</td>
+</tr>
+<tr>
+<td data-day="J3">24/06</td>
+<td><strong>20H00 → 23H00</strong></td>
+<td><a href="jour-3.html#spot-9"><strong>Parking Clauzel</strong></a></td>
+<td>Coucher de soleil + flaques d'eau</td>
+</tr>
+<tr>
+<td><strong>🌅 Mer 25/06</strong></td>
+<td><strong>05H00 → 08H00</strong></td>
+<td><a href="jour-4.html#spot-10"><strong>Bateau</strong></a></td>
+<td><a href="jour-3.html#spot-7">Quais / Passerelle Debilly / Simone de Beauvoir — lever du soleil absolu</a></td>
+</tr>
+<tr>
+<td data-day="J4">25/06</td>
+<td>08H00 → 20H00</td>
+<td>REPOS</td>
+<td>—</td>
+</tr>
+<tr>
+<td data-day="J4">25/06</td>
+<td><strong>20H00 → 23H00</strong></td>
+<td><a href="jour-4.html#spot-11"><strong>Théâtre du Châtelet</strong></a></td>
+<td>Coucher de soleil + toits + Notre-Dame</td>
+</tr>
+</tbody>
+</table>
+<p><strong>⚠️ Lecture pour Mathurin</strong> : 11 spots au total. 8 sessions à lumière magique (aube ou crépuscule), 1 session diurne (MPP). Repos systématique milieu de journée. Météo Terrass'Hôtel = backup matin 23/06 si pluie 22/06. Repérage anticipé prévu <strong>21/06 avec Mathurin</strong> sur 7 des 11 spots (cf chaque section).</p>
+<hr />
+<details>
+<summary>📚 <b>RÉFÉRENTIEL &amp; DOCTRINES</b> — Légende, Workflow, Cohérence série, Équipe, Doctrines flash / Tour Eiffel / parkour, Profil Johan, Open Question (clique pour déplier)</summary>
+<h3>🏷️ Légende tags photos</h3>
+<blockquote>
+<p>Note : ces tags sont indicatifs. Le cœur de la livraison Fuji 15 = images qui combinent <strong>à la fois Beauty et Perf</strong> (très beau + performance signature). « Beauty » et « Perf » purs servent à équilibrer la série, pas à trancher entre l'un ou l'autre.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Beauty</strong></td>
+<td>Photo esthétique pure, lumière + composition + sujet</td>
+</tr>
+<tr>
+<td><strong>Perf</strong></td>
+<td>Performance parkour, action signature Johan</td>
+</tr>
+<tr>
+<td><strong>Zone grise (dangereux)</strong></td>
+<td>Borderline brief Fuji (« pas dangereux »). Shoot et trie après. Si veto Fuji → sortie hors projet (life post-Fuji)</td>
+</tr>
+<tr>
+<td><strong>Lifestyle</strong></td>
+<td>Portrait calme, Johan pas en action, respiration série</td>
+</tr>
+</tbody>
+</table>
+<h3>🎬 Légende workflow</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Sens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔒 LOCKÉ</td>
+<td>Spot + horaire + concept actés, on touche pas</td>
+</tr>
+<tr>
+<td>✅ ACTÉ</td>
+<td>Photo identifiée et validée, à exécuter le jour J</td>
+</tr>
+<tr>
+<td>🟡 WIP</td>
+<td>Idée à creuser, repérage 21/06 ou décision terrain</td>
+</tr>
+<tr>
+<td>❓ À VÉRIFIER</td>
+<td>Faisabilité tech/sécu/autorisation à confirmer</td>
+</tr>
+</tbody>
+</table>
+<h3>🎯 COHÉRENCE SÉRIE</h3>
+<blockquote>
+<p><strong>Verbatim Tristan</strong> : <em>« la cohérence c'est Johan qui est présent sur l'ensemble des clichés. On documente son parcours dans Paris, dans son terrain de jeu. C'est un hommage à la vie de lumière. »</em></p>
+</blockquote>
+<p><strong>Fil rouge série (acquis)</strong> :
+- ✅ Johan présent dans 100% des photos (avec ou sans modèle féminine)
+- ✅ Paris terrain de jeu (Trocadéro → Châtelet, vie de l'athlète parkour parisien)
+- ✅ Hommage vie de lumière (Niépce 1826 → 2026, 200 ans photo)
+- ✅ <strong>Appareil photo en bandoulière Johan</strong> : demandé Fuji pour <strong>TOUTES les vidéos</strong>. En photos, on est libre de mettre l'appareil ou non en scène — quelques photos avec sera bien vu (cohérence message Fuji) mais pas systématique.
+- ✅ Lumière magique matin/soir = signature transverse</p>
+<p><strong>Stratégie série Fuji 15</strong> :
+- Pas trancher maintenant les 15 cardinales (trop tôt)
+- Co-construction : 1ʳᵉ pass Mathurin → 2ᵉ pass équipe (Cyril/Johan/Zenzel)
+- Flexibilité maintenue tout au long de la prépa
+- Identification progressive au fur et à mesure que la story s'impose
+- Possibilité plusieurs sorties : Fuji 15 + Lifestyle séparé + Zone grise hors projet</p>
+<p><strong>3 axes complémentaires de tackle (doctrine Tristan)</strong> :
+1. <strong>PARCOURS-ARCHITECTE</strong> (humain dans architecture, ce que Zenzel aime) — Olympiades + Simone de Beauvoir + Châtelet + MPP
+2. <strong>LIFESTYLE/NARRATIF</strong> (vie d'amour, vie de lumière, relation Johan ↔ modèle féminine) — Trocadéro Erwitt + Hyperfocale + Terrass suite lit + Terrass resto fun + bateau portrait + Châtelet rambardes
+3. <strong>RECETTE HABITUELLE BEAUTY</strong> (plus beau décor + plus belle lumière pour valoriser performance) — Trocadéro statues + Tour Eiffel coupée + Bir-Hakeim + Debilly + Garage Abbeville silhouettes + Clauzel + Châtelet télé toits</p>
+<p>→ La série Fuji 15 sera <strong>équilibrée sur ces 3 axes</strong> = signal de maturité projet phare.</p>
+<h3>🎬 ÉQUIPE — Chef d'orchestre + référents</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Personne</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chef d'orchestre logistique</strong></td>
+<td><strong>Cyril Vernusse (NOESYS Prod)</strong></td>
+<td>Producteur + cadreur secondaire, vieux couple parkour avec Johan + Zenzel depuis l'origine du mouvement français</td>
+</tr>
+<tr>
+<td><strong>Réalisateur film publicitaire + making-of</strong></td>
+<td>Zenzel</td>
+<td>Lead créatif vidéo</td>
+</tr>
+<tr>
+<td><strong>Talent parkour</strong></td>
+<td>Johan Tonnoir</td>
+<td>Vice-champion monde + sensibilité image élevée, apporte idées</td>
+</tr>
+<tr>
+<td><strong>Assistant terrain Tristan + vidéo helper</strong></td>
+<td><strong>Mathurin Vautier</strong></td>
+<td>Cascadeur + appétence vidéo (allège Zenzel). Repérage 21/06 avec Tristan.</td>
+</tr>
+<tr>
+<td><strong>Cordistes</strong></td>
+<td>À confirmer Cyril</td>
+<td><a href="jour-1.html#spot-4">Sécurité Terrass'Hôtel + Châtelet + zone grise toits</a></td>
+</tr>
+<tr>
+<td><strong>Figurants</strong> (couple parapluies Erwitt)</td>
+<td>Cyril gère casting</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Modèle féminine</strong></td>
+<td>Cyril gère casting (Erwitt + hyperfocale, possiblement plus)</td>
+<td>Storytelling vie d'amour à creuser</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Doctrine relationnelle Tristan</strong> : Famille parkour (Cyril + Johan + Zenzel) travaillent ensemble depuis l'origine. Tristan se positionne <strong>allié complet</strong>, <strong>pas Diva</strong>. Mathurin = yeux fermés (historique fort Tristan).</p>
+<h3>🤝 SIGNATURE DA TRISTAN + JOHAN (essence projet)</h3>
+<p><strong>Storyline rencontre</strong> :</p>
+<blockquote>
+<p><em>« Pour nous c'est un projet signature où on se rencontre à l'occasion de ce projet. Johan vient alors qu'il est plutôt sur la fin de sa carrière, ses titres tout ça c'est plutôt derrière. Lui il est vraiment concentré sur l'image. Combinaison expérience Johan + photographe des montagnes/action. »</em></p>
+</blockquote>
+<p><strong>Doctrine commune</strong> :
+- Pas freestyle total sur le shoot (préparation cardinale)
+- Expertise totale = préparation préalable (20 ans Tristan + sensibilité image Johan)
+- Adaptable le jour J selon météo/énergie/idées émergentes
+- Plan d'attaque préalable = gage d'excellence majeur</p>
+<p><strong>Mantra Tristan cardinal</strong> :</p>
+<blockquote>
+<p><em>« La lumière magique elle va pas durer longtemps, les spots ça va disparaître en deux secondes, on a trois heures par spot, on doit faire photos, on doit faire vidéos, on doit se remettre dans cette dynamique de "toi tu veux ci, je veux ça, combien d'essais on a etc" ça va aller super vite. Le fait d'avoir déjà un plan d'attaque avant d'arriver, un plan d'attaque qu'on peut adapter, me paraît un gage d'excellence majeur. »</em></p>
+</blockquote>
+<h3>🎯 PROFIL JOHAN TONNOIR — Synthèse Tristan</h3>
+<blockquote>
+<p><em>« Sensibilité image grande. Il adore la photographie + vidéo. Aisance technique, vice-champion monde parkour freestyle. »</em></p>
+</blockquote>
+<p><strong>Forces identifiées</strong> :
+- ✅ Sensibilité image élevée — pas qu'un sportif, vraie culture visuelle
+- ✅ Attitudes corporelles gracieuses en l'air — élégance
+- ✅ Apporte des idées activement (perspective revisitée horizon penché → spot 9.5 Clauzel ; variété silhouettes)
+- ✅ Réceptif au travail d'équipe — <em>« on crée des images ensemble »</em>
+- ✅ Fin de carrière mais sommet de la vague → motivation max sur <strong>image</strong>
+- ✅ Volontaire / positif : <em>« où moi je voyais pas des trucs de fou, m'a dit mais si on peut faire ci, on peut faire ça »</em></p>
+<p><strong>Doctrine Tristan appliquée</strong> :</p>
+<blockquote>
+<p><em>« Quand un athlète est motivé, il faut l'écouter. Même si je ne sens pas forcément la photo au départ, en général ça sort des trucs bien. »</em></p>
+</blockquote>
+<p><strong>Implications projet</strong> :
+- Récup banque images : ses photos repérage + sa sélection style préférée
+- Co-création : moments d'échange "ce que tu vois / ce que je vois"
+- Inviter Johan à la sélection post-shoot pour son œil visuel</p>
+<h3>🎬 DOCTRINE PHOTO TRISTAN vs CODES PARKOUR</h3>
+<p><strong>Code parkour de base (lisibilité)</strong> :
+- Mettre Johan dans le ciel = silhouette détachée
+- Cohérent avec lecture rapide réseaux sociaux</p>
+<p><strong>Apports techniques Tristan (au-delà du code parkour)</strong> :
+1. <strong>Faible profondeur de champ</strong> : <code>XF 35mm f/1.4</code> pour détacher Johan quand il se confond avec toits
+2. <strong>Gros télés</strong> : compression + détachement perspective
+3. <strong>Flash</strong> : <em>« je ne suis pas sûr qu'ils aient l'habitude de shooter avec des flashs »</em> — différenciation</p>
+<p><strong>Combinaison gagnante</strong> : codes parkour (lisibilité ciel + énergie) <strong>+</strong> apports Tristan (PdC + télés + flash gels) = projet signature unique.</p>
+<h3>💡 DOCTRINE FLASH (Mbappé 22-25 juin)</h3>
+<p><strong>Décision</strong> : <strong>2 flashs embarqués</strong>
+- ✅ Justification : on assume le surplus transport (voitures sur place)
+- ✅ Liberté terrain : utiliser 1 OU 2 selon zone
+- ✅ Beaucoup de zones permettent les 2 flashs</p>
+<p><strong>Setup avec Mathurin</strong> :
+- Mathurin = peut se positionner sur des angles variés (toits, cheminées, recul) <strong>dans les limites de sécurité fixées par le cordiste</strong>
+- <strong>Mathurin ne prend PAS de photos pour la série</strong> — il fait le making-of (angles vidéo) + il gère les flashs (positionnement, déclenchement, gels couleur)
+- Mathurin = cascadeur → à l'aise positions difficiles</p>
+<p><strong>Doctrine couleur Tristan</strong> :
+- Gels de couleurs sur flash pour matcher lumière coucher du soleil
+- Habitude acquise (parapente) : flash contre-jour + côté + gels pour <strong>sublimer</strong> lumière naturelle (pas la remplacer)</p>
+<p><strong>Mantra</strong> :</p>
+<blockquote>
+<p><em>« Moi, je veux shooter avec des lumières ambiantes naturelles de fou, c'est pour ça qu'on shoot au lever ou au coucher mais on peut sublimer ça avec une gestion efficace des flashs. »</em></p>
+</blockquote>
+<h3>🗼 Doctrine Tour Eiffel — récap projet</h3>
+<p>3 spots <strong>proximité directe Tour Eiffel</strong> : Trocadéro + Debilly + Bir-Hakeim
++ 1 spot <strong>silhouette télé</strong> : Garage Abbeville
+= <strong>Tour Eiffel = motif récurrent série</strong> (cohérence visuelle reportage Paris)</p>
+<h3>🎨 NOUVELLE DIMENSION TRANSVERSE — Lifestyle</h3>
+<p><strong>Origine</strong> : émerge du dump Terrass'Hôtel (Photo 4.7 lit suite).</p>
+<p><strong>Concept</strong> : insérer dans la série quelques <strong>portraits de Johan pas en action</strong> — moments calmes, lifestyle, beauty pure.</p>
+<p><strong>Spots possibles</strong> :
+- Lit suite Terrass'Hôtel (vue Paris)
+- Sur le pont du bateau pendant qu'on avance vers les monuments
+- Châtelet : portrait calme sur les toits
+- À étudier ailleurs au fil du dump</p>
+<p><strong>Justification doctrine DA</strong> : casser la lecture all-action, donner de la respiration, montrer Johan comme <strong>personne</strong> pas que <strong>performeur</strong>, augmenter profondeur narrative série Phoenix.</p>
+<h3>❓ Open question résiduelle</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Statut</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="jour-1.html#spot-3">Voitures passent sur quais Bir-Hakeim à 5h ? (Photo 3.6)</a></td>
+<td>❓ vérifier</td>
+<td>Tristan via Google Earth + repérage 21/06</td>
+</tr>
+</tbody>
+</table>
+<h3>📜 Changelog WIP</h3>
+<ul>
+<li><strong>2026-06-05 12h</strong> v0.1 : création. Sacralisé spots 1-3 (Trocadéro 7 photos + Camoëns 2 + Bir-Hakeim 6-7 + bateau 2-4). 15-18 photos identifiées. Plan B WhatsApp acté. DR X-T6 leaks lancé. Demande arrosage Parking Clauzel notée.</li>
+<li><strong>2026-06-16 15h</strong> v0.2 : restructuration majeure pour première lecture Mathurin. Ajout planning 22-25 (récap PDF V01) en tête. Sections meta repliées en <code>&lt;details markdown="1"&gt;</code>. Liens Google Maps cliquables après chaque nom de spot. Chaque photo individuelle en <code>&lt;details markdown="1"&gt;</code> collapsible. Dossiers <code>assets/inspirations/spot_*</code> créés pour mock-ups visuels.</li>
+<li><strong>2026-06-16 16h</strong> v0.3 : nettoyage. Suppression sections NDA/DR L1/Tethering/Stats/Photos majeures/Phase 2/Workflow MAJ. Clarification Légende tags. Précision Mathurin = pas photos série. Fusion Photos 1.2+1.3 (Trocadéro statues + backflip contre-jour Tour Eiffel entière). Renumérotation Trocadéro. Ajout Photo 1.7 escaliers parvis → bassins (référence Johan).</li>
+</ul>
+</details>
+<hr />
+</div></details><details id="source-info"><summary>ℹ️ Source &amp; versioning</summary><div class="body"><p>Doc source : <code>2026-06-05 — Shooting Plan WIP — Note.md</code> · Build pipeline : <code>BRAIN_fuji_build_plan.py</code> v2.0</p></div></details>
+</main>
+<a href="#top" class="back" aria-label="Retour haut">▲</a>
+<script>
+(function(){
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.from((r||document).querySelectorAll(s));}
+  window.toggleAll = function(open, sel){
+    sel = sel || 'details';
+    $$(sel).forEach(function(d){ d.open = !!open; });
+  };
+  // localStorage persistence per <details id="...">
+  function lsKey(id){ return 'mbappe:' + (document.body.dataset.day || 'idx') + ':' + id; }
+  function restoreState(){
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:' + (document.body.dataset.day || 'idx') + ':') === 0) {
+        var id = k.split(':').slice(2).join(':');
+        var el = document.getElementById(id);
+        if (el) el.open = true;
+      }
+    }
+  }
+  function bindToggleListeners(){
+    $$('details[id]').forEach(function(d){
+      d.addEventListener('toggle', function(){
+        var k = lsKey(d.id);
+        if (d.open) localStorage.setItem(k, '1');
+        else localStorage.removeItem(k);
+      });
+    });
+  }
+  function openHashTarget(){
+    if (!location.hash) return;
+    var t = document.querySelector(location.hash);
+    if (!t) return;
+    var el = t;
+    while (el && el !== document.body) {
+      if (el.tagName === 'DETAILS') el.open = true;
+      el = el.parentElement;
+    }
+    setTimeout(function(){ t.scrollIntoView({block:'start'}); }, 80);
+  }
+  window.resetState = function(){
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:') === 0) keys.push(k);
+    }
+    keys.forEach(function(k){ localStorage.removeItem(k); });
+    location.reload();
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    restoreState();
+    bindToggleListeners();
+    openHashTarget();
+    window.addEventListener('hashchange', openHashTarget);
+  });
+})();
+</script>
+</body></html>

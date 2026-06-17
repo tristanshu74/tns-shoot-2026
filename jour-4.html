@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="theme-color" content="#1e6fbf">
+<title>Mbappé Shoot — J4 — Jeudi 25 juin 2026</title>
+<style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#1e6fbf;--card:#fff;--border:#d8d8d8;--code:#f0f0f0;
+--day-1:#1e6fbf;--day-2:#0a9a4f;--day-3:#d97706;--day-4:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#e8e8e8;--muted:#aaa;--accent:#5fa8e8;--card:#1c1c1c;--border:#333;--code:#222}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:60px}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+@media(min-width:768px){body{font-size:17px}}
+.topbar{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:2px solid var(--accent);padding:8px 14px;display:flex;align-items:center;gap:10px;min-height:48px}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;font-size:.95em}
+.topbar a:hover{background:var(--code)}
+.topbar .home-lbl{display:inline}
+@media(max-width:600px){.topbar .home-lbl,.topbar .day-jumps{display:none}}
+.topbar .spacer{flex:1}
+.topbar .btn-maps[data-state="pending"]{opacity:.5;pointer-events:none}
+.topbar .day-title{font-weight:600;font-size:.95em;color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:12px 16px 80px}
+header.day-hd{padding:14px 0 12px;margin:0 0 16px;border-bottom:3px solid var(--accent)}
+header.day-hd h1{margin:0;font-size:1.25em;line-height:1.25}
+header.day-hd .crumbs{font-size:.88em;color:var(--muted);margin-top:6px}
+header.day-hd .crumbs a{color:var(--accent);text-decoration:none;margin-right:10px}
+.maps-crumb{display:inline-block;background:var(--accent);color:#fff!important;padding:3px 10px;border-radius:14px;font-weight:600;font-size:.88em;margin-left:4px}
+.maps-crumb:hover{opacity:.85}
+.toolbar{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
+.toolbar button{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-size:.92em;cursor:pointer;font-weight:500;min-height:40px}
+.toolbar button:hover{background:var(--code);border-color:var(--accent)}
+.toolbar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* All <details> uniform picto + tap target */
+details{margin:10px 0;border:1px solid var(--border);border-radius:8px;background:var(--card);overflow:hidden}
+details>summary{padding:12px 14px;cursor:pointer;font-weight:600;list-style:none;font-size:1em;min-height:44px;display:flex;align-items:center;gap:8px;user-select:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";color:var(--muted);font-size:.85em;flex-shrink:0;transition:none;display:inline-block;width:1em;text-align:center}
+details[open]>summary::before{content:"▾"}
+details[open]>summary{background:var(--code);border-bottom:1px solid var(--border)}
+details .body{padding:12px 14px 14px}
+details .body>:first-child{margin-top:0}
+details .body>:last-child{margin-bottom:0}
+
+/* Specific styling */
+details.spot{margin:18px 0;border:2px solid var(--border);border-radius:10px;background:var(--card)}
+details.spot>summary{font-size:1.08em;padding:14px 16px;min-height:52px;background:var(--card);border-bottom:0}
+details.spot[open]>summary{border-bottom:1px solid var(--border);background:var(--code)}
+details.spot .body{padding:14px 16px 18px}
+details.brief>summary,details.light>summary,details.inspi>summary{font-size:.95em;background:transparent}
+
+/* Hierarchy: nested details inside a spot are indented + colored left border */
+details.spot .body{padding-left:18px;border-left:3px solid var(--accent);margin-left:6px}
+details.spot details{margin-left:0;border-left:2px solid var(--border)}
+details.spot details.brief{border-left-color:#8a8a8a}
+details.spot details.light{border-left-color:#d97706}
+details.spot details.photo-card{border-left-color:var(--accent)}
+details.spot details.photo-card details.inspi{margin-left:14px;border-left:2px solid #8a8a8a}
+@media(max-width:600px){details.spot .body{padding-left:10px}details.spot details.photo-card details.inspi{margin-left:8px}}
+details.photo-card{margin:8px 0;border:1px solid var(--border)}
+details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
+
+.summary-meta{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;line-height:1.4}
+.chip-day{color:#fff}
+.chip-status{background:var(--code);color:var(--muted);border:1px solid var(--border)}
+.chip-focal{background:var(--accent);color:#fff}
+.chip-tag{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.count-badge{color:var(--muted);font-weight:400;font-size:.85em;margin-left:6px}
+
+/* Photo-strip overview */
+.photo-strip{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.9em;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.photo-strip th{background:var(--code);text-align:left;padding:8px 10px;font-weight:600;font-size:.82em;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;border-bottom:1px solid var(--border)}
+.photo-strip td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.photo-strip tr:last-child td{border-bottom:0}
+.photo-strip tr:hover td{background:var(--code)}
+.photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
+.photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
+.photo-strip .ps-status{white-space:nowrap}
+.photo-strip .ps-tag{color:var(--muted);font-size:.88em}
+
+nav.toc{margin:8px 0 24px;padding:0}
+nav.toc ul{margin:0;padding:0 16px 12px;list-style:none}
+nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
+nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
+nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
+nav.toc li > .day-line a{display:inline}
+nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
+nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
+nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
+
+ul,ol{padding-left:20px}
+li{margin:4px 0}
+strong{color:var(--fg)}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-size:.92em}
+blockquote{margin:12px 0;padding:10px 14px;background:var(--code);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.95em}
+hr{border:0;border-top:1px solid var(--border);margin:24px 0}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92em}
+table th,table td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table th{background:var(--code);font-weight:600}
+td[data-day]::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+td[data-day="J1"]::before{background:var(--day-1)} td[data-day="J2"]::before{background:var(--day-2)}
+td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{background:var(--day-4)}
+
+.shoot-img{max-width:560px;width:100%;height:auto;display:block;margin:14px auto;border-radius:4px}
+@media(max-width:768px){.shoot-img{max-width:100%}}
+
+.back{position:fixed;bottom:14px;right:14px;background:var(--accent);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.2em;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:50;opacity:.75}
+.back:hover{opacity:1}
+.ref-internal{color:var(--muted);font-size:.85em;cursor:help}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center}
+.stat-card .num{font-size:1.6em;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-card .lbl{font-size:.82em;color:var(--muted);margin-top:2px}
+
+@media print{
+  body{font-size:11pt;background:#fff;color:#000}
+  .topbar,nav.toc,.back,.toolbar{display:none!important}
+  details,details.spot{break-inside:avoid;page-break-inside:avoid}
+  details>summary::before,details>summary{cursor:default}
+  details .body,details{display:block!important}
+  details>summary{background:transparent!important;border-bottom:1px solid #ccc!important}
+  details.spot{page-break-before:always}
+  .shoot-img{max-width:400px}
+}
+</style>
+</head><body data-day="J4">
+<div class="topbar"><a href="index.html">🏠 <span class="home-lbl">Index</span></a><span class="day-title">J4 — Jeudi 25 juin 2026</span><div class="spacer"></div><span class="day-jumps"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a></span><a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" class="btn-maps" data-state="live" target="_blank">🗺️ Maps</a></div>
+<main>
+<a id="top"></a>
+<header class="day-hd"><h1><span class="chip chip-day" style="background:#c0392b">J4</span> J4 — Jeudi 25 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(2)</span></summary><div class="body"><ul><li><a href="#spot-10"><strong>Spot 10 — Bateau</strong><small>🕒 Jeu 25/06 05h-08h</small></a></li><li><a href="#spot-11"><strong>Spot 11 — Châtelet</strong><small>🕒 Jeu 25/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-10">
+<summary><strong>Spot 10 — Bateau</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Jeu 25/06 05h-08h</span> <span class="count-badge">2 photos</span> </span></summary>
+<div class="body">
+<h3>🚤 SPOT 10 — BATEAU (zone Debilly ↔ Bir-Hakeim uniquement)</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-10-1">10.1</a></td>
+<td><a href="#photo-10-1">Travelling quais</a></td>
+<td class="ps-status">✅ ACTÉE vidéo / 🟡 WIP photo</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Vidéo principalement</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-10-2">10.2</a></td>
+<td><a href="#photo-10-2">Portrait Johan sur pont du bateau</a></td>
+<td class="ps-status">✅ ACTÉE (cohérent dimension li</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty + Lifestyle</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌅 <strong>25/06 05H00 → 08H00</strong> (lever du soleil absolu) — couvre uniquement la zone <strong>Passerelle Debilly ↔ Pont de Bir-Hakeim</strong>
+📍 <strong>Itinéraire fluvial Seine</strong> — <a href="https://maps.app.goo.gl/SL56F57yzobR4JzB7">Pont Bir-Hakeim</a> ↔ <a href="https://maps.app.goo.gl/GMfcG8vmFwSGJQA2A">Passerelle Debilly</a></p>
+<blockquote>
+<p>⚠️ <strong>Simone-de-Beauvoir = HORS scope bateau</strong> (trop loin en aval). Toutes les photos Simone-de-Beauvoir sont désormais dans le <strong>Spot 8 (session matinée 24/06)</strong> — sol uniquement.</p>
+</blockquote>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE aube absolue (lever du soleil)</li>
+<li><strong>Status spot</strong> : 🎯 <strong>PÉPITE CARDINALE Cyril</strong> — débloque la zone Tour-Eiffel/Trocadéro depuis l'eau</li>
+<li><strong>Statut tri-fonctionnel</strong> :
+  1. Point de vue <strong>JAMAIS shooté</strong> (n'importe quelle scène depuis l'eau)
+  2. Outil de <strong>travelling vidéo</strong> parfait (plans coulissants impossibles à pied)
+  3. Moyen de <strong>transport rapide</strong> entre Bir-Hakeim et Debilly
+  4. <strong>Débarquement possible</strong> pour shooter aussi depuis sol</li>
+<li><strong>Location</strong> : 3h aube confirmé Cyril</li>
+</ul>
+<h3>Spots couverts par le bateau (zone restreinte aube)</h3>
+<ol>
+<li><strong>Passerelle Debilly</strong> — voir spot 7</li>
+<li><strong>Pont de Bir-Hakeim</strong> — bonus depuis l'eau (lumière magique vs 09h sol — voir spot 3)</li>
+</ol>
+</div>
+</details>
+<details class="photo-card" id="photo-10-1">
+<summary>📷 Photo 10.1 — Travelling quais (vidéo principalement)</summary>
+<ul>
+<li><strong>Tag</strong> : Vidéo principalement</li>
+<li><strong>Statut</strong> : ✅ ACTÉE vidéo / 🟡 WIP photo</li>
+<li><strong>Setup</strong> : bateau avance, caméra dessus, Johan court sur quais en parallèle</li>
+<li><strong>Plan vidéo</strong> : travelling latéral</li>
+<li><strong>Photo possible</strong> : slow shutter pour effet mouvement défilement (effets sympas possibles)</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-10-2">
+<summary>📷 Photo 10.2 — Portrait Johan sur pont du bateau (Lifestyle)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + <strong>Lifestyle</strong></li>
+<li><strong>Statut</strong> : ✅ ACTÉE (cohérent dimension lifestyle transverse)</li>
+<li><strong>Composition</strong> : Johan debout sur le pont du bateau, on avance vers monuments</li>
+<li><strong>Mood</strong> : portrait calme contemplatif, lifestyle pure</li>
+</ul>
+</details>
+<p><strong>Récap Bateau = 2 photos identifiées + bonus angles Debilly/Bir-Hakeim depuis l'eau</strong> (travelling quais + portrait pont + angles inédits sur Debilly &amp; Bir-Hakeim couverts par leurs spots respectifs §7 &amp; §3)
+<strong>Cross-réf DR L1 complet</strong> : <code>02- MEMORY_LOGS/DEEP_RESEARCH_REPORTS/2026-06-05_olympiades_simone_beauvoir_DR_L1.md</code></p>
+<hr />
+</div>
+</details><details class="spot" id="spot-11">
+<summary><strong>Spot 11 — Châtelet</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Jeu 25/06 20h00</span> <span class="count-badge">5 photos</span> </span></summary>
+<div class="body">
+<h3>🎭 SPOT 11 — THÉÂTRE DU CHÂTELET</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-11-1">11.1</a></td>
+<td><a href="#photo-11-1">Depuis quai Seine en face : télé toit du théâtre</a></td>
+<td class="ps-status">✅ ACTÉE (3-4 photos depuis qua</td>
+<td class="ps-focal">téléobjectif</td>
+<td class="ps-tag">Beauty (signature graphique)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-11-2">11.2</a></td>
+<td><a href="#photo-11-2">Escalier dominant la scène</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-11-3">11.3</a></td>
+<td><a href="#photo-11-3">Passage entre 2 rambardes perpendiculaires + portraits</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty + Lifestyle/Portrait</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-11-4">11.4</a></td>
+<td><a href="#photo-11-4">Johan sur rambarde verticale + perspective ciel</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">du 70-200mm au 35mm = effets p</td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-11-5">11.5</a></td>
+<td><a href="#photo-11-5">Échelle bord gauche en haut du toit</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (graphique ombre chinoise)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(7 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌇 <strong>25/06 20H00 → 23H00</strong> (coucher de soleil)
+📍 <strong><a href="https://maps.app.goo.gl/JbPaf94gUbs3vQPQ9">Google Maps — Position Tristan face Théâtre du Châtelet</a></strong><br />
+📮 <em>4 Quai de la Mégisserie, 75001 Paris</em> (position depuis le quai en face — le théâtre est en face sur la rive opposée)</p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE coucher de soleil</li>
+<li><strong>Status spot</strong> : 🎯 <strong>DÉCOR MAJEUR</strong> — au bord Seine, proche Notre-Dame (<strong>SEUL endroit avec Notre-Dame</strong>)</li>
+<li><strong>Note ambition</strong> : <em>« iconique, Assassin's Creed, c'est la vision que j'avais moi quand on a commencé à nous parler du projet »</em> — vision originelle Tristan</li>
+<li><strong>Statut historique reconquête</strong> : Tristan voulait dropper après repérage technique restrictif → <strong>équipe (Cyril/Johan) l'a convaincu</strong> <em>« t'inquiète il y a plein de zones grises, plein d'angles »</em></li>
+<li><strong>Particularité commerciale</strong> : <strong>quasi JAMAIS shooté en photo</strong> = opportunité unique</li>
+<li><strong>Sécurité</strong> : cordistes obligatoires + lignes de vie partout</li>
+</ul>
+</div>
+</details>
+<details class="light">
+<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1724_dc9176c7adb4.avif"><source type="image/webp" srcset="img/IMG_1724_dc9176c7adb4.webp"><img src="img/IMG_1724_dc9176c7adb4.jpg" alt="Châtelet - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1069"></picture></p>
+</div>
+</details>
+<details class="photo-card" id="photo-11-1">
+<summary>📷 Photo 11.1 — Depuis quai Seine en face : télé toit du théâtre</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (signature graphique)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (3-4 photos depuis quais)</li>
+<li><strong>Position Tristan</strong> : depuis le quai Seine en face</li>
+<li><strong>Focale</strong> : téléobjectif</li>
+<li><strong>Sujets</strong> : Johan sur le toit + structure toit + petite rotonde + gargouilles</li>
+<li><strong>Note Tristan révisée</strong> : initialement pas chaud (« un peu anonyme, on voit pas Paris »), équipe l'a convaincu</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_0769_0be6f6abe4cc.avif"><source type="image/webp" srcset="img/IMG_0769_0be6f6abe4cc.webp"><img src="img/IMG_0769_0be6f6abe4cc.jpg" alt="11.1 - ref Johan 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="913"></picture>
+<picture><source type="image/avif" srcset="img/IMG_0770_d389e97c3097.avif"><source type="image/webp" srcset="img/IMG_0770_d389e97c3097.webp"><img src="img/IMG_0770_d389e97c3097.jpg" alt="11.1 - ref Johan 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="913"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-11-2">
+<summary>📷 Photo 11.2 — Escalier dominant la scène</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : escalier (du sol ?) → domine la scène du théâtre</li>
+<li><strong>Action</strong> : « certainement le truc à faire là-dedans »</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-11-3">
+<summary>📷 Photo 11.3 — Passage entre 2 rambardes perpendiculaires + portraits</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Lifestyle/Portrait</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : passage perpendiculaire entre 2 rambardes traversant le toit</li>
+<li><strong>Type</strong> : <strong>portraits Johan</strong> (lifestyle dimension transverse)</li>
+<li><strong>Variante</strong> : pieds Johan de chaque bord rambarde</li>
+<li><strong>Vue</strong> : DIRECTE sur scène + Notre-Dame en phase</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-11-4">
+<summary>📷 Photo 11.4 — Johan sur rambarde verticale + perspective ciel</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Sécurité</strong> : <strong>lignes de vie de part et d'autre</strong> + Tristan assuré par cordiste</li>
+<li><strong>Composition</strong> : Johan sur rambarde verticale traversante</li>
+<li><strong>Tristan position</strong> : shoot d'un côté ou de l'autre</li>
+<li><strong>Focale</strong> : du <strong>70-200mm au 35mm</strong> = effets profondeur/perspective détacher Johan dans ciel</li>
+<li><strong>Mood</strong> : Johan dans le ciel signature parkour</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-11-5">
+<summary>📷 Photo 11.5 — Échelle bord gauche en haut du toit (graphique ombre chinoise)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (graphique ombre chinoise)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : échelle latérale graphique + toits, démarque bien en ombre chinoise</li>
+<li><strong>Variantes</strong> : Spiderman / Empire State Building / autre action</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_0765_8e2a3ad2714e.avif"><source type="image/webp" srcset="img/IMG_0765_8e2a3ad2714e.webp"><img src="img/IMG_0765_8e2a3ad2714e.jpg" alt="11.5 - échelle bord gauche" loading="lazy" decoding="async" class="shoot-img" width="913" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<blockquote>
+<p>📌 <strong>Autres photos à explorer sur place</strong> — au-delà des 5 identifiées ci-dessus, il y a un certain nombre d'angles non listés à découvrir le jour J (25/06 soir). <strong>En particulier : vue Notre-Dame</strong> (seul spot du shoot avec Notre-Dame en arrière-plan, axe à exploiter à fond). À arbitrer terrain avec Cyril/Johan.</p>
+</blockquote>
+<p><strong>Récap Châtelet = 5 photos identifiées + N à explorer sur place (dont vue Notre-Dame)</strong> — Beauty : 4-5 · Perf : 2 · Lifestyle/Portrait : 1 (passage rambardes)</p>
+</div>
+</details>
+</main>
+<a href="#top" class="back" aria-label="Retour haut">▲</a>
+<script>
+(function(){
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.from((r||document).querySelectorAll(s));}
+  window.toggleAll = function(open, sel){
+    sel = sel || 'details';
+    $$(sel).forEach(function(d){ d.open = !!open; });
+  };
+  // localStorage persistence per <details id="...">
+  function lsKey(id){ return 'mbappe:' + (document.body.dataset.day || 'idx') + ':' + id; }
+  function restoreState(){
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:' + (document.body.dataset.day || 'idx') + ':') === 0) {
+        var id = k.split(':').slice(2).join(':');
+        var el = document.getElementById(id);
+        if (el) el.open = true;
+      }
+    }
+  }
+  function bindToggleListeners(){
+    $$('details[id]').forEach(function(d){
+      d.addEventListener('toggle', function(){
+        var k = lsKey(d.id);
+        if (d.open) localStorage.setItem(k, '1');
+        else localStorage.removeItem(k);
+      });
+    });
+  }
+  function openHashTarget(){
+    if (!location.hash) return;
+    var t = document.querySelector(location.hash);
+    if (!t) return;
+    var el = t;
+    while (el && el !== document.body) {
+      if (el.tagName === 'DETAILS') el.open = true;
+      el = el.parentElement;
+    }
+    setTimeout(function(){ t.scrollIntoView({block:'start'}); }, 80);
+  }
+  window.resetState = function(){
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:') === 0) keys.push(k);
+    }
+    keys.forEach(function(k){ localStorage.removeItem(k); });
+    location.reload();
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    restoreState();
+    bindToggleListeners();
+    openHashTarget();
+    window.addEventListener('hashchange', openHashTarget);
+  });
+})();
+</script>
+</body></html>

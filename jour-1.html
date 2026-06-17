@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="theme-color" content="#1e6fbf">
+<title>Mbappé Shoot — J1 — Lundi 22 juin 2026</title>
+<style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#1e6fbf;--card:#fff;--border:#d8d8d8;--code:#f0f0f0;
+--day-1:#1e6fbf;--day-2:#0a9a4f;--day-3:#d97706;--day-4:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#e8e8e8;--muted:#aaa;--accent:#5fa8e8;--card:#1c1c1c;--border:#333;--code:#222}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:60px}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+@media(min-width:768px){body{font-size:17px}}
+.topbar{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:2px solid var(--accent);padding:8px 14px;display:flex;align-items:center;gap:10px;min-height:48px}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;font-size:.95em}
+.topbar a:hover{background:var(--code)}
+.topbar .home-lbl{display:inline}
+@media(max-width:600px){.topbar .home-lbl,.topbar .day-jumps{display:none}}
+.topbar .spacer{flex:1}
+.topbar .btn-maps[data-state="pending"]{opacity:.5;pointer-events:none}
+.topbar .day-title{font-weight:600;font-size:.95em;color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:12px 16px 80px}
+header.day-hd{padding:14px 0 12px;margin:0 0 16px;border-bottom:3px solid var(--accent)}
+header.day-hd h1{margin:0;font-size:1.25em;line-height:1.25}
+header.day-hd .crumbs{font-size:.88em;color:var(--muted);margin-top:6px}
+header.day-hd .crumbs a{color:var(--accent);text-decoration:none;margin-right:10px}
+.maps-crumb{display:inline-block;background:var(--accent);color:#fff!important;padding:3px 10px;border-radius:14px;font-weight:600;font-size:.88em;margin-left:4px}
+.maps-crumb:hover{opacity:.85}
+.toolbar{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
+.toolbar button{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-size:.92em;cursor:pointer;font-weight:500;min-height:40px}
+.toolbar button:hover{background:var(--code);border-color:var(--accent)}
+.toolbar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* All <details> uniform picto + tap target */
+details{margin:10px 0;border:1px solid var(--border);border-radius:8px;background:var(--card);overflow:hidden}
+details>summary{padding:12px 14px;cursor:pointer;font-weight:600;list-style:none;font-size:1em;min-height:44px;display:flex;align-items:center;gap:8px;user-select:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";color:var(--muted);font-size:.85em;flex-shrink:0;transition:none;display:inline-block;width:1em;text-align:center}
+details[open]>summary::before{content:"▾"}
+details[open]>summary{background:var(--code);border-bottom:1px solid var(--border)}
+details .body{padding:12px 14px 14px}
+details .body>:first-child{margin-top:0}
+details .body>:last-child{margin-bottom:0}
+
+/* Specific styling */
+details.spot{margin:18px 0;border:2px solid var(--border);border-radius:10px;background:var(--card)}
+details.spot>summary{font-size:1.08em;padding:14px 16px;min-height:52px;background:var(--card);border-bottom:0}
+details.spot[open]>summary{border-bottom:1px solid var(--border);background:var(--code)}
+details.spot .body{padding:14px 16px 18px}
+details.brief>summary,details.light>summary,details.inspi>summary{font-size:.95em;background:transparent}
+
+/* Hierarchy: nested details inside a spot are indented + colored left border */
+details.spot .body{padding-left:18px;border-left:3px solid var(--accent);margin-left:6px}
+details.spot details{margin-left:0;border-left:2px solid var(--border)}
+details.spot details.brief{border-left-color:#8a8a8a}
+details.spot details.light{border-left-color:#d97706}
+details.spot details.photo-card{border-left-color:var(--accent)}
+details.spot details.photo-card details.inspi{margin-left:14px;border-left:2px solid #8a8a8a}
+@media(max-width:600px){details.spot .body{padding-left:10px}details.spot details.photo-card details.inspi{margin-left:8px}}
+details.photo-card{margin:8px 0;border:1px solid var(--border)}
+details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
+
+.summary-meta{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;line-height:1.4}
+.chip-day{color:#fff}
+.chip-status{background:var(--code);color:var(--muted);border:1px solid var(--border)}
+.chip-focal{background:var(--accent);color:#fff}
+.chip-tag{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.count-badge{color:var(--muted);font-weight:400;font-size:.85em;margin-left:6px}
+
+/* Photo-strip overview */
+.photo-strip{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.9em;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.photo-strip th{background:var(--code);text-align:left;padding:8px 10px;font-weight:600;font-size:.82em;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;border-bottom:1px solid var(--border)}
+.photo-strip td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.photo-strip tr:last-child td{border-bottom:0}
+.photo-strip tr:hover td{background:var(--code)}
+.photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
+.photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
+.photo-strip .ps-status{white-space:nowrap}
+.photo-strip .ps-tag{color:var(--muted);font-size:.88em}
+
+nav.toc{margin:8px 0 24px;padding:0}
+nav.toc ul{margin:0;padding:0 16px 12px;list-style:none}
+nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
+nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
+nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
+nav.toc li > .day-line a{display:inline}
+nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
+nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
+nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
+
+ul,ol{padding-left:20px}
+li{margin:4px 0}
+strong{color:var(--fg)}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-size:.92em}
+blockquote{margin:12px 0;padding:10px 14px;background:var(--code);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.95em}
+hr{border:0;border-top:1px solid var(--border);margin:24px 0}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92em}
+table th,table td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table th{background:var(--code);font-weight:600}
+td[data-day]::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+td[data-day="J1"]::before{background:var(--day-1)} td[data-day="J2"]::before{background:var(--day-2)}
+td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{background:var(--day-4)}
+
+.shoot-img{max-width:560px;width:100%;height:auto;display:block;margin:14px auto;border-radius:4px}
+@media(max-width:768px){.shoot-img{max-width:100%}}
+
+.back{position:fixed;bottom:14px;right:14px;background:var(--accent);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.2em;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:50;opacity:.75}
+.back:hover{opacity:1}
+.ref-internal{color:var(--muted);font-size:.85em;cursor:help}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center}
+.stat-card .num{font-size:1.6em;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-card .lbl{font-size:.82em;color:var(--muted);margin-top:2px}
+
+@media print{
+  body{font-size:11pt;background:#fff;color:#000}
+  .topbar,nav.toc,.back,.toolbar{display:none!important}
+  details,details.spot{break-inside:avoid;page-break-inside:avoid}
+  details>summary::before,details>summary{cursor:default}
+  details .body,details{display:block!important}
+  details>summary{background:transparent!important;border-bottom:1px solid #ccc!important}
+  details.spot{page-break-before:always}
+  .shoot-img{max-width:400px}
+}
+</style>
+</head><body data-day="J1">
+<div class="topbar"><a href="index.html">🏠 <span class="home-lbl">Index</span></a><span class="day-title">J1 — Lundi 22 juin 2026</span><div class="spacer"></div><span class="day-jumps"><a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a></span><a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" class="btn-maps" data-state="live" target="_blank">🗺️ Maps</a></div>
+<main>
+<a id="top"></a>
+<header class="day-hd"><h1><span class="chip chip-day" style="background:#1e6fbf">J1</span> J1 — Lundi 22 juin 2026</h1><div class="crumbs"><a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(4)</span></summary><div class="body"><ul><li><a href="#spot-1"><strong>Spot 1 — Trocadéro</strong><small>🕒 Lun 22/06 matin</small></a></li><li><a href="#spot-2"><strong>Spot 2 — Passage Camoëns</strong><small>🕒 Lun 22/06 matin</small></a></li><li><a href="#spot-3"><strong>Spot 3 — Pont Bir-Hakeim</strong><small>🕒 Lun 22/06 09h00</small></a></li><li><a href="#spot-4"><strong>Spot 4 — Terrass&#x27;Hôtel</strong><small>🕒 Lun 22/06 19h00</small></a></li></ul></div></details><details class="spot" id="spot-1">
+<summary><strong>Spot 1 — Trocadéro</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 matin</span> <span class="count-badge">7 photos</span> </span></summary>
+<div class="body">
+<h3>🗼 SPOT 1 — TROCADÉRO</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-1-1">1.1</a></td>
+<td><a href="#photo-1-1">Revisite Erwitt « Umbrella Jump » 🎯 LEAD</a></td>
+<td class="ps-status">🔒 LOCKÉE (photo lead affiche)</td>
+<td class="ps-focal">35mm OU 55mm (arbitrer terrain</td>
+<td class="ps-tag">Beauty + Hommage</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-1-2">1.2</a></td>
+<td><a href="#photo-1-2">Statues du parvis + backflip signature contre-jour Tour Eiff</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">35-85mm (variations à arbitrer</td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-1-3">1.3</a></td>
+<td><a href="#photo-1-3">Tour Eiffel coupée graphique gros télé</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">400mm OU 200mm + TC — assumer </td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-1-4">1.4</a></td>
+<td><a href="#photo-1-4">Hyperfocale demoiselle + Johan + Tour Eiffel</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">16-35mm (hyperfocale)</td>
+<td class="ps-tag">Beauty + Twist surréaliste</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-1-5">1.5</a></td>
+<td><a href="#photo-1-5">Spiderman bassins ⚠️ Zone grise (dangereux)</a></td>
+<td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
+<td class="ps-focal">16-35mm</td>
+<td class="ps-tag">Zone grise (dangereux)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-1-6">1.6</a></td>
+<td><a href="#photo-1-6">Verticale plots béton + reflets fenêtres ⚠️ Zone grise (dang</a></td>
+<td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
+<td class="ps-focal">16-35mm (verticale)</td>
+<td class="ps-tag">Zone grise (dangereux)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-1-7">1.7</a></td>
+<td><a href="#photo-1-7">Escaliers parvis → bassins, perspective Tour Eiffel + muret </a></td>
+<td class="ps-status">🟡 WIP (à valider terrain repér</td>
+<td class="ps-focal">16-24mm (ou 16-35mm)</td>
+<td class="ps-tag">Beauty (jeu de perspectives)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(6 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌅 <strong>22/06 04H30</strong> (aube bleue → matinale dorée)
+📍 <strong><a href="https://maps.app.goo.gl/pWH5scfHWqpE7wAg9">Google Maps — Trocadéro</a></strong><br />
+📮 <em>13 Pl. du Trocadéro et du 11 Novembre, 75016 Paris</em> (GPS 48.862632, 2.287977)</p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE aube bleue → matinale dorée</li>
+<li><strong>Status spot</strong> : 🔒 LOCKÉ — parvis vidé d'humains, hommage Erwitt obligatoire</li>
+<li><strong>Setup spécial</strong> : tethering ordi (live preview équipe) + arrosage sol (Cyril cherche solution + autorisation Ville Paris)</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu</li>
+<li><strong>Casting</strong> : figurants couple-parapluies + modèle féminine (la même que Photo 1.4) — Cyril gère</li>
+</ul>
+</div>
+</details>
+<details class="light">
+<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/SunSeeker_Here_3D_2_1a3cb7f7b171.avif"><source type="image/webp" srcset="img/SunSeeker_Here_3D_2_1a3cb7f7b171.webp"><img src="img/SunSeeker_Here_3D_2_1a3cb7f7b171.jpg" alt="Trajectoire soleil Trocadéro - SunSeeker 3D" loading="lazy" decoding="async" class="shoot-img" width="1600" height="738"></picture></p>
+</div>
+</details>
+<details class="photo-card" id="photo-1-1">
+<summary>📷 <b>Photo 1.1 — Revisite Erwitt « Umbrella Jump » 🎯 LEAD</b></summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Hommage</li>
+<li><strong>Statut</strong> : 🔒 LOCKÉE (photo lead affiche)</li>
+<li><strong>Focale</strong> : 35mm OU 55mm (arbitrer terrain selon cadrage Erwitt)</li>
+<li><strong>Couleur</strong> : <strong>N&amp;B</strong> simulation ACROS (seule image N&amp;B du projet)</li>
+<li><strong>Flash</strong> : non (si on a le temps, pourquoi pas faire une variante avec flash)</li>
+<li><strong>Composition</strong> : même angle photo originale Erwitt 1989 + sol arrosé</li>
+<li><strong>Action Johan</strong> : backflip tête à l'envers + possiblement tenant boîtier Fuji</li>
+<li><strong>Figurants</strong> : couple avec parapluies (rappel composition originale)</li>
+<li><strong>Twist</strong> : parapluie → appareil photo dans la main du sauteur (à valider)</li>
+<li><strong>Setup</strong> : trépied + tethering ordi, shoot très tôt (parvis vidé)</li>
+<li><strong>Note historique</strong> : Erwitt hommage probable à HCB Gare St-Lazare → clin d'œil dans le clin d'œil (en attente confirmation Magnum/Karen Jonsson)</li>
+</ul>
+<p><strong>Technique boîtier</strong> :
+- Mode <strong>rafale</strong> activé
+- <strong>Pré-focus</strong> pour éviter tout souci d'autofocus pendant le saut</p>
+<details class="inspi">
+<summary>🖼️ 🖼️ Inspirations 📷📷</summary>
+<div class="body">
+<p><strong>Référence Tristan — angle parvis Erwitt</strong> (repérage Day 3) :</p>
+<p><picture><source type="image/avif" srcset="img/IMG_1646_1d459285fa0f.avif"><source type="image/webp" srcset="img/IMG_1646_1d459285fa0f.webp"><img src="img/IMG_1646_1d459285fa0f.jpg" alt="Référence parvis Erwitt — Tristan repérage" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><strong>Inspiration originale Elliott Erwitt — « Paris, France — Umbrella Jump » (1989)</strong> :</p>
+<p><picture><source type="image/avif" srcset="img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.avif"><source type="image/webp" srcset="img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.webp"><img src="img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.jpg" alt="Elliott Erwitt - Paris France Umbrella Jump 1989" loading="lazy" decoding="async" class="shoot-img" width="1500" height="1007"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-1-2">
+<summary>📷 <b>Photo 1.2 — Statues du parvis + backflip signature contre-jour Tour Eiffel</b></summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 35-85mm (variations à arbitrer terrain — angles statues côté Sud + Nord)</li>
+<li><strong>Flash</strong> : 2 versions à tester — avec / sans flash de remplissage</li>
+<li><strong>Composition</strong> :</li>
+<li>Position prise : depuis le parvis, statues d'un côté et de l'autre, vue Tour Eiffel derrière</li>
+<li>Johan part entre les statues, backflip ou mouvement signature</li>
+<li><strong>Tour Eiffel ENTIÈRE</strong> (pas coupée sur cette photo)</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références — angles statues parvis 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1655_df97155df4a9.avif"><source type="image/webp" srcset="img/IMG_1655_df97155df4a9.webp"><img src="img/IMG_1655_df97155df4a9.jpg" alt="Statues parvis - angle 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1647_5c985f08a029.avif"><source type="image/webp" srcset="img/IMG_1647_5c985f08a029.webp"><img src="img/IMG_1647_5c985f08a029.jpg" alt="Statues parvis - angle 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-1-3">
+<summary>📷 <b>Photo 1.3 — Tour Eiffel coupée graphique gros télé</b></summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : <strong>400mm OU 200mm + TC</strong> — assumer la coupe Tour Eiffel</li>
+<li><strong>Composition</strong> : Johan inscrit géométriquement sous structure 1er étage OU entre 1er et 2e étage</li>
+<li><strong>Silhouette</strong> : oui — Johan silhouette</li>
+<li><strong>Spot prise</strong> : muret au bout du parvis face Tour Eiffel → appui pour saut</li>
+<li><strong>Action</strong> : attitude corporelle belle et <strong>lisible</strong> (pas forcément "bien tendue"). Critère cardinal : <strong>Johan se découpe nettement contre le ciel</strong>, ne se superpose PAS avec un élément de la Tour Eiffel. Alternative : on peut tenter de le faire « marcher dessus » la structure.</li>
+<li><strong>Doctrine DA</strong> : assumer la coupe = pas problème de compréhension Tour Eiffel (icône reconnaissable par fragment + montrée pleine ailleurs dans la série)</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-1-4">
+<summary>📷 <b>Photo 1.4 — Hyperfocale demoiselle + Johan + Tour Eiffel</b></summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Twist surréaliste</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : <strong>16-35mm</strong> (hyperfocale)</li>
+<li><strong>Composition</strong> : modèle féminine 1er plan main tendue + Johan silhouette milieu + Tour Eiffel arrière-plan</li>
+<li><strong>Modèle</strong> : MÊME que photo Erwitt (économie casting acté)</li>
+<li><strong>Clin d'œil</strong> : pied de nez à la photo touristique « je tiens la Tour Eiffel »</li>
+<li><strong>Inspiration</strong> : ta propre photo JB Chandelier / Aurore Ghiliano / parapentiste</li>
+<li><strong>Localisation</strong> : sur le <strong>parvis</strong></li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Inspiration — « The Air Goddess » Tristan Shu × Aurore Ghiliano × JB Chandelier 📷</summary>
+<div class="body">
+<p>Photo récupérée depuis <a href="https://www.tristanshu.com/-/galleries/portfolios/gallery/-/medias/5f13b957-76b1-48bf-bdf5-e0afeef0ece5-the-air-goddess-with-aurore-ghiliano-jean-baptiste-chandelier">tristanshu.com</a> (Saint Vincent les Forts, Hautes Alpes, mars 2023, Nikon D810).</p>
+<p><picture><source type="image/avif" srcset="img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.avif"><source type="image/webp" srcset="img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.webp"><img src="img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.jpg" alt="The Air Goddess - Aurore Ghiliano + JB Chandelier - Tristan Shu" loading="lazy" decoding="async" class="shoot-img" width="1600" height="930"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-1-5">
+<summary>📷 <b>Photo 1.5 — Spiderman bassins ⚠️ Zone grise (dangereux)</b></summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (zone grise assumée)</li>
+<li><strong>Focale</strong> : <strong>16-35mm</strong></li>
+<li><strong>Composition</strong> : Johan suspendu mode Spiderman Empire State Building face Tour Eiffel</li>
+<li><strong>Spot</strong> : à droite OU à gauche du parvis en descendant vers les bassins</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-1-6">
+<summary>📷 <b>Photo 1.6 — Verticale plots béton + reflets fenêtres ⚠️ Zone grise (dangereux)</b></summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (zone grise assumée)</li>
+<li><strong>Focale</strong> : <strong>16-35mm</strong> (verticale)</li>
+<li><strong>Composition</strong> : à hauteur des bassins, dos au bassin, regard vers le haut</li>
+<li><strong>Décor</strong> : Tour Eiffel reflétée dans fenêtres bâtiment Trocadéro + muret segmenté par plots béton</li>
+<li><strong>Action</strong> : Johan saute d'un plot béton à l'autre</li>
+<li><strong>Graphique</strong> : très chouette avec Tour Eiffel + reflets</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence — vue depuis le bas 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1653_303bd909f660.avif"><source type="image/webp" srcset="img/IMG_1653_303bd909f660.webp"><img src="img/IMG_1653_303bd909f660.jpg" alt="Plots béton verticale - vue du bas" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-1-7">
+<summary>📷 <b>Photo 1.7 — Escaliers parvis → bassins, perspective Tour Eiffel + muret + Johan flottant</b> (idée Johan)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (jeu de perspectives)</li>
+<li><strong>Statut</strong> : 🟡 WIP (à valider terrain repérage 21/06)</li>
+<li><strong>Focale</strong> : <strong>16-24mm</strong> (ou 16-35mm)</li>
+<li><strong>Localisation</strong> : sur les <strong>escaliers qui descendent du parvis en direction des bassins</strong></li>
+<li><strong>Composition</strong> : jeu de perspectives — placer la <strong>Tour Eiffel sous un angle</strong>, le <strong>muret sous un autre angle</strong>, <strong>Johan en train de flotter en l'air entre les deux</strong></li>
+<li><strong>Origine idée</strong> : Johan (sensibilité jeu de perspectives)</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Image de référence prise par Johan 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_0717_920fad7a475b.avif"><source type="image/webp" srcset="img/IMG_0717_920fad7a475b.webp"><img src="img/IMG_0717_920fad7a475b.jpg" alt="Repérage Johan" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<p><strong>Récap Trocadéro = 7 photos identifiées</strong> — Beauty : 4 (1.1, 1.2, 1.3, 1.4) · Beauty/Perf : 1 (1.3 a aussi un tag Perf) · Zone grise (dangereux) : 2 (1.5, 1.6) · Idée Johan WIP : 1 (1.7)</p>
+<hr />
+</div>
+</details><details class="spot" id="spot-2">
+<summary><strong>Spot 2 — Passage Camoëns</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 matin</span> <span class="count-badge">2 photos</span> </span></summary>
+<div class="body">
+<h3>🌳 SPOT 2 — AVENUE CAMOËNS / ESCALIERS</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-2-1">2.1</a></td>
+<td><a href="#photo-2-1">Saut perf escaliers (muret haut → muret bas) — 2 angles</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">grand angle 16-24mm probable (</td>
+<td class="ps-tag">Perf (action pour vidéo Johan)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-2-2">2.2</a></td>
+<td><a href="#photo-2-2">Artigraphique hyperfocale depuis le bas</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">35mm</td>
+<td class="ps-tag">Beauty (graphique narratif)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌅 <strong>22/06 09H00</strong> (transition Trocadéro → Bir-Hakeim)
+📍 <strong><a href="https://maps.app.goo.gl/DKnztETZGgBWxWeJ6">Google Maps — Passage Camoëns</a></strong><br />
+📮 <em>Av. de Camoens, 75116 Paris</em></p>
+<ul>
+<li><strong>Lumière</strong> : matinale (encore correcte si on a avancé vite au Trocadéro)</li>
+<li><strong>Status spot</strong> : ⚠️ <strong>Zone grise</strong> — on n'a pas le droit au niveau des accords, mais on y va quand même</li>
+<li><strong>Flash</strong> : possible voire probable</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu</li>
+</ul>
+</div>
+</details>
+<details class="photo-card" id="photo-2-1">
+<summary>📷 Photo 2.1 — Saut perf escaliers (muret haut → muret bas) — 2 angles</summary>
+<ul>
+<li><strong>Tag</strong> : Perf (action pour vidéo Johan)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : grand angle 16-24mm probable (dans les escaliers)</li>
+<li><strong>Composition</strong> : Johan saute muret supérieur → muret inférieur</li>
+<li><strong>2 angles à shooter</strong> :</li>
+<li><strong>Angle A</strong> : depuis l'escalier (vue côté/dessous)</li>
+<li><strong>Angle B</strong> : depuis le haut où Johan prend son appel</li>
+<li><strong>Plan vidéo</strong> : 1-2 angles complémentaires pour la vidéo</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1664_ab8904d1b537.avif"><source type="image/webp" srcset="img/IMG_1664_ab8904d1b537.webp"><img src="img/IMG_1664_ab8904d1b537.jpg" alt="Saut escaliers - vue 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1662_b7cd7d9c0907.avif"><source type="image/webp" srcset="img/IMG_1662_b7cd7d9c0907.webp"><img src="img/IMG_1662_b7cd7d9c0907.jpg" alt="Saut escaliers - vue 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1660_a45e67a41911.avif"><source type="image/webp" srcset="img/IMG_1660_a45e67a41911.webp"><img src="img/IMG_1660_a45e67a41911.jpg" alt="Saut escaliers - vue 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1658_87c334e968de.avif"><source type="image/webp" srcset="img/IMG_1658_87c334e968de.webp"><img src="img/IMG_1658_87c334e968de.jpg" alt="Saut escaliers - vue 4" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-2-2">
+<summary>📷 Photo 2.2 — Artigraphique hyperfocale depuis le bas</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (graphique narratif)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : <strong>35mm</strong></li>
+<li><strong>Composition</strong> : cadre depuis le bas des escaliers, fontaine/statue à cornes 1er plan + immeubles haussmanniens + Johan petite silhouette en haut qui saute comme s'il prenait appui sur les cornes</li>
+<li><strong>Effet</strong> : hyperfocale + perspective écrasée</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1657_99ecb253dab4.avif"><source type="image/webp" srcset="img/IMG_1657_99ecb253dab4.webp"><img src="img/IMG_1657_99ecb253dab4.jpg" alt="Hyperfocale depuis le bas" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<p><strong>Récap Camoëns = 2 photos</strong> — Beauty : 1 (2.2) · Perf : 1 (2.1)</p>
+<hr />
+</div>
+</details><details class="spot" id="spot-3">
+<summary><strong>Spot 3 — Pont Bir-Hakeim</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 09h00</span> <span class="count-badge">6 photos</span> </span></summary>
+<div class="body">
+<h3>🌉 SPOT 3 — PONT DE BIR-HAKEIM</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-3-1">3.1</a></td>
+<td><a href="#photo-3-1">Classique revisité, perspective comprimée colonnes + portes</a></td>
+<td class="ps-status">✅ ACTÉE (chute facile, déclina</td>
+<td class="ps-focal">longue télé 200mm voire + OU e</td>
+<td class="ps-tag">Beauty (japonais vont adorer)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-3-2">3.2</a></td>
+<td><a href="#photo-3-2">Tour Eiffel entière + 3.2bis Tour Eiffel coupée</a></td>
+<td class="ps-status">✅ ACTÉE (2 versions)</td>
+<td class="ps-focal">à arbitrer terrain</td>
+<td class="ps-tag">Beauty</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-3-3">3.3</a></td>
+<td><a href="#photo-3-3">Johan suspendu structure pont (Empire State / Spiderman) ⚠️ </a></td>
+<td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
+<td class="ps-focal">à étudier</td>
+<td class="ps-tag">Zone grise (dangereux)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-3-4">3.4</a></td>
+<td><a href="#photo-3-4">Îlot statue renfoncement</a></td>
+<td class="ps-status">❓ À VÉRIFIER (investigation re</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-3-5">3.5</a></td>
+<td><a href="#photo-3-5">Passerelle face Tour Eiffel</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (composition simple)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-3-6">3.6</a></td>
+<td><a href="#photo-3-6">Pose longue depuis quais 🟡 WIP</a></td>
+<td class="ps-status">🟡 WIP — à vérifier</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (tech démo Fuji)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(6 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌅 <strong>22/06 09H00</strong> (session 1) + 🚤 <strong>25/06 05H-08H bonus bateau aube</strong>
+📍 <strong><a href="https://maps.app.goo.gl/SL56F57yzobR4JzB7">Google Maps — Pont de Bir-Hakeim</a></strong><br />
+📮 <em>Pont de Bir-Hakeim, 75015 Paris</em> (escalier d'accès juste au-dessus de la station métro côté Quai de Grenelle)</p>
+<ul>
+<li><strong>Lumière</strong> : 1ère session 09h (intéressante mais plus magique) + 2e session bateau aube (lumière dorée absolue)</li>
+<li><strong>Status spot</strong> : ✅ ACTÉ — iconique + archi-shooté Paris, revisite assumée</li>
+<li><strong>Setup spécial</strong> : Tristan possiblement sur voie routière latérale à 5h matin</li>
+<li><strong>Flash</strong> : oui</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu (incluant simulation angles bateau depuis les quais — pas le pont depuis bateau directement)</li>
+</ul>
+</div>
+</details>
+<details class="light">
+<summary>🌅 Lecture lumière <span class="count-badge">(2 images)</span></summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1673_c4e2a58fb236.avif"><source type="image/webp" srcset="img/IMG_1673_c4e2a58fb236.webp"><img src="img/IMG_1673_c4e2a58fb236.jpg" alt="Bir-Hakeim - lecture lumière soleil 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1066"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1674_70b44f5ea103.avif"><source type="image/webp" srcset="img/IMG_1674_70b44f5ea103.webp"><img src="img/IMG_1674_70b44f5ea103.jpg" alt="Bir-Hakeim - lecture lumière soleil 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1053"></picture></p>
+</div>
+</details>
+<details class="photo-card" id="photo-3-1">
+<summary>📷 Photo 3.1 — Classique revisité, perspective comprimée colonnes + portes</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (japonais vont adorer)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (chute facile, déclinable vite, impact important)</li>
+<li><strong>Focale</strong> : <strong>longue télé 200mm voire +</strong> OU exemple photo célèbre Bir-Hakeim <strong>grand angle</strong> (les deux possibles)</li>
+<li><strong>Note focale (Tristan)</strong> : <em>« je pense que la focale ça doit être de 35 à 200mm »</em> — <strong>range à investiguer lors du repérage 21/06 avec Mathurin</strong> pour trouver exactement</li>
+<li><strong>Flash</strong> : possible flash arrière en silhouette N&amp;B chinoise (à arbitrer)</li>
+<li><strong>Composition</strong> : Johan parfaitement inscrit géométriquement dans la perspective, tête à l'envers OU saut verticale</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1665_dc0316ed19b7.avif"><source type="image/webp" srcset="img/IMG_1665_dc0316ed19b7.webp"><img src="img/IMG_1665_dc0316ed19b7.jpg" alt="Bir-Hakeim 3.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1677_8172ef3cebbc.avif"><source type="image/webp" srcset="img/IMG_1677_8172ef3cebbc.webp"><img src="img/IMG_1677_8172ef3cebbc.jpg" alt="Bir-Hakeim 3.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1676_271e12254c24.avif"><source type="image/webp" srcset="img/IMG_1676_271e12254c24.webp"><img src="img/IMG_1676_271e12254c24.jpg" alt="Bir-Hakeim 3.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-3-2">
+<summary>📷 Photo 3.2 — Tour Eiffel entière + 3.2bis Tour Eiffel coupée</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (2 versions)</li>
+<li><strong>Focale</strong> : à arbitrer terrain</li>
+<li><strong>Composition</strong> : depuis la voie centrale du pont (Tristan sur route latérale possible à 5h)</li>
+<li><strong>Version A (3.2a)</strong> : ne PAS couper Tour Eiffel (instinct Tristan préservé)</li>
+<li><strong>Version B (3.2b)</strong> : assumer la coupure pour perspective renforcée</li>
+<li><strong>Action Johan</strong> : positions diverses à explorer</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><strong>Version A (3.2a — Tour Eiffel entière)</strong> :</p>
+<p><picture><source type="image/avif" srcset="img/IMG_1669_0a9870bb3aab.avif"><source type="image/webp" srcset="img/IMG_1669_0a9870bb3aab.webp"><img src="img/IMG_1669_0a9870bb3aab.jpg" alt="3.2a - Tour Eiffel entière" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><strong>Version B (3.2b — Tour Eiffel coupée)</strong> :</p>
+<p><picture><source type="image/avif" srcset="img/IMG_1666_8d6007f979df.avif"><source type="image/webp" srcset="img/IMG_1666_8d6007f979df.webp"><img src="img/IMG_1666_8d6007f979df.jpg" alt="3.2b - Tour Eiffel coupée" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-3-3">
+<summary>📷 Photo 3.3 — Johan suspendu structure pont (Empire State / Spiderman) ⚠️ Zone grise (dangereux)</summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (zone grise assumée)</li>
+<li><strong>Focale</strong> : à étudier</li>
+<li><strong>Composition</strong> : Johan grimpe le long structure et se suspend au-dessus</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-3-4">
+<summary>📷 Photo 3.4 — Îlot statue renfoncement</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty</li>
+<li><strong>Statut</strong> : ❓ À VÉRIFIER (investigation repérage 21/06)</li>
+<li><strong>Composition</strong> : Johan s'avance dans renfoncement avec statue, structure différente, plus de recul</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1679_b1805c1c1ad5.avif"><source type="image/webp" srcset="img/IMG_1679_b1805c1c1ad5.webp"><img src="img/IMG_1679_b1805c1c1ad5.jpg" alt="3.4 - Îlot statue renfoncement" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-3-5">
+<summary>📷 Photo 3.5 — Passerelle face Tour Eiffel</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (composition simple)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Johan marche sur passerelle OU saute d'un montant du bord</li>
+<li><strong>Tête à l'envers</strong> : composition signature (Tour Eiffel + Johan tête en bas)</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1675_0f67836a0fbc.avif"><source type="image/webp" srcset="img/IMG_1675_0f67836a0fbc.webp"><img src="img/IMG_1675_0f67836a0fbc.jpg" alt="3.5 - Passerelle face Tour Eiffel" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-3-6">
+<summary>📷 Photo 3.6 — Pose longue depuis quais 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (tech démo Fuji)</li>
+<li><strong>Statut</strong> : 🟡 WIP — à vérifier</li>
+<li><strong>Setup</strong> : trépied, pose longue depuis quais</li>
+<li><strong>Composition</strong> :</li>
+<li>1er plan : traînées rouges phares voitures passant sur les quais</li>
+<li>Lumière bleutée du ciel avant lever soleil</li>
+<li>Johan suspendu sur le pont en ombre chinoise OU éclairé au flash</li>
+<li><strong>Vérif à faire</strong> : Google Earth pour confirmer voitures passent sur quais à 5h</li>
+<li><strong>Vérif terrain</strong> : repérage 21/06 final</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-3-7">
+<summary>📷 Photos 3.7+ — BONUS BATEAU 24 OU 25/06</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Tech démo Fuji (haut ISO + AF mouvement)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (concept), angles spécifiques 🟡 WIP</li>
+<li><strong>Lumière</strong> : magique aube depuis l'eau</li>
+<li><strong>Démo Fuji</strong> : haut ISO récupération lumière + mouvement bateau + AF</li>
+<li><strong>Variantes</strong> :</li>
+<li>Angles depuis bateau jamais shootés ainsi</li>
+<li>Johan suspendu sous le pont depuis bateau (impossible depuis quai)</li>
+<li>Débarquer sur sol pour shooter depuis terre avec lumière magique aube</li>
+<li><strong>Débloque</strong> : photos uniques + matière vidéo travelling + arguments tech Fuji</li>
+</ul>
+</details>
+<p><strong>Récap Bir-Hakeim = 6-7 photos identifiées + 2-4 bonus bateau = 8-11 photos potentielles</strong> — Beauty : 4-5 (3.1, 3.2a/b, 3.4, 3.5, 3.6) · Zone grise : 1 (3.3) · Bonus tech démo Fuji : 2-4 (bateau)</p>
+<hr />
+</div>
+</details><details class="spot" id="spot-4">
+<summary><strong>Spot 4 — Terrass&#x27;Hôtel</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 19h00</span> <span class="count-badge">7 photos</span> </span></summary>
+<div class="body">
+<h3>🏨 SPOT 4 — TERRASS'HÔTEL</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-4-1">4.1</a></td>
+<td><a href="#photo-4-1">Suspension toit vue plongée (Johan + rue + cimetière en dess</a></td>
+<td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
+<td class="ps-focal">à arbitrer terrain</td>
+<td class="ps-tag">Zone grise (dangereux) (Tristan fla</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-4-2">4.2</a></td>
+<td><a href="#photo-4-2">Empilement toits + Montmartre derrière</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">à arbitrer (probablement 35-50</td>
+<td class="ps-tag">Beauty</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-4-3">4.3</a></td>
+<td><a href="#photo-4-3">Tour Eiffel + parvis Défense</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">à arbitrer (variations possibl</td>
+<td class="ps-tag">Beauty (signature golden hour absol</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-4-4">4.4</a></td>
+<td><a href="#photo-4-4">Tourelle centrale (Empire State / Spiderman) ⚠️ Zone grise</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">à arbitrer</td>
+<td class="ps-tag">Zone grise (dangereux)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-4-5">4.5</a></td>
+<td><a href="#photo-4-5">Resto fenêtre : Johan marche sur rambarde direction toit FM</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty + Twist intérieur/extérieur</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-4-6">4.6</a></td>
+<td><a href="#photo-4-6">Vue depuis le bas de la rue</a></td>
+<td class="ps-status">✅ ACTÉE (1-2 photos)</td>
+<td class="ps-focal">35mm OU grand angle (voir tout</td>
+<td class="ps-tag">Beauty + Perf (saut de toit en toit</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-4-7">4.7</a></td>
+<td><a href="#photo-4-7">Suite lit lifestyle 🟡 WIP</a></td>
+<td class="ps-status">🟡 WIP — pas tranchée mais idée</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty + Lifestyle (nouvelle dimens</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(10 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌇 <strong>22/06 19H00</strong> (coucher de soleil) — Back-up : 🌅 <strong>23/06 04H30</strong> si pluie veille
+📍 <strong><a href="https://maps.app.goo.gl/Q8gUE22dbUFyxEvd9">Google Maps — Terrass'Hôtel</a></strong><br />
+📮 <em>12-14 Rue Joseph de Maistre, 75018 Paris</em></p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE coucher de soleil (axe Défense)</li>
+<li><strong>Status spot</strong> : 🚨 spot le PLUS DANGEREUX du projet + techniquement complexe (peu de recul)</li>
+<li><strong>Setup spécial</strong> :</li>
+<li>🛡️ Encordé obligatoire (cordistes)</li>
+<li>⚡ Flash sur le toit + <strong>gel de lumière pour matcher couleur sunset</strong></li>
+<li>🏨 Suite louée (810 ou 801 à confirmer) = accès toit + dormir sur place + back-up matin 23/06 si pluie</li>
+<li>🌅 <strong>Note lumière</strong> : coucher du soleil va faire de l'ombre sur partie du toit → angles à trouver où Johan se détache bien dans le ciel</li>
+<li>🎬 Workflow optimal séquence : (a) Rue façade éclairée → (b) Resto → (c) Toits derniers rayons absolus → (d) éventuellement redescendre rue derniers rayons façade</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ❌ pas possible (accès toit avec autorisation suite louée le jour du shoot)</li>
+</ul>
+</div>
+</details>
+<details class="light">
+<summary>🌅 Lecture lumière <span class="count-badge">(2 images)</span></summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1694_1bebec748fa9.avif"><source type="image/webp" srcset="img/IMG_1694_1bebec748fa9.webp"><img src="img/IMG_1694_1bebec748fa9.jpg" alt="Terrass&#x27;Hôtel - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1080"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1695_59d8b76c02fa.avif"><source type="image/webp" srcset="img/IMG_1695_59d8b76c02fa.webp"><img src="img/IMG_1695_59d8b76c02fa.jpg" alt="Terrass&#x27;Hôtel - vue globale" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+<details class="photo-card" id="photo-4-1">
+<summary>📷 Photo 4.1 — Suspension toit vue plongée (Johan + rue + cimetière en dessous) ⚠️ Zone grise (dangereux)</summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux) (Tristan flag explicite)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (zone grise assumée)</li>
+<li><strong>Composition</strong> : Johan suspendu au bord toit, vue plongée depuis dessus, on voit rue + cimetière juste à côté</li>
+<li><strong>Clin d'œil</strong> : juxtaposition décalée (suspension + cimetière)</li>
+<li><strong>Sécurité</strong> : cordistes obligatoires</li>
+<li><strong>Focale</strong> : à arbitrer terrain</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-4-2">
+<summary>📷 Photo 4.2 — Empilement toits + Montmartre derrière</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Johan en avant-plan + empilement caractéristique toits parisiens + Montmartre arrière</li>
+<li><strong>Focale</strong> : à arbitrer (probablement 35-50mm pour avoir les couches)</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-4-3">
+<summary>📷 Photo 4.3 — Tour Eiffel + parvis Défense (soleil se couche dans l'axe Défense)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (signature golden hour absolue)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Johan + Tour Eiffel OU + parvis Défense + soleil couchant dans l'axe</li>
+<li><strong>Focale</strong> : à arbitrer (variations possibles)</li>
+<li><strong>Pépite lumière</strong> : axe coucher de soleil = Défense, à exploiter</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-4-4">
+<summary>📷 Photo 4.4 — Tourelle centrale (Empire State / Spiderman) ⚠️ Zone grise (dangereux)</summary>
+<ul>
+<li><strong>Tag</strong> : Zone grise (dangereux)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Johan monte sur la tourelle centrale, se suspend mode Empire State Building / Spiderman</li>
+<li><strong>Sécurité</strong> : cordistes</li>
+<li><strong>Focale</strong> : à arbitrer</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_0725_a0c4e39b5d51.avif"><source type="image/webp" srcset="img/IMG_0725_a0c4e39b5d51.webp"><img src="img/IMG_0725_a0c4e39b5d51.jpg" alt="4.4 - Tourelle - ref Johan 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_0729_34a920e2d849.avif"><source type="image/webp" srcset="img/IMG_0729_34a920e2d849.webp"><img src="img/IMG_0729_34a920e2d849.jpg" alt="4.4 - Tourelle - ref Johan 2" loading="lazy" decoding="async" class="shoot-img" width="914" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-4-5">
+<summary>📷 Photo 4.5 — Resto fenêtre : Johan marche sur rambarde direction toit FM</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Twist intérieur/extérieur</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Tristan shoot depuis intérieur restaurant → fenêtres → Johan extérieur marche sur rambarde</li>
+<li><strong>Modèle féminine</strong> : optionnelle (à décider) — si oui, présence dans le cadre intérieur en avant-plan</li>
+<li><strong>Inspiration</strong> : restaurant fermé ce soir-là = libre d'utilisation</li>
+<li><strong>Note Johan</strong> : <em>« il m'a dit que c'est des choses qu'il a jamais faites »</em></li>
+<li><strong>Photo 4.5bis</strong> : variations dans le restaurant — autres murets et endroits exploitables</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1700_23668a32435a.avif"><source type="image/webp" srcset="img/IMG_1700_23668a32435a.webp"><img src="img/IMG_1700_23668a32435a.jpg" alt="4.5 - Resto fenêtre - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1701_7d9373ead821.avif"><source type="image/webp" srcset="img/IMG_1701_7d9373ead821.webp"><img src="img/IMG_1701_7d9373ead821.jpg" alt="4.5 - Resto fenêtre - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1702_a818dff45aa8.avif"><source type="image/webp" srcset="img/IMG_1702_a818dff45aa8.webp"><img src="img/IMG_1702_a818dff45aa8.jpg" alt="4.5 - Resto fenêtre - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-4-6">
+<summary>📷 Photo 4.6 — Vue depuis le bas de la rue (façade encore éclairée)</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf (saut de toit en toit)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (1-2 photos)</li>
+<li><strong>Focale</strong> : <strong>35mm OU grand angle</strong> (voir toute la taille du bâtiment)</li>
+<li><strong>Action Johan</strong> : saute d'un spot à l'autre sur les toits = jouer aux sommets, mode chamois</li>
+<li><strong>Timing</strong> : début de session, façade encore éclairée</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1704_524bea870c9c.avif"><source type="image/webp" srcset="img/IMG_1704_524bea870c9c.webp"><img src="img/IMG_1704_524bea870c9c.jpg" alt="4.6 - Vue depuis le bas de la rue" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-4-7">
+<summary>📷 Photo 4.7 — Suite lit lifestyle 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + <strong>Lifestyle</strong> (nouvelle dimension série)</li>
+<li><strong>Statut</strong> : 🟡 WIP — pas tranchée mais idée forte</li>
+<li><strong>Composition</strong> : Johan dans le lit de la suite, regarde les toits de Paris par la fenêtre</li>
+<li><strong>Lumière</strong> : possible au coucher OU au lever (à arbitrer)</li>
+<li><strong>Justification</strong> : la suite louée = vue magnifique sur Paris, autant en profiter</li>
+</ul>
+</details>
+<p><strong>Récap Terrass'Hôtel = 6-8 photos identifiées</strong> — Toits 3-4 · Resto 1-2 · Rue 1-2 · Lifestyle suite 1
+<strong>Ventilation tags</strong> : 4-5 Beauty / 2 Zone grise / 1 Lifestyle NEW</p>
+<hr />
+</div>
+</details>
+</main>
+<a href="#top" class="back" aria-label="Retour haut">▲</a>
+<script>
+(function(){
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.from((r||document).querySelectorAll(s));}
+  window.toggleAll = function(open, sel){
+    sel = sel || 'details';
+    $$(sel).forEach(function(d){ d.open = !!open; });
+  };
+  // localStorage persistence per <details id="...">
+  function lsKey(id){ return 'mbappe:' + (document.body.dataset.day || 'idx') + ':' + id; }
+  function restoreState(){
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:' + (document.body.dataset.day || 'idx') + ':') === 0) {
+        var id = k.split(':').slice(2).join(':');
+        var el = document.getElementById(id);
+        if (el) el.open = true;
+      }
+    }
+  }
+  function bindToggleListeners(){
+    $$('details[id]').forEach(function(d){
+      d.addEventListener('toggle', function(){
+        var k = lsKey(d.id);
+        if (d.open) localStorage.setItem(k, '1');
+        else localStorage.removeItem(k);
+      });
+    });
+  }
+  function openHashTarget(){
+    if (!location.hash) return;
+    var t = document.querySelector(location.hash);
+    if (!t) return;
+    var el = t;
+    while (el && el !== document.body) {
+      if (el.tagName === 'DETAILS') el.open = true;
+      el = el.parentElement;
+    }
+    setTimeout(function(){ t.scrollIntoView({block:'start'}); }, 80);
+  }
+  window.resetState = function(){
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:') === 0) keys.push(k);
+    }
+    keys.forEach(function(k){ localStorage.removeItem(k); });
+    location.reload();
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    restoreState();
+    bindToggleListeners();
+    openHashTarget();
+    window.addEventListener('hashchange', openHashTarget);
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="theme-color" content="#1e6fbf">
+<title>Mbappé Shoot — J2 — Mardi 23 juin 2026</title>
+<style>
+:root{--bg:#fafafa;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#1e6fbf;--card:#fff;--border:#d8d8d8;--code:#f0f0f0;
+--day-1:#1e6fbf;--day-2:#0a9a4f;--day-3:#d97706;--day-4:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#e8e8e8;--muted:#aaa;--accent:#5fa8e8;--card:#1c1c1c;--border:#333;--code:#222}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:60px}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+@media(min-width:768px){body{font-size:17px}}
+.topbar{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:2px solid var(--accent);padding:8px 14px;display:flex;align-items:center;gap:10px;min-height:48px}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;font-size:.95em}
+.topbar a:hover{background:var(--code)}
+.topbar .home-lbl{display:inline}
+@media(max-width:600px){.topbar .home-lbl,.topbar .day-jumps{display:none}}
+.topbar .spacer{flex:1}
+.topbar .btn-maps[data-state="pending"]{opacity:.5;pointer-events:none}
+.topbar .day-title{font-weight:600;font-size:.95em;color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:12px 16px 80px}
+header.day-hd{padding:14px 0 12px;margin:0 0 16px;border-bottom:3px solid var(--accent)}
+header.day-hd h1{margin:0;font-size:1.25em;line-height:1.25}
+header.day-hd .crumbs{font-size:.88em;color:var(--muted);margin-top:6px}
+header.day-hd .crumbs a{color:var(--accent);text-decoration:none;margin-right:10px}
+.maps-crumb{display:inline-block;background:var(--accent);color:#fff!important;padding:3px 10px;border-radius:14px;font-weight:600;font-size:.88em;margin-left:4px}
+.maps-crumb:hover{opacity:.85}
+.toolbar{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
+.toolbar button{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-size:.92em;cursor:pointer;font-weight:500;min-height:40px}
+.toolbar button:hover{background:var(--code);border-color:var(--accent)}
+.toolbar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* All <details> uniform picto + tap target */
+details{margin:10px 0;border:1px solid var(--border);border-radius:8px;background:var(--card);overflow:hidden}
+details>summary{padding:12px 14px;cursor:pointer;font-weight:600;list-style:none;font-size:1em;min-height:44px;display:flex;align-items:center;gap:8px;user-select:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";color:var(--muted);font-size:.85em;flex-shrink:0;transition:none;display:inline-block;width:1em;text-align:center}
+details[open]>summary::before{content:"▾"}
+details[open]>summary{background:var(--code);border-bottom:1px solid var(--border)}
+details .body{padding:12px 14px 14px}
+details .body>:first-child{margin-top:0}
+details .body>:last-child{margin-bottom:0}
+
+/* Specific styling */
+details.spot{margin:18px 0;border:2px solid var(--border);border-radius:10px;background:var(--card)}
+details.spot>summary{font-size:1.08em;padding:14px 16px;min-height:52px;background:var(--card);border-bottom:0}
+details.spot[open]>summary{border-bottom:1px solid var(--border);background:var(--code)}
+details.spot .body{padding:14px 16px 18px}
+details.brief>summary,details.light>summary,details.inspi>summary{font-size:.95em;background:transparent}
+
+/* Hierarchy: nested details inside a spot are indented + colored left border */
+details.spot .body{padding-left:18px;border-left:3px solid var(--accent);margin-left:6px}
+details.spot details{margin-left:0;border-left:2px solid var(--border)}
+details.spot details.brief{border-left-color:#8a8a8a}
+details.spot details.light{border-left-color:#d97706}
+details.spot details.photo-card{border-left-color:var(--accent)}
+details.spot details.photo-card details.inspi{margin-left:14px;border-left:2px solid #8a8a8a}
+@media(max-width:600px){details.spot .body{padding-left:10px}details.spot details.photo-card details.inspi{margin-left:8px}}
+details.photo-card{margin:8px 0;border:1px solid var(--border)}
+details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
+
+.summary-meta{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;line-height:1.4}
+.chip-day{color:#fff}
+.chip-status{background:var(--code);color:var(--muted);border:1px solid var(--border)}
+.chip-focal{background:var(--accent);color:#fff}
+.chip-tag{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.count-badge{color:var(--muted);font-weight:400;font-size:.85em;margin-left:6px}
+
+/* Photo-strip overview */
+.photo-strip{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.9em;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.photo-strip th{background:var(--code);text-align:left;padding:8px 10px;font-weight:600;font-size:.82em;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;border-bottom:1px solid var(--border)}
+.photo-strip td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.photo-strip tr:last-child td{border-bottom:0}
+.photo-strip tr:hover td{background:var(--code)}
+.photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
+.photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
+.photo-strip .ps-status{white-space:nowrap}
+.photo-strip .ps-tag{color:var(--muted);font-size:.88em}
+
+nav.toc{margin:8px 0 24px;padding:0}
+nav.toc ul{margin:0;padding:0 16px 12px;list-style:none}
+nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
+nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
+nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
+nav.toc li > .day-line a{display:inline}
+nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
+nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
+nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
+
+ul,ol{padding-left:20px}
+li{margin:4px 0}
+strong{color:var(--fg)}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-size:.92em}
+blockquote{margin:12px 0;padding:10px 14px;background:var(--code);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.95em}
+hr{border:0;border-top:1px solid var(--border);margin:24px 0}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92em}
+table th,table td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table th{background:var(--code);font-weight:600}
+td[data-day]::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+td[data-day="J1"]::before{background:var(--day-1)} td[data-day="J2"]::before{background:var(--day-2)}
+td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{background:var(--day-4)}
+
+.shoot-img{max-width:560px;width:100%;height:auto;display:block;margin:14px auto;border-radius:4px}
+@media(max-width:768px){.shoot-img{max-width:100%}}
+
+.back{position:fixed;bottom:14px;right:14px;background:var(--accent);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.2em;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:50;opacity:.75}
+.back:hover{opacity:1}
+.ref-internal{color:var(--muted);font-size:.85em;cursor:help}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center}
+.stat-card .num{font-size:1.6em;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-card .lbl{font-size:.82em;color:var(--muted);margin-top:2px}
+
+@media print{
+  body{font-size:11pt;background:#fff;color:#000}
+  .topbar,nav.toc,.back,.toolbar{display:none!important}
+  details,details.spot{break-inside:avoid;page-break-inside:avoid}
+  details>summary::before,details>summary{cursor:default}
+  details .body,details{display:block!important}
+  details>summary{background:transparent!important;border-bottom:1px solid #ccc!important}
+  details.spot{page-break-before:always}
+  .shoot-img{max-width:400px}
+}
+</style>
+</head><body data-day="J2">
+<div class="topbar"><a href="index.html">🏠 <span class="home-lbl">Index</span></a><span class="day-title">J2 — Mardi 23 juin 2026</span><div class="spacer"></div><span class="day-jumps"><a href="jour-1.html">J1</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a></span><a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" class="btn-maps" data-state="live" target="_blank">🗺️ Maps</a></div>
+<main>
+<a id="top"></a>
+<header class="day-hd"><h1><span class="chip chip-day" style="background:#0a9a4f">J2</span> J2 — Mardi 23 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(2)</span></summary><div class="body"><ul><li><a href="#spot-5"><strong>Spot 5 — MPP</strong><small>🕒 Mar 23/06 10h-13h</small></a></li><li><a href="#spot-6"><strong>Spot 6 — Garage Abbeville</strong><small>🕒 Mar 23/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-5">
+<summary><strong>Spot 5 — MPP</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mar 23/06 10h-13h</span> <span class="count-badge">6 photos</span> </span></summary>
+<div class="body">
+<h3>🏛️ SPOT 5 — MPP</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-5-1">5.1</a></td>
+<td><a href="#photo-5-1">Tunnel d&#x27;accès extérieur + flash contre-jour télé compressé</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">télé compression (à arbitrer 1</td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-5-2">5.2</a></td>
+<td><a href="#photo-5-2">Tunnel ext variante sans flash</a></td>
+<td class="ps-status">✅ ACTÉE (variante diversificat</td>
+<td class="ps-focal">même angle que 5.1</td>
+<td class="ps-tag">Beauty</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-5-3">5.3</a></td>
+<td><a href="#photo-5-3">Tunnel ext 35mm + flash mode grotte</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">35mm</td>
+<td class="ps-tag">Beauty (structure pierre)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-5-4">5.4</a></td>
+<td><a href="#photo-5-4">Tunnel ext grand angle à ras du sol 🟡 WIP</a></td>
+<td class="ps-status">🟡 WIP (2-3 angles à explorer)</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (variation graphique)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-5-5">5.5</a></td>
+<td><a href="#photo-5-5">Façade MPP escalier rambarde</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">à arbitrer terrain</td>
+<td class="ps-tag">Beauty + Perf</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-5-6">5.6</a></td>
+<td><a href="#photo-5-6">Tunnel intérieur bâtiment perspective + porte 🟡 WIP</a></td>
+<td class="ps-status">🟡 WIP (instinct Tristan : tunn</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (variante)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(8 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : ☀️ <strong>23/06 10H00 → 13H00</strong> (intérieur + ombre, lumière peu critique)
+📍 <strong><a href="https://maps.app.goo.gl/Cd6eb6Pw2vzurwwm6">Google Maps — MPP (Médiathèque du patrimoine et de la photographie)</a></strong><br />
+📮 <em>Fort de Saint-Cyr — 12-14 Rue du Fort de Saint-Cyr, 78390 Montigny-le-Bretonneux</em> ✅ adresse confirmée Tristan</p>
+<ul>
+<li><strong>Lumière</strong> : intérieur + ombre → peu critique horaire</li>
+<li><strong>Status spot</strong> : ✅ ACTÉ — seul spot où la lumière n'est pas le héros</li>
+<li><strong>Note importante</strong> : <strong>double session</strong> :</li>
+<li>23/06 nous → avec flash, déboucher</li>
+<li><strong>1ʳᵉ semaine juillet équipe japonaise</strong> → re-shooter SANS flash, tethering ordi + démo performance ISO Fuji</li>
+<li><strong>Flash</strong> : oui</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ❌ Non — pas de repérage MPP avec Mathurin</li>
+</ul>
+</div>
+</details>
+<details class="light">
+<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1616_4c4564c6c875.avif"><source type="image/webp" srcset="img/IMG_1616_4c4564c6c875.webp"><img src="img/IMG_1616_4c4564c6c875.jpg" alt="MPP - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="738" height="1600"></picture></p>
+</div>
+</details>
+<details class="photo-card" id="photo-5-1">
+<summary>📷 Photo 5.1 — Tunnel d'accès extérieur + flash contre-jour télé compressé</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : télé compression (à arbitrer 100-200mm)</li>
+<li><strong>Flash</strong> : oui — <strong>contre-jour pour éclairer tout le tunnel</strong></li>
+<li><strong>Action Johan</strong> : backflip dans le tunnel</li>
+<li><strong>Effet</strong> : compression télé + débouchage flash arrière</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1617_188146609008.avif"><source type="image/webp" srcset="img/IMG_1617_188146609008.webp"><img src="img/IMG_1617_188146609008.jpg" alt="5.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1618_213b5a7118d0.avif"><source type="image/webp" srcset="img/IMG_1618_213b5a7118d0.webp"><img src="img/IMG_1618_213b5a7118d0.jpg" alt="5.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1619_35d5533e2a87.avif"><source type="image/webp" srcset="img/IMG_1619_35d5533e2a87.webp"><img src="img/IMG_1619_35d5533e2a87.jpg" alt="5.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-5-2">
+<summary>📷 Photo 5.2 — Tunnel ext variante sans flash</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (variante diversification série)</li>
+<li><strong>Focale</strong> : même angle que 5.1</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-5-3">
+<summary>📷 Photo 5.3 — Tunnel ext 35mm + flash mode grotte</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (structure pierre)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : 35mm</li>
+<li><strong>Flash</strong> : oui — <em>« la structure de la pierre va chanter en mode grotte »</em></li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/Screenshot_b766a28fc4be.avif"><source type="image/webp" srcset="img/Screenshot_b766a28fc4be.webp"><img src="img/Screenshot_b766a28fc4be.jpg" alt="5.3 - mode grotte" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1065"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-5-4">
+<summary>📷 Photo 5.4 — Tunnel ext grand angle à ras du sol 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (variation graphique)</li>
+<li><strong>Statut</strong> : 🟡 WIP (2-3 angles à explorer)</li>
+</ul>
+</details>
+<details class="photo-card" id="photo-5-5">
+<summary>📷 Photo 5.5 — Façade MPP escalier rambarde</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty + Perf</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Composition</strong> : Johan en équilibre sur rambarde escalier façade MPP, Tristan shoot depuis dessous</li>
+<li><strong>Flash</strong> : oui — débouchage obligatoire (tout sera à l'ombre)</li>
+<li><strong>Focale</strong> : à arbitrer terrain</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1620_54358b2a6079.avif"><source type="image/webp" srcset="img/IMG_1620_54358b2a6079.webp"><img src="img/IMG_1620_54358b2a6079.jpg" alt="5.5 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1635_13b9044adfed.avif"><source type="image/webp" srcset="img/IMG_1635_13b9044adfed.webp"><img src="img/IMG_1635_13b9044adfed.jpg" alt="5.5 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-5-6">
+<summary>📷 Photo 5.6 — Tunnel intérieur bâtiment perspective + porte 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (variante)</li>
+<li><strong>Statut</strong> : 🟡 WIP (instinct Tristan : tunnel ext &gt; tunnel int, mais équipe vidéo voudra peut-être travailler là)</li>
+<li><strong>Composition</strong> : perspective tunnel intérieur + porte qui s'ouvre vers extérieur</li>
+<li><strong>Note</strong> : refaire/varier ce qu'on a fait dans tunnel extérieur</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Références 📷📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_1626_42993bed356f.avif"><source type="image/webp" srcset="img/IMG_1626_42993bed356f.webp"><img src="img/IMG_1626_42993bed356f.jpg" alt="5.6 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/IMG_1624_aceb0b262a29.avif"><source type="image/webp" srcset="img/IMG_1624_aceb0b262a29.webp"><img src="img/IMG_1624_aceb0b262a29.jpg" alt="5.6 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+</div>
+</details>
+</details>
+<p><strong>Récap MPP = 5-6 photos identifiées</strong> (tunnel ext × 3-4 variantes + escalier façade + tunnel int)</p>
+<h3>🔬 Note spéciale Tethering tests juillet</h3>
+<ul>
+<li>Re-shoot équipe japonaise 1ʳᵉ semaine juillet = <strong>occasion de tester tethering ordinateur + démonstration performance ISO Fuji</strong></li>
+<li>Pas de flash → montrer ce que le boîtier sait faire en lumière basse pure</li>
+<li>Workflow : trépied + ordi + tethering câble (pas wireless car contrôle qualité full)</li>
+</ul>
+<hr />
+</div>
+</details><details class="spot" id="spot-6">
+<summary><strong>Spot 6 — Garage Abbeville</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mar 23/06 20h00</span> <span class="count-badge">3 photos</span> </span></summary>
+<div class="body">
+<h3>🅿️ SPOT 6 — GARAGE D'ABBEVILLE</h3>
+<h4>📋 Vue d'ensemble — photos du spot</h4>
+<table class="photo-strip">
+<thead>
+<tr>
+<th>#</th>
+<th>Titre</th>
+<th>Statut</th>
+<th>Focale</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ps-num"><a href="#photo-6-1">6.1</a></td>
+<td><a href="#photo-6-1">Silhouettes télé Tour Eiffel / Montmartre depuis sommet park</a></td>
+<td class="ps-status">✅ ACTÉE</td>
+<td class="ps-focal">téléobjectif (200mm+)</td>
+<td class="ps-tag">Beauty (signature silhouette)</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-6-2">6.2</a></td>
+<td><a href="#photo-6-2">Enchevêtrement de toits (transition vers toit face Tour Eiff</a></td>
+<td class="ps-status">🟡 WIP — décision Tristan à pre</td>
+<td class="ps-focal">—</td>
+<td class="ps-tag">Beauty (background unique non-rejou</td>
+</tr>
+<tr>
+<td class="ps-num"><a href="#photo-6-3">6.3</a></td>
+<td><a href="#photo-6-3">Saut dévers parking → boucle voitures</a></td>
+<td class="ps-status">✅ ACTÉE (2 axes)</td>
+<td class="ps-focal">grand angle</td>
+<td class="ps-tag">Perf (action saut)</td>
+</tr>
+</tbody>
+</table>
+<details class="brief">
+<summary>📋 Brief spot <span class="count-badge">(6 infos)</span></summary>
+<div class="body">
+<p><strong>Horaire planning</strong> : 🌇 <strong>23/06 20H00 → 23H00</strong> (coucher de soleil)
+📍 <strong><a href="https://www.google.com/maps?q=48.8783,2.3508">Google Maps — Garage d'Abbeville</a></strong><br />
+📮 <em>9 Rue d'Abbeville, 75009 Paris</em> <em>(lien à reconfirmer terrain — pas fourni cycle 92)</em></p>
+<ul>
+<li><strong>Lumière</strong> : 🔒 LOCKÉE coucher de soleil</li>
+<li><strong>Status spot</strong> : ⚠️ <strong>Zone grise globale</strong> — Tristan + Zenzel restent sur sommet parking, MAIS Johan doit aller sur les toits autour (non légal). Assumé équipe, discret au coucher.</li>
+<li><strong>Flash</strong> : oui</li>
+<li><strong>Accessoires</strong> : 🚰 <strong>Jerricane d'eau</strong> (effet reflet / flaque au sol au coucher du soleil — sol valorisé)</li>
+<li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu</li>
+</ul>
+</div>
+</details>
+<details class="photo-card" id="photo-6-1">
+<summary>📷 Photo 6.1 — Silhouettes télé Tour Eiffel / Montmartre depuis sommet parking</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (signature silhouette)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE</li>
+<li><strong>Focale</strong> : téléobjectif (200mm+)</li>
+<li><strong>Composition</strong> : Johan en silhouette sur petites bouches d'aération / cheminées toits autour, en arrière-plan Tour Eiffel OU Montmartre</li>
+<li><strong>Lumière</strong> : ombres chinoises sur fond ciel coucher de soleil</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_0734_c795d0370bbc.avif"><source type="image/webp" srcset="img/IMG_0734_c795d0370bbc.webp"><img src="img/IMG_0734_c795d0370bbc.jpg" alt="6.1 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="913" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-6-2">
+<summary>📷 Photo 6.2 — Enchevêtrement de toits (transition vers toit face Tour Eiffel) 🟡 WIP</summary>
+<ul>
+<li><strong>Tag</strong> : Beauty (background unique non-rejouable)</li>
+<li><strong>Statut</strong> : 🟡 WIP — décision Tristan à prendre :</li>
+<li><strong>Option A</strong> : compo précise → arrêter Johan à un endroit précis, shoot soigné lumière/rendu</li>
+<li><strong>Option B</strong> : shoot continu au 70-200 partout pour multiplier les photos</li>
+<li><strong>Option C (instinct Tristan)</strong> : trancher l'angle qu'il préfère + shoot au moment où Johan passe au <strong>35mm</strong></li>
+<li><strong>Note importante</strong> : <em>« on pourra pas le refaire 3-4 fois, il faut le shooter à ce moment-là »</em> — pas de rejeu possible</li>
+</ul>
+<details class="inspi">
+<summary>🖼️ 🖼️ Référence 📷</summary>
+<div class="body">
+<p><picture><source type="image/avif" srcset="img/IMG_0738_b6ce7095e78a.avif"><source type="image/webp" srcset="img/IMG_0738_b6ce7095e78a.webp"><img src="img/IMG_0738_b6ce7095e78a.jpg" alt="6.2 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="914" height="1600"></picture></p>
+</div>
+</details>
+</details>
+<details class="photo-card" id="photo-6-3">
+<summary>📷 Photo 6.3 — Saut dévers parking → boucle voitures (grand angle)</summary>
+<ul>
+<li><strong>Tag</strong> : Perf (action saut)</li>
+<li><strong>Statut</strong> : ✅ ACTÉE (2 axes)</li>
+<li><strong>Focale</strong> : grand angle</li>
+<li><strong>Composition</strong> : Johan saute du sommet du toit (parking) → première boucle qui tourne pour faire monter les voitures</li>
+<li><strong>2 axes différents</strong> identifiés</li>
+</ul>
+</details>
+<p><strong>Récap Garage Abbeville = 4-5 photos</strong> (1 silhouette télé + 1-2 enchevêtrement + 2 saut grand angle) — Beauty : 3-4 · Perf : 1-2 · Zone grise transverse (toits non légaux Johan)</p>
+<hr />
+</div>
+</details>
+</main>
+<a href="#top" class="back" aria-label="Retour haut">▲</a>
+<script>
+(function(){
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.from((r||document).querySelectorAll(s));}
+  window.toggleAll = function(open, sel){
+    sel = sel || 'details';
+    $$(sel).forEach(function(d){ d.open = !!open; });
+  };
+  // localStorage persistence per <details id="...">
+  function lsKey(id){ return 'mbappe:' + (document.body.dataset.day || 'idx') + ':' + id; }
+  function restoreState(){
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:' + (document.body.dataset.day || 'idx') + ':') === 0) {
+        var id = k.split(':').slice(2).join(':');
+        var el = document.getElementById(id);
+        if (el) el.open = true;
+      }
+    }
+  }
+  function bindToggleListeners(){
+    $$('details[id]').forEach(function(d){
+      d.addEventListener('toggle', function(){
+        var k = lsKey(d.id);
+        if (d.open) localStorage.setItem(k, '1');
+        else localStorage.removeItem(k);
+      });
+    });
+  }
+  function openHashTarget(){
+    if (!location.hash) return;
+    var t = document.querySelector(location.hash);
+    if (!t) return;
+    var el = t;
+    while (el && el !== document.body) {
+      if (el.tagName === 'DETAILS') el.open = true;
+      el = el.parentElement;
+    }
+    setTimeout(function(){ t.scrollIntoView({block:'start'}); }, 80);
+  }
+  window.resetState = function(){
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('mbappe:') === 0) keys.push(k);
+    }
+    keys.forEach(function(k){ localStorage.removeItem(k); });
+    location.reload();
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    restoreState();
+    bindToggleListeners();
+    openHashTarget();
+    window.addEventListener('hashchange', openHashTarget);
+  });
+})();
+</script>
+</body></html>
