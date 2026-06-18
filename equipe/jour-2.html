@@ -77,6 +77,11 @@ details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
 .photo-strip tr:last-child td{border-bottom:0}
 .photo-strip tr:hover td{background:var(--code)}
 .photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip td.ps-check{width:36px;text-align:center;padding:6px 4px}
+.photo-strip input.photo-done{width:20px;height:20px;cursor:pointer;accent-color:#0a9a4f}
+.photo-strip tr:has(input.photo-done:checked) td:not(.ps-check){opacity:.45;text-decoration:line-through;text-decoration-color:#0a9a4f}
+.done-counter{margin:6px 0 0;padding:4px 10px;font-size:.85em;color:var(--muted);font-weight:600;background:var(--code);border-radius:6px;display:inline-block}
+.done-counter.complete{background:#0a9a4f;color:#fff}
 .photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
 .photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
 .photo-strip .ps-status{white-space:nowrap}
@@ -127,10 +132,9 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
-body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb),
-body.mode-equipe td a{color:inherit;text-decoration:none;font-weight:600;border-bottom:1px dotted currentColor}
-body.mode-equipe .photo-strip a:hover,
-body.mode-equipe nav.toc a:hover{border-bottom-style:solid}
+body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
+/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -159,6 +163,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Focale</th>
@@ -166,37 +171,44 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-5-1" class="photo-done" data-spot="5" aria-label="Photo 5.1 faite"></td>
 <td class="ps-num"><a href="#photo-5-1">5.1</a></td>
 <td><a href="#photo-5-1">Tunnel d&#x27;accès extérieur + flash contre-jour télé compressé</a></td>
 <td class="ps-focal">télé compression (à arbitrer 1</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-5-2" class="photo-done" data-spot="5" aria-label="Photo 5.2 faite"></td>
 <td class="ps-num"><a href="#photo-5-2">5.2</a></td>
 <td><a href="#photo-5-2">Tunnel ext variante sans flash</a></td>
 <td class="ps-focal">même angle que 5.1</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-5-3" class="photo-done" data-spot="5" aria-label="Photo 5.3 faite"></td>
 <td class="ps-num"><a href="#photo-5-3">5.3</a></td>
 <td><a href="#photo-5-3">Tunnel ext 35mm + flash mode grotte</a></td>
 <td class="ps-focal">35mm</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-5-4" class="photo-done" data-spot="5" aria-label="Photo 5.4 faite"></td>
 <td class="ps-num"><a href="#photo-5-4">5.4</a></td>
 <td><a href="#photo-5-4">Tunnel ext grand angle à ras du sol 🟡 WIP</a></td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-5-5" class="photo-done" data-spot="5" aria-label="Photo 5.5 faite"></td>
 <td class="ps-num"><a href="#photo-5-5">5.5</a></td>
 <td><a href="#photo-5-5">Façade MPP escalier rambarde</a></td>
 <td class="ps-focal">à arbitrer terrain</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-5-6" class="photo-done" data-spot="5" aria-label="Photo 5.6 faite"></td>
 <td class="ps-num"><a href="#photo-5-6">5.6</a></td>
 <td><a href="#photo-5-6">Tunnel intérieur bâtiment perspective + porte 🟡 WIP</a></td>
 <td class="ps-focal">—</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-5-counter" data-total="6">0/6 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -312,8 +324,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li>Workflow : trépied + ordi + tethering câble (pas wireless car contrôle qualité full)</li>
 </ul>
 <hr />
-</div>
-</details><details class="spot" id="spot-6">
+<p></div>
+</details></p><details class="spot" id="spot-6">
 <summary><strong>Spot 6 — Garage Abbeville</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mar 23/06 20h00</span> <span class="count-badge">3 photos</span> </span></summary>
 <div class="body">
 <h3>🅿️ SPOT 6 — GARAGE D'ABBEVILLE</h3>
@@ -323,6 +335,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Focale</th>
@@ -330,22 +343,26 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-6-1" class="photo-done" data-spot="6" aria-label="Photo 6.1 faite"></td>
 <td class="ps-num"><a href="#photo-6-1">6.1</a></td>
 <td><a href="#photo-6-1">Silhouettes télé Tour Eiffel / Montmartre depuis sommet park</a></td>
 <td class="ps-focal">téléobjectif (200mm+)</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-6-2" class="photo-done" data-spot="6" aria-label="Photo 6.2 faite"></td>
 <td class="ps-num"><a href="#photo-6-2">6.2</a></td>
 <td><a href="#photo-6-2">Enchevêtrement de toits (transition vers toit face Tour Eiff</a></td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-6-3" class="photo-done" data-spot="6" aria-label="Photo 6.3 faite"></td>
 <td class="ps-num"><a href="#photo-6-3">6.3</a></td>
 <td><a href="#photo-6-3">Saut dévers parking → boucle voitures</a></td>
 <td class="ps-focal">grand angle</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-6-counter" data-total="3">0/3 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -408,8 +425,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details>
 <p><strong>Récap Garage Abbeville = 4-5 photos</strong> (1 silhouette télé + 1-2 enchevêtrement + 2 saut grand angle) — Beauty : 3-4 · Perf : 1-2 · Zone grise transverse (toits non légaux Johan)</p>
 <hr />
-</div>
-</details>
+<p></div>
+</details></p>
 </main>
 <a href="#top" class="back" aria-label="Retour haut">▲</a>
 <script>
@@ -461,9 +478,42 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
     keys.forEach(function(k){ localStorage.removeItem(k); });
     location.reload();
   };
+  function checkKey(id){ return 'mbappe-done:' + id; }
+  function restoreChecks(){
+    $$('.photo-done').forEach(function(cb){
+      if (localStorage.getItem(checkKey(cb.id)) === '1') cb.checked = true;
+    });
+  }
+  function bindCheckListeners(){
+    $$('.photo-done').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        if (cb.checked) localStorage.setItem(checkKey(cb.id), '1');
+        else localStorage.removeItem(checkKey(cb.id));
+        updateCounter(cb.dataset.spot);
+      });
+    });
+  }
+  function updateCounter(spotNum){
+    if (!spotNum) return;
+    var counter = document.getElementById('spot-' + spotNum + '-counter');
+    if (!counter) return;
+    var total = parseInt(counter.dataset.total, 10);
+    var checked = $$('.photo-done[data-spot="' + spotNum + '"]:checked').length;
+    counter.textContent = checked + '/' + total + ' photos faites';
+    if (checked === total) counter.classList.add('complete');
+    else counter.classList.remove('complete');
+  }
+  function updateAllCounters(){
+    var spots = {};
+    $$('.photo-done').forEach(function(cb){ if (cb.dataset.spot) spots[cb.dataset.spot] = 1; });
+    Object.keys(spots).forEach(updateCounter);
+  }
   document.addEventListener('DOMContentLoaded', function(){
     restoreState();
     bindToggleListeners();
+    restoreChecks();
+    bindCheckListeners();
+    updateAllCounters();
     openHashTarget();
     window.addEventListener('hashchange', openHashTarget);
   });

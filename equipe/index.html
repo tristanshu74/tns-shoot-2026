@@ -77,6 +77,11 @@ details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
 .photo-strip tr:last-child td{border-bottom:0}
 .photo-strip tr:hover td{background:var(--code)}
 .photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip td.ps-check{width:36px;text-align:center;padding:6px 4px}
+.photo-strip input.photo-done{width:20px;height:20px;cursor:pointer;accent-color:#0a9a4f}
+.photo-strip tr:has(input.photo-done:checked) td:not(.ps-check){opacity:.45;text-decoration:line-through;text-decoration-color:#0a9a4f}
+.done-counter{margin:6px 0 0;padding:4px 10px;font-size:.85em;color:var(--muted);font-weight:600;background:var(--code);border-radius:6px;display:inline-block}
+.done-counter.complete{background:#0a9a4f;color:#fff}
 .photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
 .photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
 .photo-strip .ps-status{white-space:nowrap}
@@ -127,10 +132,9 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
-body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb),
-body.mode-equipe td a{color:inherit;text-decoration:none;font-weight:600;border-bottom:1px dotted currentColor}
-body.mode-equipe .photo-strip a:hover,
-body.mode-equipe nav.toc a:hover{border-bottom-style:solid}
+body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
+/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -149,7 +153,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <div class="topbar"><div class="spacer"></div><a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" class="btn-maps" data-state="live" target="_blank">🗺️ Maps</a></div>
 <main>
 <a id="top"></a>
-<header class="day-hd"><h1>🎬 Mbappé Shoot — Plan 22-25 juin 2026</h1><div class="crumbs">Index master · 4 jours · 11 spots · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><nav class="toc"><details id="nav-jours" open><summary>📅 Navigation par jour <span class="count-badge">(4 jours)</span></summary><div class="body"><ul><li><div class="day-line"><span class="chip chip-day" style="background:#1e6fbf">J1</span> <a href="jour-1.html"><strong>Lundi 22 juin 2026</strong></a> <span class="count-badge">(4 spots)</span></div><ul class="spot-links"><li><a href="jour-1.html#spot-1">→ Spot 1 — Trocadéro</a></li><li><a href="jour-1.html#spot-2">→ Spot 2 — Passage Camoëns</a></li><li><a href="jour-1.html#spot-3">→ Spot 3 — Pont Bir-Hakeim</a></li><li><a href="jour-1.html#spot-4">→ Spot 4 — Terrass&#x27;Hôtel</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#0a9a4f">J2</span> <a href="jour-2.html"><strong>Mardi 23 juin 2026</strong></a> <span class="count-badge">(2 spots)</span></div><ul class="spot-links"><li><a href="jour-2.html#spot-5">→ Spot 5 — MPP</a></li><li><a href="jour-2.html#spot-6">→ Spot 6 — Garage Abbeville</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#d97706">J3</span> <a href="jour-3.html"><strong>Mercredi 24 juin 2026</strong></a> <span class="count-badge">(3 spots)</span></div><ul class="spot-links"><li><a href="jour-3.html#spot-7">→ Spot 7 — Passerelle Debilly</a></li><li><a href="jour-3.html#spot-8">→ Spot 8 — Olympiades + Simone</a></li><li><a href="jour-3.html#spot-9">→ Spot 9 — Parking Clauzel</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#c0392b">J4</span> <a href="jour-4.html"><strong>Jeudi 25 juin 2026</strong></a> <span class="count-badge">(2 spots)</span></div><ul class="spot-links"><li><a href="jour-4.html#spot-10">→ Spot 10 — Bateau</a></li><li><a href="jour-4.html#spot-11">→ Spot 11 — Châtelet</a></li></ul></li></ul></div></details></nav><div class="dashboard dashboard--compact"><div class="stat-card"><div class="num">4</div><div class="lbl">jours</div></div><div class="stat-card"><div class="num">11</div><div class="lbl">spots</div></div><div class="stat-card"><div class="num">58</div><div class="lbl">photos</div></div><div class="stat-card"><div class="num">3</div><div class="lbl">sessions aube</div></div><div class="stat-card"><div class="num">4</div><div class="lbl">sessions coucher</div></div></div><hr><details id="planning-overview" markdown="1"><summary>📋 Vue d'ensemble du planning</summary><div class="body">
+<header class="day-hd"><h1>🎬 Mbappé Shoot — Plan 22-25 juin 2026</h1><div class="crumbs">Index master · 4 jours · 11 spots · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><nav class="toc"><details id="nav-jours" open><summary>📅 Navigation par jour <span class="count-badge">(4 jours)</span></summary><div class="body"><ul><li><div class="day-line"><span class="chip chip-day" style="background:#1e6fbf">J1</span> <a href="jour-1.html"><strong>Lundi 22 juin 2026</strong></a> <span class="count-badge">(4 spots)</span></div><ul class="spot-links"><li><a href="jour-1.html#spot-1">→ Spot 1 — Trocadéro</a></li><li><a href="jour-1.html#spot-2">→ Spot 2 — Passage Camoëns</a></li><li><a href="jour-1.html#spot-3">→ Spot 3 — Pont Bir-Hakeim</a></li><li><a href="jour-1.html#spot-4">→ Spot 4 — Terrass&#x27;Hôtel</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#0a9a4f">J2</span> <a href="jour-2.html"><strong>Mardi 23 juin 2026</strong></a> <span class="count-badge">(2 spots)</span></div><ul class="spot-links"><li><a href="jour-2.html#spot-5">→ Spot 5 — MPP</a></li><li><a href="jour-2.html#spot-6">→ Spot 6 — Garage Abbeville</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#d97706">J3</span> <a href="jour-3.html"><strong>Mercredi 24 juin 2026</strong></a> <span class="count-badge">(3 spots)</span></div><ul class="spot-links"><li><a href="jour-3.html#spot-7">→ Spot 7 — Passerelle Debilly</a></li><li><a href="jour-3.html#spot-8">→ Spot 8 — Olympiades + Simone-de-Beauvoir</a></li><li><a href="jour-3.html#spot-9">→ Spot 9 — Parking Clauzel</a></li></ul></li><li><div class="day-line"><span class="chip chip-day" style="background:#c0392b">J4</span> <a href="jour-4.html"><strong>Jeudi 25 juin 2026</strong></a> <span class="count-badge">(2 spots)</span></div><ul class="spot-links"><li><a href="jour-4.html#spot-10">→ Spot 10 — Bateau</a></li><li><a href="jour-4.html#spot-11">→ Spot 11 — Châtelet</a></li></ul></li></ul></div></details></nav><div class="dashboard dashboard--compact"><div class="stat-card"><div class="num">4</div><div class="lbl">jours</div></div><div class="stat-card"><div class="num">11</div><div class="lbl">spots</div></div><div class="stat-card"><div class="num">58</div><div class="lbl">photos</div></div><div class="stat-card"><div class="num">3</div><div class="lbl">sessions aube</div></div><div class="stat-card"><div class="num">4</div><div class="lbl">sessions coucher</div></div></div><hr><details id="planning-overview" markdown="1"><summary>📋 Vue d'ensemble du planning</summary><div class="body">
 <hr />
 <h2>🗓️ PLANNING SHOOT 22-25 JUIN 2026</h2>
 
@@ -295,9 +299,42 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
     keys.forEach(function(k){ localStorage.removeItem(k); });
     location.reload();
   };
+  function checkKey(id){ return 'mbappe-done:' + id; }
+  function restoreChecks(){
+    $$('.photo-done').forEach(function(cb){
+      if (localStorage.getItem(checkKey(cb.id)) === '1') cb.checked = true;
+    });
+  }
+  function bindCheckListeners(){
+    $$('.photo-done').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        if (cb.checked) localStorage.setItem(checkKey(cb.id), '1');
+        else localStorage.removeItem(checkKey(cb.id));
+        updateCounter(cb.dataset.spot);
+      });
+    });
+  }
+  function updateCounter(spotNum){
+    if (!spotNum) return;
+    var counter = document.getElementById('spot-' + spotNum + '-counter');
+    if (!counter) return;
+    var total = parseInt(counter.dataset.total, 10);
+    var checked = $$('.photo-done[data-spot="' + spotNum + '"]:checked').length;
+    counter.textContent = checked + '/' + total + ' photos faites';
+    if (checked === total) counter.classList.add('complete');
+    else counter.classList.remove('complete');
+  }
+  function updateAllCounters(){
+    var spots = {};
+    $$('.photo-done').forEach(function(cb){ if (cb.dataset.spot) spots[cb.dataset.spot] = 1; });
+    Object.keys(spots).forEach(updateCounter);
+  }
   document.addEventListener('DOMContentLoaded', function(){
     restoreState();
     bindToggleListeners();
+    restoreChecks();
+    bindCheckListeners();
+    updateAllCounters();
     openHashTarget();
     window.addEventListener('hashchange', openHashTarget);
   });

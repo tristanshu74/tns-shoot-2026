@@ -77,6 +77,11 @@ details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
 .photo-strip tr:last-child td{border-bottom:0}
 .photo-strip tr:hover td{background:var(--code)}
 .photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip td.ps-check{width:36px;text-align:center;padding:6px 4px}
+.photo-strip input.photo-done{width:20px;height:20px;cursor:pointer;accent-color:#0a9a4f}
+.photo-strip tr:has(input.photo-done:checked) td:not(.ps-check){opacity:.45;text-decoration:line-through;text-decoration-color:#0a9a4f}
+.done-counter{margin:6px 0 0;padding:4px 10px;font-size:.85em;color:var(--muted);font-weight:600;background:var(--code);border-radius:6px;display:inline-block}
+.done-counter.complete{background:#0a9a4f;color:#fff}
 .photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
 .photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
 .photo-strip .ps-status{white-space:nowrap}
@@ -127,10 +132,9 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
-body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb),
-body.mode-equipe td a{color:inherit;text-decoration:none;font-weight:600;border-bottom:1px dotted currentColor}
-body.mode-equipe .photo-strip a:hover,
-body.mode-equipe nav.toc a:hover{border-bottom-style:solid}
+body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
+/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -159,6 +163,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Focale</th>
@@ -166,17 +171,20 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-10-1" class="photo-done" data-spot="10" aria-label="Photo 10.1 faite"></td>
 <td class="ps-num"><a href="#photo-10-1">10.1</a></td>
 <td><a href="#photo-10-1">Travelling quais</a></td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-10-2" class="photo-done" data-spot="10" aria-label="Photo 10.2 faite"></td>
 <td class="ps-num"><a href="#photo-10-2">10.2</a></td>
 <td><a href="#photo-10-2">Portrait Johan sur pont du bateau</a></td>
 <td class="ps-focal">—</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-10-counter" data-total="2">0/2 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -226,8 +234,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <p><strong>Récap Bateau = 2 photos identifiées + bonus angles Debilly/Bir-Hakeim depuis l'eau</strong> (travelling quais + portrait pont + angles inédits sur Debilly &amp; Bir-Hakeim couverts par leurs spots respectifs §7 &amp; §3)
 <strong>Cross-réf DR L1 complet</strong> : <code>02- MEMORY_LOGS/DEEP_RESEARCH_REPORTS/2026-06-05_olympiades_simone_beauvoir_DR_L1.md</code></p>
 <hr />
-</div>
-</details><details class="spot" id="spot-11">
+<p></div>
+</details></p><details class="spot" id="spot-11">
 <summary><strong>Spot 11 — Châtelet</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Jeu 25/06 20h00</span> <span class="count-badge">5 photos</span> </span></summary>
 <div class="body">
 <h3>🎭 SPOT 11 — THÉÂTRE DU CHÂTELET</h3>
@@ -237,6 +245,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Focale</th>
@@ -244,32 +253,38 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-11-1" class="photo-done" data-spot="11" aria-label="Photo 11.1 faite"></td>
 <td class="ps-num"><a href="#photo-11-1">11.1</a></td>
 <td><a href="#photo-11-1">Depuis quai Seine en face : télé toit du théâtre</a></td>
 <td class="ps-focal">téléobjectif</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-11-2" class="photo-done" data-spot="11" aria-label="Photo 11.2 faite"></td>
 <td class="ps-num"><a href="#photo-11-2">11.2</a></td>
 <td><a href="#photo-11-2">Escalier dominant la scène</a></td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-11-3" class="photo-done" data-spot="11" aria-label="Photo 11.3 faite"></td>
 <td class="ps-num"><a href="#photo-11-3">11.3</a></td>
 <td><a href="#photo-11-3">Passage entre 2 rambardes perpendiculaires + portraits</a></td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-11-4" class="photo-done" data-spot="11" aria-label="Photo 11.4 faite"></td>
 <td class="ps-num"><a href="#photo-11-4">11.4</a></td>
 <td><a href="#photo-11-4">Johan sur rambarde verticale + perspective ciel</a></td>
 <td class="ps-focal">du 70-200mm au 35mm = effets p</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-11-5" class="photo-done" data-spot="11" aria-label="Photo 11.5 faite"></td>
 <td class="ps-num"><a href="#photo-11-5">11.5</a></td>
 <td><a href="#photo-11-5">Échelle bord gauche en haut du toit</a></td>
 <td class="ps-focal">—</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-11-counter" data-total="5">0/5 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -363,8 +378,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <p>📌 <strong>Autres photos à explorer sur place</strong> — au-delà des 5 identifiées ci-dessus, il y a un certain nombre d'angles non listés à découvrir le jour J (25/06 soir). <strong>En particulier : vue Notre-Dame</strong> (seul spot du shoot avec Notre-Dame en arrière-plan, axe à exploiter à fond). À arbitrer terrain avec Cyril/Johan.</p>
 </blockquote>
 <p><strong>Récap Châtelet = 5 photos identifiées + N à explorer sur place (dont vue Notre-Dame)</strong> — Beauty : 4-5 · Perf : 2 · Lifestyle/Portrait : 1 (passage rambardes)</p>
-</div>
-</details>
+<p></div>
+</details></p>
 </main>
 <a href="#top" class="back" aria-label="Retour haut">▲</a>
 <script>
@@ -416,9 +431,42 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
     keys.forEach(function(k){ localStorage.removeItem(k); });
     location.reload();
   };
+  function checkKey(id){ return 'mbappe-done:' + id; }
+  function restoreChecks(){
+    $$('.photo-done').forEach(function(cb){
+      if (localStorage.getItem(checkKey(cb.id)) === '1') cb.checked = true;
+    });
+  }
+  function bindCheckListeners(){
+    $$('.photo-done').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        if (cb.checked) localStorage.setItem(checkKey(cb.id), '1');
+        else localStorage.removeItem(checkKey(cb.id));
+        updateCounter(cb.dataset.spot);
+      });
+    });
+  }
+  function updateCounter(spotNum){
+    if (!spotNum) return;
+    var counter = document.getElementById('spot-' + spotNum + '-counter');
+    if (!counter) return;
+    var total = parseInt(counter.dataset.total, 10);
+    var checked = $$('.photo-done[data-spot="' + spotNum + '"]:checked').length;
+    counter.textContent = checked + '/' + total + ' photos faites';
+    if (checked === total) counter.classList.add('complete');
+    else counter.classList.remove('complete');
+  }
+  function updateAllCounters(){
+    var spots = {};
+    $$('.photo-done').forEach(function(cb){ if (cb.dataset.spot) spots[cb.dataset.spot] = 1; });
+    Object.keys(spots).forEach(updateCounter);
+  }
   document.addEventListener('DOMContentLoaded', function(){
     restoreState();
     bindToggleListeners();
+    restoreChecks();
+    bindCheckListeners();
+    updateAllCounters();
     openHashTarget();
     window.addEventListener('hashchange', openHashTarget);
   });

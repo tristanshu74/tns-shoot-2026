@@ -77,6 +77,11 @@ details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
 .photo-strip tr:last-child td{border-bottom:0}
 .photo-strip tr:hover td{background:var(--code)}
 .photo-strip a{color:var(--accent);text-decoration:none;font-weight:500}
+.photo-strip td.ps-check{width:36px;text-align:center;padding:6px 4px}
+.photo-strip input.photo-done{width:20px;height:20px;cursor:pointer;accent-color:#0a9a4f}
+.photo-strip tr:has(input.photo-done:checked) td:not(.ps-check){opacity:.45;text-decoration:line-through;text-decoration-color:#0a9a4f}
+.done-counter{margin:6px 0 0;padding:4px 10px;font-size:.85em;color:var(--muted);font-weight:600;background:var(--code);border-radius:6px;display:inline-block}
+.done-counter.complete{background:#0a9a4f;color:#fff}
 .photo-strip .ps-num{font-weight:700;color:var(--accent);white-space:nowrap}
 .photo-strip .ps-focal{font-family:Menlo,Consolas,monospace;font-size:.92em;color:var(--muted)}
 .photo-strip .ps-status{white-space:nowrap}
@@ -127,10 +132,9 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
-body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb),
-body.mode-equipe td a{color:inherit;text-decoration:none;font-weight:600;border-bottom:1px dotted currentColor}
-body.mode-equipe .photo-strip a:hover,
-body.mode-equipe nav.toc a:hover{border-bottom-style:solid}
+body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
+/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -159,6 +163,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Statut</th>
@@ -167,49 +172,57 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-1" class="photo-done" data-spot="1" aria-label="Photo 1.1 faite"></td>
 <td class="ps-num"><a href="#photo-1-1">1.1</a></td>
 <td><a href="#photo-1-1">Revisite Erwitt « Umbrella Jump » 🎯 LEAD</a></td>
 <td class="ps-status">🔒 LOCKÉE (photo lead affiche)</td>
 <td class="ps-focal">35mm OU 55mm (arbitrer terrain</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-2" class="photo-done" data-spot="1" aria-label="Photo 1.2 faite"></td>
 <td class="ps-num"><a href="#photo-1-2">1.2</a></td>
 <td><a href="#photo-1-2">Statues du parvis + backflip signature contre-jour Tour Eiff</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">35-85mm (variations à arbitrer</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-3" class="photo-done" data-spot="1" aria-label="Photo 1.3 faite"></td>
 <td class="ps-num"><a href="#photo-1-3">1.3</a></td>
 <td><a href="#photo-1-3">Tour Eiffel coupée graphique gros télé</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">400mm OU 200mm + TC — assumer </td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-4" class="photo-done" data-spot="1" aria-label="Photo 1.4 faite"></td>
 <td class="ps-num"><a href="#photo-1-4">1.4</a></td>
 <td><a href="#photo-1-4">Hyperfocale demoiselle + Johan + Tour Eiffel</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">16-35mm (hyperfocale)</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-5" class="photo-done" data-spot="1" aria-label="Photo 1.5 faite"></td>
 <td class="ps-num"><a href="#photo-1-5">1.5</a></td>
 <td><a href="#photo-1-5">Spiderman Piliers ⚠️ Zone grise (dangereux)</a></td>
 <td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
 <td class="ps-focal">16-35mm</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-6" class="photo-done" data-spot="1" aria-label="Photo 1.6 faite"></td>
 <td class="ps-num"><a href="#photo-1-6">1.6</a></td>
 <td><a href="#photo-1-6">Verticale plots béton + reflets fenêtres ⚠️ Zone grise (dang</a></td>
 <td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
 <td class="ps-focal">16-35mm (verticale)</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-1-7" class="photo-done" data-spot="1" aria-label="Photo 1.7 faite"></td>
 <td class="ps-num"><a href="#photo-1-7">1.7</a></td>
 <td><a href="#photo-1-7">Escaliers parvis → bassins, perspective Tour Eiffel + muret </a></td>
 <td class="ps-status">🟡 WIP (à valider terrain repér</td>
 <td class="ps-focal">16-24mm (ou 16-35mm)</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-1-counter" data-total="7">0/7 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -381,8 +394,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details>
 <p><strong>Récap Trocadéro = 7 photos identifiées</strong> — Beauty : 4 (1.1, 1.2, 1.3, 1.4) · Beauty/Perf : 1 (1.3 a aussi un tag Perf) · Zone grise (dangereux) : 2 (1.5, 1.6) · Idée Johan WIP : 1 (1.7)</p>
 <hr />
-</div>
-</details><details class="spot" id="spot-2">
+<p></div>
+</details></p><details class="spot" id="spot-2">
 <summary><strong>Spot 2 — Passage Camoëns</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 matin</span> <span class="count-badge">2 photos</span> </span></summary>
 <div class="body">
 <h3>🌳 SPOT 2 — AVENUE CAMOËNS / ESCALIERS</h3>
@@ -392,6 +405,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Statut</th>
@@ -400,19 +414,22 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-2-1" class="photo-done" data-spot="2" aria-label="Photo 2.1 faite"></td>
 <td class="ps-num"><a href="#photo-2-1">2.1</a></td>
 <td><a href="#photo-2-1">Saut perf escaliers (muret haut → muret bas) — 2 angles</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">grand angle 16-24mm probable (</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-2-2" class="photo-done" data-spot="2" aria-label="Photo 2.2 faite"></td>
 <td class="ps-num"><a href="#photo-2-2">2.2</a></td>
 <td><a href="#photo-2-2">Artigraphique hyperfocale depuis le bas</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">35mm</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-2-counter" data-total="2">0/2 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -447,7 +464,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <p><picture><source type="image/avif" srcset="img/IMG_1664_ab8904d1b537.avif"><source type="image/webp" srcset="img/IMG_1664_ab8904d1b537.webp"><img src="img/IMG_1664_ab8904d1b537.jpg" alt="Saut escaliers - vue 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
 <picture><source type="image/avif" srcset="img/IMG_1662_b7cd7d9c0907.avif"><source type="image/webp" srcset="img/IMG_1662_b7cd7d9c0907.webp"><img src="img/IMG_1662_b7cd7d9c0907.jpg" alt="Saut escaliers - vue 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
 <picture><source type="image/avif" srcset="img/IMG_1660_a45e67a41911.avif"><source type="image/webp" srcset="img/IMG_1660_a45e67a41911.webp"><img src="img/IMG_1660_a45e67a41911.jpg" alt="Saut escaliers - vue 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1658_87c334e968de.avif"><source type="image/webp" srcset="img/IMG_1658_87c334e968de.webp"><img src="img/IMG_1658_87c334e968de.jpg" alt="Saut escaliers - vue 4" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<picture><source type="image/avif" srcset="img/IMG_1658_87c334e968de.avif"><source type="image/webp" srcset="img/IMG_1658_87c334e968de.webp"><img src="img/IMG_1658_87c334e968de.jpg" alt="Saut escaliers - vue 4" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+- <strong>Angles</strong> : 3 à 4 angles possibles identifiés — <strong>à arbitrer sur place</strong> au repérage 21/06 et le jour J</p>
 </div>
 </details>
 </details>
@@ -469,8 +487,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details>
 <p><strong>Récap Camoëns = 2 photos</strong> — Beauty : 1 (2.2) · Perf : 1 (2.1)</p>
 <hr />
-</div>
-</details><details class="spot" id="spot-3">
+<p></div>
+</details></p><details class="spot" id="spot-3">
 <summary><strong>Spot 3 — Pont Bir-Hakeim</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 09h00</span> <span class="count-badge">6 photos</span> </span></summary>
 <div class="body">
 <h3>🌉 SPOT 3 — PONT DE BIR-HAKEIM</h3>
@@ -480,6 +498,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Statut</th>
@@ -488,43 +507,50 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-3-1" class="photo-done" data-spot="3" aria-label="Photo 3.1 faite"></td>
 <td class="ps-num"><a href="#photo-3-1">3.1</a></td>
 <td><a href="#photo-3-1">Classique revisité, perspective comprimée colonnes + portes</a></td>
 <td class="ps-status">✅ ACTÉE (chute facile, déclina</td>
 <td class="ps-focal">longue télé 200mm voire + OU e</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-3-2" class="photo-done" data-spot="3" aria-label="Photo 3.2 faite"></td>
 <td class="ps-num"><a href="#photo-3-2">3.2</a></td>
 <td><a href="#photo-3-2">Tour Eiffel entière + 3.2bis Tour Eiffel coupée</a></td>
 <td class="ps-status">✅ ACTÉE (2 versions)</td>
 <td class="ps-focal">à arbitrer terrain</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-3-3" class="photo-done" data-spot="3" aria-label="Photo 3.3 faite"></td>
 <td class="ps-num"><a href="#photo-3-3">3.3</a></td>
 <td><a href="#photo-3-3">Johan suspendu structure pont (Empire State / Spiderman) ⚠️ </a></td>
 <td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
 <td class="ps-focal">à étudier</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-3-4" class="photo-done" data-spot="3" aria-label="Photo 3.4 faite"></td>
 <td class="ps-num"><a href="#photo-3-4">3.4</a></td>
 <td><a href="#photo-3-4">Îlot statue renfoncement</a></td>
 <td class="ps-status">❓ À VÉRIFIER (investigation re</td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-3-5" class="photo-done" data-spot="3" aria-label="Photo 3.5 faite"></td>
 <td class="ps-num"><a href="#photo-3-5">3.5</a></td>
 <td><a href="#photo-3-5">Passerelle face Tour Eiffel</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-3-6" class="photo-done" data-spot="3" aria-label="Photo 3.6 faite"></td>
 <td class="ps-num"><a href="#photo-3-6">3.6</a></td>
 <td><a href="#photo-3-6">Pose longue depuis quais 🟡 WIP</a></td>
 <td class="ps-status">🟡 WIP — à vérifier</td>
 <td class="ps-focal">—</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-3-counter" data-total="6">0/6 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -657,8 +683,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details>
 <p><strong>Récap Bir-Hakeim = 6-7 photos identifiées + 2-4 bonus bateau = 8-11 photos potentielles</strong> — Beauty : 4-5 (3.1, 3.2a/b, 3.4, 3.5, 3.6) · Zone grise : 1 (3.3) · Bonus tech démo Fuji : 2-4 (bateau)</p>
 <hr />
-</div>
-</details><details class="spot" id="spot-4">
+<p></div>
+</details></p><details class="spot" id="spot-4">
 <summary><strong>Spot 4 — Terrass&#x27;Hôtel</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Lun 22/06 19h00</span> <span class="count-badge">7 photos</span> </span></summary>
 <div class="body">
 <h3>🏨 SPOT 4 — TERRASS'HÔTEL</h3>
@@ -668,6 +694,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <table class="photo-strip">
 <thead>
 <tr>
+<th>✓</th>
 <th>#</th>
 <th>Titre</th>
 <th>Statut</th>
@@ -676,49 +703,57 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </thead>
 <tbody>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-1" class="photo-done" data-spot="4" aria-label="Photo 4.1 faite"></td>
 <td class="ps-num"><a href="#photo-4-1">4.1</a></td>
 <td><a href="#photo-4-1">Suspension toit vue plongée (Johan + rue + cimetière en dess</a></td>
 <td class="ps-status">✅ ACTÉE (zone grise assumée)</td>
 <td class="ps-focal">à arbitrer terrain</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-2" class="photo-done" data-spot="4" aria-label="Photo 4.2 faite"></td>
 <td class="ps-num"><a href="#photo-4-2">4.2</a></td>
 <td><a href="#photo-4-2">Empilement toits + Montmartre derrière</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">à arbitrer (probablement 35-50</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-3" class="photo-done" data-spot="4" aria-label="Photo 4.3 faite"></td>
 <td class="ps-num"><a href="#photo-4-3">4.3</a></td>
 <td><a href="#photo-4-3">Tour Eiffel + parvis Défense</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">à arbitrer (variations possibl</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-4" class="photo-done" data-spot="4" aria-label="Photo 4.4 faite"></td>
 <td class="ps-num"><a href="#photo-4-4">4.4</a></td>
 <td><a href="#photo-4-4">Tourelle centrale (Empire State / Spiderman) ⚠️ Zone grise</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">à arbitrer</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-5" class="photo-done" data-spot="4" aria-label="Photo 4.5 faite"></td>
 <td class="ps-num"><a href="#photo-4-5">4.5</a></td>
 <td><a href="#photo-4-5">Resto fenêtre : Johan marche sur rambarde direction toit FM</a></td>
 <td class="ps-status">✅ ACTÉE</td>
 <td class="ps-focal">—</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-6" class="photo-done" data-spot="4" aria-label="Photo 4.6 faite"></td>
 <td class="ps-num"><a href="#photo-4-6">4.6</a></td>
 <td><a href="#photo-4-6">Vue depuis le bas de la rue</a></td>
 <td class="ps-status">✅ ACTÉE (1-2 photos)</td>
 <td class="ps-focal">35mm OU grand angle (voir tout</td>
 </tr>
 <tr>
+<td class="ps-check"><input type="checkbox" id="check-photo-4-7" class="photo-done" data-spot="4" aria-label="Photo 4.7 faite"></td>
 <td class="ps-num"><a href="#photo-4-7">4.7</a></td>
 <td><a href="#photo-4-7">Suite lit lifestyle 🟡 WIP</a></td>
 <td class="ps-status">🟡 WIP — pas tranchée mais idée</td>
 <td class="ps-focal">—</td>
 </tr>
 </tbody>
-</table>
+</table><div class="done-counter" id="spot-4-counter" data-total="7">0/7 photos faites</div>
+</details>
 </div>
 </details>
 <details class="brief">
@@ -843,8 +878,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <p><strong>Récap Terrass'Hôtel = 6-8 photos identifiées</strong> — Toits 3-4 · Resto 1-2 · Rue 1-2 · Lifestyle suite 1
 <strong>Ventilation tags</strong> : 4-5 Beauty / 2 Zone grise / 1 Lifestyle NEW</p>
 <hr />
-</div>
-</details>
+<p></div>
+</details></p>
 </main>
 <a href="#top" class="back" aria-label="Retour haut">▲</a>
 <script>
@@ -896,9 +931,42 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
     keys.forEach(function(k){ localStorage.removeItem(k); });
     location.reload();
   };
+  function checkKey(id){ return 'mbappe-done:' + id; }
+  function restoreChecks(){
+    $$('.photo-done').forEach(function(cb){
+      if (localStorage.getItem(checkKey(cb.id)) === '1') cb.checked = true;
+    });
+  }
+  function bindCheckListeners(){
+    $$('.photo-done').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        if (cb.checked) localStorage.setItem(checkKey(cb.id), '1');
+        else localStorage.removeItem(checkKey(cb.id));
+        updateCounter(cb.dataset.spot);
+      });
+    });
+  }
+  function updateCounter(spotNum){
+    if (!spotNum) return;
+    var counter = document.getElementById('spot-' + spotNum + '-counter');
+    if (!counter) return;
+    var total = parseInt(counter.dataset.total, 10);
+    var checked = $$('.photo-done[data-spot="' + spotNum + '"]:checked').length;
+    counter.textContent = checked + '/' + total + ' photos faites';
+    if (checked === total) counter.classList.add('complete');
+    else counter.classList.remove('complete');
+  }
+  function updateAllCounters(){
+    var spots = {};
+    $$('.photo-done').forEach(function(cb){ if (cb.dataset.spot) spots[cb.dataset.spot] = 1; });
+    Object.keys(spots).forEach(updateCounter);
+  }
   document.addEventListener('DOMContentLoaded', function(){
     restoreState();
     bindToggleListeners();
+    restoreChecks();
+    bindCheckListeners();
+    updateAllCounters();
     openHashTarget();
     window.addEventListener('hashchange', openHashTarget);
   });
