@@ -51,14 +51,14 @@ details.spot[open]>summary{border-bottom:1px solid var(--border);background:var(
 details.spot .body{padding:14px 16px 18px}
 details.brief>summary,details.light>summary,details.inspi>summary{font-size:.95em;background:transparent}
 
-/* Hierarchy: nested details inside a spot are indented + colored left border */
-details.spot .body{padding-left:18px;border-left:3px solid var(--accent);margin-left:6px}
-details.spot details{margin-left:0;border-left:2px solid var(--border)}
-details.spot details.brief{border-left-color:#8a8a8a}
-details.spot details.light{border-left-color:#d97706}
-details.spot details.photo-card{border-left-color:var(--accent)}
-details.spot details.photo-card details.inspi{margin-left:14px;border-left:2px solid #8a8a8a}
-@media(max-width:600px){details.spot .body{padding-left:10px}details.spot details.photo-card details.inspi{margin-left:8px}}
+/* Hierarchy: ONE colored rail per spot (anchors "you are inside Spot N"). Nested details rely on indentation + card border only. Panel UX 18 juin verdict SIMPLIFIER conf 0.88 */
+details.spot .body{padding-left:14px;border-left:3px solid var(--accent);margin-left:6px}
+details.spot details{margin-left:0;border-left:0}
+details.spot details.photo-card details.inspi{margin-left:10px}
+@media(max-width:600px){
+  details.spot .body{padding-left:10px}
+  details.spot details.photo-card details.inspi{margin-left:6px}
+}
 details.photo-card{margin:8px 0;border:1px solid var(--border)}
 details.photo-card>summary{font-size:.98em;flex-wrap:wrap}
 
