@@ -93,7 +93,10 @@ nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
 nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
 nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
 nav.toc li > .day-line a{display:inline}
-nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc li small{color:var(--muted);font-size:.85em;margin-left:8px;display:inline-block}
+nav.toc li > .day-line strong,details.toc li > a strong{margin-right:4px}
+details.toc li > a{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+details.toc li > a small{margin-left:0}
 nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
 nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
 nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
@@ -159,7 +162,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <header class="day-hd"><h1><span class="chip chip-day" style="background:#1e6fbf">J1</span> J1 — Lundi 22 juin 2026</h1><div class="crumbs"><a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(4)</span></summary><div class="body"><ul><li><a href="#spot-1"><strong>Spot 1 — Trocadéro</strong><small>🕒 Lun 22/06 matin</small></a></li><li><a href="#spot-2"><strong>Spot 2 — Passage Camoëns</strong><small>🕒 Lun 22/06 matin</small></a></li><li><a href="#spot-3"><strong>Spot 3 — Pont Bir-Hakeim</strong><small>🕒 Lun 22/06 09h00</small></a></li><li><a href="#spot-4"><strong>Spot 4 — Terrass&#x27;Hôtel</strong><small>🕒 Lun 22/06 19h00</small></a></li></ul></div></details><details class="spot" id="spot-1">
 <summary><strong>Spot 1 — Trocadéro</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Lun 22/06 matin</span><span class="count-badge">7 photos</span></span></summary>
 <div class="body">
-<h3>🗼 SPOT 1 — TROCADÉRO</h3>
 <details class="overview-photos" id="ov-spot-1"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-1" class="photo-done" data-spot="1" aria-label="Photo 1.1 faite"></td><td class="ps-num"><a href="#photo-1-1">1.1</a></td><td><a href="#photo-1-1">Revisite Erwitt « Umbrella Jump » 🎯 LEAD</a></td><td class="ps-status">🔒 LOCKÉE (photo lead affiche)</td><td class="ps-focal">35mm OU 55mm (arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-2" class="photo-done" data-spot="1" aria-label="Photo 1.2 faite"></td><td class="ps-num"><a href="#photo-1-2">1.2</a></td><td><a href="#photo-1-2">Statues du parvis + backflip signature contre-jour Tour Eiff</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">35-85mm (variations à arbitrer</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-3" class="photo-done" data-spot="1" aria-label="Photo 1.3 faite"></td><td class="ps-num"><a href="#photo-1-3">1.3</a></td><td><a href="#photo-1-3">Tour Eiffel coupée graphique gros télé</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">400mm OU 200mm + TC — assumer </td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-4" class="photo-done" data-spot="1" aria-label="Photo 1.4 faite"></td><td class="ps-num"><a href="#photo-1-4">1.4</a></td><td><a href="#photo-1-4">Hyperfocale demoiselle + Johan + Tour Eiffel</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">16-35mm (hyperfocale)</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-5" class="photo-done" data-spot="1" aria-label="Photo 1.5 faite"></td><td class="ps-num"><a href="#photo-1-5">1.5</a></td><td><a href="#photo-1-5">Spiderman Piliers ⚠️ Zone grise (dangereux)</a></td><td class="ps-status">✅ ACTÉE (zone grise assumée)</td><td class="ps-focal">16-35mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-6" class="photo-done" data-spot="1" aria-label="Photo 1.6 faite"></td><td class="ps-num"><a href="#photo-1-6">1.6</a></td><td><a href="#photo-1-6">Verticale plots béton + reflets fenêtres ⚠️ Zone grise (dang</a></td><td class="ps-status">✅ ACTÉE (zone grise assumée)</td><td class="ps-focal">16-35mm (verticale)</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-1-7" class="photo-done" data-spot="1" aria-label="Photo 1.7 faite"></td><td class="ps-num"><a href="#photo-1-7">1.7</a></td><td><a href="#photo-1-7">Escaliers parvis → bassins, perspective Tour Eiffel + muret </a></td><td class="ps-status">🟡 WIP (à valider terrain repér</td><td class="ps-focal">16-24mm (ou 16-35mm)</td></tr></tbody></table><div class="done-counter" id="spot-1-counter" data-total="7">0/7 photos faites</div>
 </div></details>
@@ -177,7 +179,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </ul></div>
 </details>
 <details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
-<div class="body"><p><picture><source type="image/avif" srcset="img/SunSeeker_Here_3D_2_1a3cb7f7b171.avif"><source type="image/webp" srcset="img/SunSeeker_Here_3D_2_1a3cb7f7b171.webp"><img src="img/SunSeeker_Here_3D_2_1a3cb7f7b171.jpg" alt="Trajectoire soleil Trocadéro - SunSeeker 3D" loading="lazy" decoding="async" class="shoot-img" width="1600" height="738"></picture></p></div>
+<div class="body"><p><picture><source type="image/avif" srcset="img/img/SunSeeker_Here_3D_2_1a3cb7f7b171.avif"><source type="image/webp" srcset="img/img/SunSeeker_Here_3D_2_1a3cb7f7b171.webp"><img src="img/img/SunSeeker_Here_3D_2_1a3cb7f7b171.jpg" alt="Trajectoire soleil Trocadéro - SunSeeker 3D" loading="lazy" decoding="async" class="shoot-img" width="1600" height="738"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-1-1">
 <summary>📷 <b>Photo 1.1 — Revisite Erwitt « Umbrella Jump » 🎯 LEAD</b></summary>
@@ -198,12 +200,12 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 - Mode <strong>rafale</strong> activé
 - <strong>Pré-focus</strong> pour éviter tout souci d'autofocus pendant le saut</p>
 <details class="inspi">
-<summary>🖼️ 🖼️ Inspirations 📷📷</summary>
+<summary>🖼️ Inspirations 📷📷</summary>
 <div class="body">
 <p><strong>Référence Tristan — angle parvis Erwitt</strong> (repérage Day 3) :</p>
-<p><picture><source type="image/avif" srcset="img/IMG_1646_1d459285fa0f.avif"><source type="image/webp" srcset="img/IMG_1646_1d459285fa0f.webp"><img src="img/IMG_1646_1d459285fa0f.jpg" alt="Référence parvis Erwitt — Tristan repérage" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1646_1d459285fa0f.avif"><source type="image/webp" srcset="img/img/IMG_1646_1d459285fa0f.webp"><img src="img/img/IMG_1646_1d459285fa0f.jpg" alt="Référence parvis Erwitt — Tristan repérage" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 <p><strong>Inspiration originale Elliott Erwitt — « Paris, France — Umbrella Jump » (1989)</strong> :</p>
-<p><picture><source type="image/avif" srcset="img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.avif"><source type="image/webp" srcset="img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.webp"><img src="img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.jpg" alt="Elliott Erwitt - Paris France Umbrella Jump 1989" loading="lazy" decoding="async" class="shoot-img" width="1500" height="1007"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.avif"><source type="image/webp" srcset="img/img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.webp"><img src="img/img/elliott-erwitt_paris-france-umbrella-jump-1_9fe23a1dfe96.jpg" alt="Elliott Erwitt - Paris France Umbrella Jump 1989" loading="lazy" decoding="async" class="shoot-img" width="1500" height="1007"></picture></p>
 </div>
 </details>
 </details>
@@ -220,10 +222,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Tour Eiffel ENTIÈRE</strong> (pas coupée sur cette photo)</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références — angles statues parvis 📷📷</summary>
+<summary>🖼️ Références — angles statues parvis 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1655_df97155df4a9.avif"><source type="image/webp" srcset="img/IMG_1655_df97155df4a9.webp"><img src="img/IMG_1655_df97155df4a9.jpg" alt="Statues parvis - angle 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1647_5c985f08a029.avif"><source type="image/webp" srcset="img/IMG_1647_5c985f08a029.webp"><img src="img/IMG_1647_5c985f08a029.jpg" alt="Statues parvis - angle 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1655_df97155df4a9.avif"><source type="image/webp" srcset="img/img/IMG_1655_df97155df4a9.webp"><img src="img/img/IMG_1655_df97155df4a9.jpg" alt="Statues parvis - angle 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1647_5c985f08a029.avif"><source type="image/webp" srcset="img/img/IMG_1647_5c985f08a029.webp"><img src="img/img/IMG_1647_5c985f08a029.jpg" alt="Statues parvis - angle 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -253,9 +255,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Localisation</strong> : sur le <strong>parvis</strong></li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Inspiration — « The Air Goddess » Tristan Shu × Aurore Ghiliano × JB Chandelier 📷</summary>
+<summary>🖼️ Inspiration — « The Air Goddess » Tristan Shu × Aurore Ghiliano × JB Chandelier 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.avif"><source type="image/webp" srcset="img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.webp"><img src="img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.jpg" alt="The Air Goddess - Aurore Ghiliano + JB Chandelier - Tristan Shu" loading="lazy" decoding="async" class="shoot-img" width="1600" height="930"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.avif"><source type="image/webp" srcset="img/img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.webp"><img src="img/img/jb_chandelier_air_goddess_aurore_ghiliano_bdd3c8982260.jpg" alt="The Air Goddess - Aurore Ghiliano + JB Chandelier - Tristan Shu" loading="lazy" decoding="async" class="shoot-img" width="1600" height="930"></picture></p>
 </div>
 </details>
 </details>
@@ -281,9 +283,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Graphique</strong> : très chouette avec Tour Eiffel + reflets</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence — vue depuis le bas 📷</summary>
+<summary>🖼️ Référence — vue depuis le bas 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1653_303bd909f660.avif"><source type="image/webp" srcset="img/IMG_1653_303bd909f660.webp"><img src="img/IMG_1653_303bd909f660.jpg" alt="Plots béton verticale - vue du bas" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1653_303bd909f660.avif"><source type="image/webp" srcset="img/img/IMG_1653_303bd909f660.webp"><img src="img/img/IMG_1653_303bd909f660.jpg" alt="Plots béton verticale - vue du bas" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -298,9 +300,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Origine idée</strong> : Johan (sensibilité jeu de perspectives)</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Image de référence prise par Johan 📷</summary>
+<summary>🖼️ Image de référence prise par Johan 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_0717_920fad7a475b.avif"><source type="image/webp" srcset="img/IMG_0717_920fad7a475b.webp"><img src="img/IMG_0717_920fad7a475b.jpg" alt="Repérage Johan" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_0717_920fad7a475b.avif"><source type="image/webp" srcset="img/img/IMG_0717_920fad7a475b.webp"><img src="img/img/IMG_0717_920fad7a475b.jpg" alt="Repérage Johan" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 </div>
 </details>
 </details>
@@ -318,19 +320,18 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Note</strong> : référence d'inspiration ci-dessous = angle complètement différent, juste pour donner l'idée de l'interaction</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Inspiration interaction 📷</summary>
+<summary>🖼️ Inspiration interaction 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/inspi_interaction_demoiselle_8ffae983984e.avif"><source type="image/webp" srcset="img/inspi_interaction_demoiselle_8ffae983984e.webp"><img src="img/inspi_interaction_demoiselle_8ffae983984e.jpg" alt="Inspiration interaction demoiselle" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1034"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/inspi_interaction_demoiselle_8ffae983984e.avif"><source type="image/webp" srcset="img/img/inspi_interaction_demoiselle_8ffae983984e.webp"><img src="img/img/inspi_interaction_demoiselle_8ffae983984e.jpg" alt="Inspiration interaction demoiselle" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1034"></picture></p>
 </div>
 </details>
 </details>
-<p><strong>Récap Trocadéro = 7 photos identifiées</strong> — Beauty : 4 (1.1, 1.2, 1.3, 1.4) · Beauty/Perf : 1 (1.3 a aussi un tag Perf) · Zone grise (dangereux) : 2 (1.5, 1.6) · Idée Johan WIP : 1 (1.7)</p>
+<p><strong>Récap Trocadéro = 7 photos identifiées</strong> — Beauty : 4 (1.1, 1.2, 1.3, 1.4) · Beauty/Perf : 1 (1.3 a aussi un tag Perf) · Zone grise (dangereux) : 2 (1.5, 1.6) · WIP : 1 (1.7)</p>
 <hr />
 </div>
 </details><details class="spot" id="spot-2">
 <summary><strong>Spot 2 — Passage Camoëns</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Lun 22/06 matin</span><span class="count-badge">2 photos</span></span></summary>
 <div class="body">
-<h3>🌳 SPOT 2 — AVENUE CAMOËNS / ESCALIERS</h3>
 <details class="overview-photos" id="ov-spot-2"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-2-1" class="photo-done" data-spot="2" aria-label="Photo 2.1 faite"></td><td class="ps-num"><a href="#photo-2-1">2.1</a></td><td><a href="#photo-2-1">Saut perf escaliers (muret haut → muret bas) — 2 angles</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">grand angle 16-24mm probable (</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-2-2" class="photo-done" data-spot="2" aria-label="Photo 2.2 faite"></td><td class="ps-num"><a href="#photo-2-2">2.2</a></td><td><a href="#photo-2-2">Artigraphique hyperfocale depuis le bas</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">35mm</td></tr></tbody></table><div class="done-counter" id="spot-2-counter" data-total="2">0/2 photos faites</div>
 </div></details>
@@ -359,10 +360,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Note angles</strong> : 3 à 4 angles possibles identifiés sur place — <strong>à arbitrer au repérage 21/06 et le jour J</strong></li>
 </ul>
 <h3>🖼️ Références (Tristan repérage Day 3)</h3>
-<p><picture><source type="image/avif" srcset="img/IMG_1664_ab8904d1b537.avif"><source type="image/webp" srcset="img/IMG_1664_ab8904d1b537.webp"><img src="img/IMG_1664_ab8904d1b537.jpg" alt="Saut escaliers - vue 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1662_b7cd7d9c0907.avif"><source type="image/webp" srcset="img/IMG_1662_b7cd7d9c0907.webp"><img src="img/IMG_1662_b7cd7d9c0907.jpg" alt="Saut escaliers - vue 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1660_a45e67a41911.avif"><source type="image/webp" srcset="img/IMG_1660_a45e67a41911.webp"><img src="img/IMG_1660_a45e67a41911.jpg" alt="Saut escaliers - vue 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1658_87c334e968de.avif"><source type="image/webp" srcset="img/IMG_1658_87c334e968de.webp"><img src="img/IMG_1658_87c334e968de.jpg" alt="Saut escaliers - vue 4" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1664_ab8904d1b537.avif"><source type="image/webp" srcset="img/img/IMG_1664_ab8904d1b537.webp"><img src="img/img/IMG_1664_ab8904d1b537.jpg" alt="Saut escaliers - vue 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1662_b7cd7d9c0907.avif"><source type="image/webp" srcset="img/img/IMG_1662_b7cd7d9c0907.webp"><img src="img/img/IMG_1662_b7cd7d9c0907.jpg" alt="Saut escaliers - vue 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1660_a45e67a41911.avif"><source type="image/webp" srcset="img/img/IMG_1660_a45e67a41911.webp"><img src="img/img/IMG_1660_a45e67a41911.jpg" alt="Saut escaliers - vue 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1658_87c334e968de.avif"><source type="image/webp" srcset="img/img/IMG_1658_87c334e968de.webp"><img src="img/img/IMG_1658_87c334e968de.jpg" alt="Saut escaliers - vue 4" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </details>
 <details class="photo-card" id="photo-2-2">
 <summary>📷 Photo 2.2 — Artigraphique hyperfocale depuis le bas</summary>
@@ -374,9 +375,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Effet</strong> : hyperfocale + perspective écrasée</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1657_99ecb253dab4.avif"><source type="image/webp" srcset="img/IMG_1657_99ecb253dab4.webp"><img src="img/IMG_1657_99ecb253dab4.jpg" alt="Hyperfocale depuis le bas" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1657_99ecb253dab4.avif"><source type="image/webp" srcset="img/img/IMG_1657_99ecb253dab4.webp"><img src="img/img/IMG_1657_99ecb253dab4.jpg" alt="Hyperfocale depuis le bas" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -386,7 +387,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details><details class="spot" id="spot-3">
 <summary><strong>Spot 3 — Pont Bir-Hakeim</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Lun 22/06 09h00</span><span class="count-badge">6 photos</span></span></summary>
 <div class="body">
-<h3>🌉 SPOT 3 — PONT DE BIR-HAKEIM</h3>
 <details class="overview-photos" id="ov-spot-3"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-3-1" class="photo-done" data-spot="3" aria-label="Photo 3.1 faite"></td><td class="ps-num"><a href="#photo-3-1">3.1</a></td><td><a href="#photo-3-1">Classique revisité, perspective comprimée colonnes + portes</a></td><td class="ps-status">✅ ACTÉE (chute facile, déclina</td><td class="ps-focal">longue télé 200mm voire + OU e</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-3-2" class="photo-done" data-spot="3" aria-label="Photo 3.2 faite"></td><td class="ps-num"><a href="#photo-3-2">3.2</a></td><td><a href="#photo-3-2">Tour Eiffel entière + 3.2bis Tour Eiffel coupée</a></td><td class="ps-status">✅ ACTÉE (2 versions)</td><td class="ps-focal">à arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-3-3" class="photo-done" data-spot="3" aria-label="Photo 3.3 faite"></td><td class="ps-num"><a href="#photo-3-3">3.3</a></td><td><a href="#photo-3-3">Johan suspendu structure pont (Empire State / Spiderman) ⚠️ </a></td><td class="ps-status">✅ ACTÉE (zone grise assumée)</td><td class="ps-focal">à étudier</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-3-4" class="photo-done" data-spot="3" aria-label="Photo 3.4 faite"></td><td class="ps-num"><a href="#photo-3-4">3.4</a></td><td><a href="#photo-3-4">Îlot statue renfoncement</a></td><td class="ps-status">❓ À VÉRIFIER (investigation re</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-3-5" class="photo-done" data-spot="3" aria-label="Photo 3.5 faite"></td><td class="ps-num"><a href="#photo-3-5">3.5</a></td><td><a href="#photo-3-5">Passerelle face Tour Eiffel</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-3-6" class="photo-done" data-spot="3" aria-label="Photo 3.6 faite"></td><td class="ps-num"><a href="#photo-3-6">3.6</a></td><td><a href="#photo-3-6">Pose longue depuis quais 🟡 WIP</a></td><td class="ps-status">🟡 WIP — à vérifier</td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-3-counter" data-total="6">0/6 photos faites</div>
 </div></details>
@@ -403,8 +403,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </ul></div>
 </details>
 <details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(2 images)</span></summary>
-<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1673_c4e2a58fb236.avif"><source type="image/webp" srcset="img/IMG_1673_c4e2a58fb236.webp"><img src="img/IMG_1673_c4e2a58fb236.jpg" alt="Bir-Hakeim - lecture lumière soleil 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1066"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1674_70b44f5ea103.avif"><source type="image/webp" srcset="img/IMG_1674_70b44f5ea103.webp"><img src="img/IMG_1674_70b44f5ea103.jpg" alt="Bir-Hakeim - lecture lumière soleil 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1053"></picture></p></div>
+<div class="body"><p><picture><source type="image/avif" srcset="img/img/IMG_1673_c4e2a58fb236.avif"><source type="image/webp" srcset="img/img/IMG_1673_c4e2a58fb236.webp"><img src="img/img/IMG_1673_c4e2a58fb236.jpg" alt="Bir-Hakeim - lecture lumière soleil 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1066"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1674_70b44f5ea103.avif"><source type="image/webp" srcset="img/img/IMG_1674_70b44f5ea103.webp"><img src="img/img/IMG_1674_70b44f5ea103.jpg" alt="Bir-Hakeim - lecture lumière soleil 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1053"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-3-1">
 <summary>📷 Photo 3.1 — Classique revisité, perspective comprimée colonnes + portes</summary>
@@ -417,11 +417,11 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Composition</strong> : Johan parfaitement inscrit géométriquement dans la perspective, tête à l'envers OU saut verticale</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1665_dc0316ed19b7.avif"><source type="image/webp" srcset="img/IMG_1665_dc0316ed19b7.webp"><img src="img/IMG_1665_dc0316ed19b7.jpg" alt="Bir-Hakeim 3.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1677_8172ef3cebbc.avif"><source type="image/webp" srcset="img/IMG_1677_8172ef3cebbc.webp"><img src="img/IMG_1677_8172ef3cebbc.jpg" alt="Bir-Hakeim 3.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1676_271e12254c24.avif"><source type="image/webp" srcset="img/IMG_1676_271e12254c24.webp"><img src="img/IMG_1676_271e12254c24.jpg" alt="Bir-Hakeim 3.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1665_dc0316ed19b7.avif"><source type="image/webp" srcset="img/img/IMG_1665_dc0316ed19b7.webp"><img src="img/img/IMG_1665_dc0316ed19b7.jpg" alt="Bir-Hakeim 3.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1677_8172ef3cebbc.avif"><source type="image/webp" srcset="img/img/IMG_1677_8172ef3cebbc.webp"><img src="img/img/IMG_1677_8172ef3cebbc.jpg" alt="Bir-Hakeim 3.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1676_271e12254c24.avif"><source type="image/webp" srcset="img/img/IMG_1676_271e12254c24.webp"><img src="img/img/IMG_1676_271e12254c24.jpg" alt="Bir-Hakeim 3.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -437,12 +437,12 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Action Johan</strong> : positions diverses à explorer</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
 <p><strong>Version A (3.2a — Tour Eiffel entière)</strong> :</p>
-<p><picture><source type="image/avif" srcset="img/IMG_1669_0a9870bb3aab.avif"><source type="image/webp" srcset="img/IMG_1669_0a9870bb3aab.webp"><img src="img/IMG_1669_0a9870bb3aab.jpg" alt="3.2a - Tour Eiffel entière" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1669_0a9870bb3aab.avif"><source type="image/webp" srcset="img/img/IMG_1669_0a9870bb3aab.webp"><img src="img/img/IMG_1669_0a9870bb3aab.jpg" alt="3.2a - Tour Eiffel entière" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 <p><strong>Version B (3.2b — Tour Eiffel coupée)</strong> :</p>
-<p><picture><source type="image/avif" srcset="img/IMG_1666_8d6007f979df.avif"><source type="image/webp" srcset="img/IMG_1666_8d6007f979df.webp"><img src="img/IMG_1666_8d6007f979df.jpg" alt="3.2b - Tour Eiffel coupée" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1666_8d6007f979df.avif"><source type="image/webp" srcset="img/img/IMG_1666_8d6007f979df.webp"><img src="img/img/IMG_1666_8d6007f979df.jpg" alt="3.2b - Tour Eiffel coupée" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 </div>
 </details>
 </details>
@@ -463,9 +463,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Composition</strong> : Johan s'avance dans renfoncement avec statue, structure différente, plus de recul</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1679_b1805c1c1ad5.avif"><source type="image/webp" srcset="img/IMG_1679_b1805c1c1ad5.webp"><img src="img/IMG_1679_b1805c1c1ad5.jpg" alt="3.4 - Îlot statue renfoncement" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1679_b1805c1c1ad5.avif"><source type="image/webp" srcset="img/img/IMG_1679_b1805c1c1ad5.webp"><img src="img/img/IMG_1679_b1805c1c1ad5.jpg" alt="3.4 - Îlot statue renfoncement" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 </div>
 </details>
 </details>
@@ -478,9 +478,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Tête à l'envers</strong> : composition signature (Tour Eiffel + Johan tête en bas)</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1675_0f67836a0fbc.avif"><source type="image/webp" srcset="img/IMG_1675_0f67836a0fbc.webp"><img src="img/IMG_1675_0f67836a0fbc.jpg" alt="3.5 - Passerelle face Tour Eiffel" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1675_0f67836a0fbc.avif"><source type="image/webp" srcset="img/img/IMG_1675_0f67836a0fbc.webp"><img src="img/img/IMG_1675_0f67836a0fbc.jpg" alt="3.5 - Passerelle face Tour Eiffel" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -518,7 +518,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details><details class="spot" id="spot-4">
 <summary><strong>Spot 4 — Terrass&#x27;Hôtel</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Lun 22/06 19h00</span><span class="count-badge">7 photos</span></span></summary>
 <div class="body">
-<h3>🏨 SPOT 4 — TERRASS'HÔTEL</h3>
 <details class="overview-photos" id="ov-spot-4"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-1" class="photo-done" data-spot="4" aria-label="Photo 4.1 faite"></td><td class="ps-num"><a href="#photo-4-1">4.1</a></td><td><a href="#photo-4-1">Suspension toit vue plongée (Johan + rue + cimetière en dess</a></td><td class="ps-status">✅ ACTÉE (zone grise assumée)</td><td class="ps-focal">à arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-2" class="photo-done" data-spot="4" aria-label="Photo 4.2 faite"></td><td class="ps-num"><a href="#photo-4-2">4.2</a></td><td><a href="#photo-4-2">Empilement toits + Montmartre derrière</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">à arbitrer (probablement 35-50</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-3" class="photo-done" data-spot="4" aria-label="Photo 4.3 faite"></td><td class="ps-num"><a href="#photo-4-3">4.3</a></td><td><a href="#photo-4-3">Tour Eiffel + parvis Défense</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">à arbitrer (variations possibl</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-4" class="photo-done" data-spot="4" aria-label="Photo 4.4 faite"></td><td class="ps-num"><a href="#photo-4-4">4.4</a></td><td><a href="#photo-4-4">Tourelle centrale (Empire State / Spiderman) ⚠️ Zone grise</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">à arbitrer</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-5" class="photo-done" data-spot="4" aria-label="Photo 4.5 faite"></td><td class="ps-num"><a href="#photo-4-5">4.5</a></td><td><a href="#photo-4-5">Resto fenêtre : Johan marche sur rambarde direction toit FM</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-6" class="photo-done" data-spot="4" aria-label="Photo 4.6 faite"></td><td class="ps-num"><a href="#photo-4-6">4.6</a></td><td><a href="#photo-4-6">Vue depuis le bas de la rue</a></td><td class="ps-status">✅ ACTÉE (1-2 photos)</td><td class="ps-focal">35mm OU grand angle (voir tout</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-4-7" class="photo-done" data-spot="4" aria-label="Photo 4.7 faite"></td><td class="ps-num"><a href="#photo-4-7">4.7</a></td><td><a href="#photo-4-7">Suite lit lifestyle 🟡 WIP</a></td><td class="ps-status">🟡 WIP — pas tranchée mais idée</td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-4-counter" data-total="7">0/7 photos faites</div>
 </div></details>
@@ -539,8 +538,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </ul></div>
 </details>
 <details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(2 images)</span></summary>
-<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1694_1bebec748fa9.avif"><source type="image/webp" srcset="img/IMG_1694_1bebec748fa9.webp"><img src="img/IMG_1694_1bebec748fa9.jpg" alt="Terrass&#x27;Hôtel - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1080"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1695_59d8b76c02fa.avif"><source type="image/webp" srcset="img/IMG_1695_59d8b76c02fa.webp"><img src="img/IMG_1695_59d8b76c02fa.jpg" alt="Terrass&#x27;Hôtel - vue globale" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p></div>
+<div class="body"><p><picture><source type="image/avif" srcset="img/img/IMG_1694_1bebec748fa9.avif"><source type="image/webp" srcset="img/img/IMG_1694_1bebec748fa9.webp"><img src="img/img/IMG_1694_1bebec748fa9.jpg" alt="Terrass&#x27;Hôtel - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1080"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1695_59d8b76c02fa.avif"><source type="image/webp" srcset="img/img/IMG_1695_59d8b76c02fa.webp"><img src="img/img/IMG_1695_59d8b76c02fa.jpg" alt="Terrass&#x27;Hôtel - vue globale" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-4-1">
 <summary>📷 Photo 4.1 — Suspension toit vue plongée (Johan + rue + cimetière en dessous) ⚠️ Zone grise (dangereux)</summary>
@@ -582,10 +581,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Focale</strong> : à arbitrer</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_0725_a0c4e39b5d51.avif"><source type="image/webp" srcset="img/IMG_0725_a0c4e39b5d51.webp"><img src="img/IMG_0725_a0c4e39b5d51.jpg" alt="4.4 - Tourelle - ref Johan 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_0729_34a920e2d849.avif"><source type="image/webp" srcset="img/IMG_0729_34a920e2d849.webp"><img src="img/IMG_0729_34a920e2d849.jpg" alt="4.4 - Tourelle - ref Johan 2" loading="lazy" decoding="async" class="shoot-img" width="914" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_0725_a0c4e39b5d51.avif"><source type="image/webp" srcset="img/img/IMG_0725_a0c4e39b5d51.webp"><img src="img/img/IMG_0725_a0c4e39b5d51.jpg" alt="4.4 - Tourelle - ref Johan 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_0729_34a920e2d849.avif"><source type="image/webp" srcset="img/img/IMG_0729_34a920e2d849.webp"><img src="img/img/IMG_0729_34a920e2d849.jpg" alt="4.4 - Tourelle - ref Johan 2" loading="lazy" decoding="async" class="shoot-img" width="914" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -601,11 +600,11 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Photo 4.5bis</strong> : variations dans le restaurant — autres murets et endroits exploitables</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1700_23668a32435a.avif"><source type="image/webp" srcset="img/IMG_1700_23668a32435a.webp"><img src="img/IMG_1700_23668a32435a.jpg" alt="4.5 - Resto fenêtre - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1701_7d9373ead821.avif"><source type="image/webp" srcset="img/IMG_1701_7d9373ead821.webp"><img src="img/IMG_1701_7d9373ead821.jpg" alt="4.5 - Resto fenêtre - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1702_a818dff45aa8.avif"><source type="image/webp" srcset="img/IMG_1702_a818dff45aa8.webp"><img src="img/IMG_1702_a818dff45aa8.jpg" alt="4.5 - Resto fenêtre - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1700_23668a32435a.avif"><source type="image/webp" srcset="img/img/IMG_1700_23668a32435a.webp"><img src="img/img/IMG_1700_23668a32435a.jpg" alt="4.5 - Resto fenêtre - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1701_7d9373ead821.avif"><source type="image/webp" srcset="img/img/IMG_1701_7d9373ead821.webp"><img src="img/img/IMG_1701_7d9373ead821.jpg" alt="4.5 - Resto fenêtre - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1702_a818dff45aa8.avif"><source type="image/webp" srcset="img/img/IMG_1702_a818dff45aa8.webp"><img src="img/img/IMG_1702_a818dff45aa8.jpg" alt="4.5 - Resto fenêtre - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 </div>
 </details>
 </details>
@@ -619,9 +618,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Timing</strong> : début de session, façade encore éclairée</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1704_524bea870c9c.avif"><source type="image/webp" srcset="img/IMG_1704_524bea870c9c.webp"><img src="img/IMG_1704_524bea870c9c.jpg" alt="4.6 - Vue depuis le bas de la rue" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1704_524bea870c9c.avif"><source type="image/webp" srcset="img/img/IMG_1704_524bea870c9c.webp"><img src="img/img/IMG_1704_524bea870c9c.jpg" alt="4.6 - Vue depuis le bas de la rue" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>

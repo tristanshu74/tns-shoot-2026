@@ -93,7 +93,10 @@ nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
 nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
 nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
 nav.toc li > .day-line a{display:inline}
-nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc li small{color:var(--muted);font-size:.85em;margin-left:8px;display:inline-block}
+nav.toc li > .day-line strong,details.toc li > a strong{margin-right:4px}
+details.toc li > a{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+details.toc li > a small{margin-left:0}
 nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
 nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
 nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
@@ -159,7 +162,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <header class="day-hd"><h1><span class="chip chip-day" style="background:#c0392b">J4</span> J4 — Jeudi 25 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(2)</span></summary><div class="body"><ul><li><a href="#spot-10"><strong>Spot 10 — Bateau</strong><small>🕒 Jeu 25/06 05h-08h</small></a></li><li><a href="#spot-11"><strong>Spot 11 — Châtelet</strong><small>🕒 Jeu 25/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-10">
 <summary><strong>Spot 10 — Bateau</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Jeu 25/06 05h-08h</span><span class="count-badge">2 photos</span></span></summary>
 <div class="body">
-<h3>🚤 SPOT 10 — BATEAU (zone Debilly ↔ Bir-Hakeim uniquement)</h3>
 <details class="overview-photos" id="ov-spot-10"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-10-1" class="photo-done" data-spot="10" aria-label="Photo 10.1 faite"></td><td class="ps-num"><a href="#photo-10-1">10.1</a></td><td><a href="#photo-10-1">Travelling quais</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-10-2" class="photo-done" data-spot="10" aria-label="Photo 10.2 faite"></td><td class="ps-num"><a href="#photo-10-2">10.2</a></td><td><a href="#photo-10-2">Portrait Johan sur pont du bateau</a></td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-10-counter" data-total="2">0/2 photos faites</div>
 </div></details>
@@ -211,7 +213,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details><details class="spot" id="spot-11">
 <summary><strong>Spot 11 — Châtelet</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Jeu 25/06 20h00</span><span class="count-badge">5 photos</span></span></summary>
 <div class="body">
-<h3>🎭 SPOT 11 — THÉÂTRE DU CHÂTELET</h3>
 <details class="overview-photos" id="ov-spot-11"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-1" class="photo-done" data-spot="11" aria-label="Photo 11.1 faite"></td><td class="ps-num"><a href="#photo-11-1">11.1</a></td><td><a href="#photo-11-1">Depuis quai Seine en face : télé toit du théâtre</a></td><td class="ps-focal">téléobjectif</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-2" class="photo-done" data-spot="11" aria-label="Photo 11.2 faite"></td><td class="ps-num"><a href="#photo-11-2">11.2</a></td><td><a href="#photo-11-2">Escalier dominant la scène</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-3" class="photo-done" data-spot="11" aria-label="Photo 11.3 faite"></td><td class="ps-num"><a href="#photo-11-3">11.3</a></td><td><a href="#photo-11-3">Passage entre 2 rambardes perpendiculaires + portraits</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-4" class="photo-done" data-spot="11" aria-label="Photo 11.4 faite"></td><td class="ps-num"><a href="#photo-11-4">11.4</a></td><td><a href="#photo-11-4">Johan sur rambarde verticale + perspective ciel</a></td><td class="ps-focal">du 70-200mm au 35mm = effets p</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-5" class="photo-done" data-spot="11" aria-label="Photo 11.5 faite"></td><td class="ps-num"><a href="#photo-11-5">11.5</a></td><td><a href="#photo-11-5">Échelle bord gauche en haut du toit</a></td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-11-counter" data-total="5">0/5 photos faites</div>
 </div></details>
@@ -229,7 +230,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </ul></div>
 </details>
 <details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
-<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1724_dc9176c7adb4.avif"><source type="image/webp" srcset="img/IMG_1724_dc9176c7adb4.webp"><img src="img/IMG_1724_dc9176c7adb4.jpg" alt="Châtelet - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1069"></picture></p></div>
+<div class="body"><p><picture><source type="image/avif" srcset="../img/img/IMG_1724_dc9176c7adb4.avif"><source type="image/webp" srcset="../img/img/IMG_1724_dc9176c7adb4.webp"><img src="../img/img/IMG_1724_dc9176c7adb4.jpg" alt="Châtelet - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1069"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-11-1">
 <summary>📷 Photo 11.1 — Depuis quai Seine en face : télé toit du théâtre</summary>
@@ -242,10 +243,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Note Tristan révisée</strong> : initialement pas chaud (« un peu anonyme, on voit pas Paris »), équipe l'a convaincu</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_0769_0be6f6abe4cc.avif"><source type="image/webp" srcset="img/IMG_0769_0be6f6abe4cc.webp"><img src="img/IMG_0769_0be6f6abe4cc.jpg" alt="11.1 - ref Johan 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="913"></picture>
-<picture><source type="image/avif" srcset="img/IMG_0770_d389e97c3097.avif"><source type="image/webp" srcset="img/IMG_0770_d389e97c3097.webp"><img src="img/IMG_0770_d389e97c3097.jpg" alt="11.1 - ref Johan 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="913"></picture></p>
+<p><picture><source type="image/avif" srcset="../img/img/IMG_0769_0be6f6abe4cc.avif"><source type="image/webp" srcset="../img/img/IMG_0769_0be6f6abe4cc.webp"><img src="../img/img/IMG_0769_0be6f6abe4cc.jpg" alt="11.1 - ref Johan 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="913"></picture>
+<picture><source type="image/avif" srcset="../img/img/IMG_0770_d389e97c3097.avif"><source type="image/webp" srcset="../img/img/IMG_0770_d389e97c3097.webp"><img src="../img/img/IMG_0770_d389e97c3097.jpg" alt="11.1 - ref Johan 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="913"></picture></p>
 </div>
 </details>
 </details>
@@ -290,9 +291,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Variantes</strong> : Spiderman / Empire State Building / autre action</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_0765_8e2a3ad2714e.avif"><source type="image/webp" srcset="img/IMG_0765_8e2a3ad2714e.webp"><img src="img/IMG_0765_8e2a3ad2714e.jpg" alt="11.5 - échelle bord gauche" loading="lazy" decoding="async" class="shoot-img" width="913" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="../img/img/IMG_0765_8e2a3ad2714e.avif"><source type="image/webp" srcset="../img/img/IMG_0765_8e2a3ad2714e.webp"><img src="../img/img/IMG_0765_8e2a3ad2714e.jpg" alt="11.5 - échelle bord gauche" loading="lazy" decoding="async" class="shoot-img" width="913" height="1600"></picture></p>
 </div>
 </details>
 </details>

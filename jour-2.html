@@ -93,7 +93,10 @@ nav.toc li{margin:6px 0;padding:8px 10px;border-radius:6px;background:var(--bg)}
 nav.toc li > .day-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35}
 nav.toc li a{color:var(--accent);text-decoration:none;font-weight:500}
 nav.toc li > .day-line a{display:inline}
-nav.toc li small{color:var(--muted);font-size:.85em}
+nav.toc li small{color:var(--muted);font-size:.85em;margin-left:8px;display:inline-block}
+nav.toc li > .day-line strong,details.toc li > a strong{margin-right:4px}
+details.toc li > a{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+details.toc li > a small{margin-left:0}
 nav.toc ul.spot-links{padding:4px 0 0 28px;margin:4px 0 0 0}
 nav.toc ul.spot-links li{margin:2px 0;padding:3px 6px;background:transparent;border:0;font-size:.92em}
 nav.toc ul.spot-links a{color:var(--accent);font-weight:400}
@@ -159,7 +162,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <header class="day-hd"><h1><span class="chip chip-day" style="background:#0a9a4f">J2</span> J2 — Mardi 23 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(2)</span></summary><div class="body"><ul><li><a href="#spot-5"><strong>Spot 5 — MPP</strong><small>🕒 Mar 23/06 10h-13h</small></a></li><li><a href="#spot-6"><strong>Spot 6 — Garage Abbeville</strong><small>🕒 Mar 23/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-5">
 <summary><strong>Spot 5 — MPP</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mar 23/06 10h-13h</span><span class="count-badge">6 photos</span></span></summary>
 <div class="body">
-<h3>🏛️ SPOT 5 — MPP</h3>
 <details class="overview-photos" id="ov-spot-5"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-1" class="photo-done" data-spot="5" aria-label="Photo 5.1 faite"></td><td class="ps-num"><a href="#photo-5-1">5.1</a></td><td><a href="#photo-5-1">Tunnel d&#x27;accès extérieur + flash contre-jour télé compressé</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">télé compression (à arbitrer 1</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-2" class="photo-done" data-spot="5" aria-label="Photo 5.2 faite"></td><td class="ps-num"><a href="#photo-5-2">5.2</a></td><td><a href="#photo-5-2">Tunnel ext variante sans flash</a></td><td class="ps-status">✅ ACTÉE (variante diversificat</td><td class="ps-focal">même angle que 5.1</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-3" class="photo-done" data-spot="5" aria-label="Photo 5.3 faite"></td><td class="ps-num"><a href="#photo-5-3">5.3</a></td><td><a href="#photo-5-3">Tunnel ext 35mm + flash mode grotte</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">35mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-4" class="photo-done" data-spot="5" aria-label="Photo 5.4 faite"></td><td class="ps-num"><a href="#photo-5-4">5.4</a></td><td><a href="#photo-5-4">Tunnel ext grand angle à ras du sol 🟡 WIP</a></td><td class="ps-status">🟡 WIP (2-3 angles à explorer)</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-5" class="photo-done" data-spot="5" aria-label="Photo 5.5 faite"></td><td class="ps-num"><a href="#photo-5-5">5.5</a></td><td><a href="#photo-5-5">Façade MPP escalier rambarde</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">à arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-6" class="photo-done" data-spot="5" aria-label="Photo 5.6 faite"></td><td class="ps-num"><a href="#photo-5-6">5.6</a></td><td><a href="#photo-5-6">Tunnel intérieur bâtiment perspective + porte 🟡 WIP</a></td><td class="ps-status">🟡 WIP (instinct Tristan : tunn</td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-5-counter" data-total="6">0/6 photos faites</div>
 </div></details>
@@ -178,7 +180,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </ul></div>
 </details>
 <details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
-<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1616_4c4564c6c875.avif"><source type="image/webp" srcset="img/IMG_1616_4c4564c6c875.webp"><img src="img/IMG_1616_4c4564c6c875.jpg" alt="MPP - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="738" height="1600"></picture></p></div>
+<div class="body"><p><picture><source type="image/avif" srcset="img/img/IMG_1616_4c4564c6c875.avif"><source type="image/webp" srcset="img/img/IMG_1616_4c4564c6c875.webp"><img src="img/img/IMG_1616_4c4564c6c875.jpg" alt="MPP - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="738" height="1600"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-5-1">
 <summary>📷 Photo 5.1 — Tunnel d'accès extérieur + flash contre-jour télé compressé</summary>
@@ -191,11 +193,11 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Effet</strong> : compression télé + débouchage flash arrière</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1617_188146609008.avif"><source type="image/webp" srcset="img/IMG_1617_188146609008.webp"><img src="img/IMG_1617_188146609008.jpg" alt="5.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1618_213b5a7118d0.avif"><source type="image/webp" srcset="img/IMG_1618_213b5a7118d0.webp"><img src="img/IMG_1618_213b5a7118d0.jpg" alt="5.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1619_35d5533e2a87.avif"><source type="image/webp" srcset="img/IMG_1619_35d5533e2a87.webp"><img src="img/IMG_1619_35d5533e2a87.jpg" alt="5.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1617_188146609008.avif"><source type="image/webp" srcset="img/img/IMG_1617_188146609008.webp"><img src="img/img/IMG_1617_188146609008.jpg" alt="5.1 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1618_213b5a7118d0.avif"><source type="image/webp" srcset="img/img/IMG_1618_213b5a7118d0.webp"><img src="img/img/IMG_1618_213b5a7118d0.jpg" alt="5.1 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1619_35d5533e2a87.avif"><source type="image/webp" srcset="img/img/IMG_1619_35d5533e2a87.webp"><img src="img/img/IMG_1619_35d5533e2a87.jpg" alt="5.1 - ref 3" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 </div>
 </details>
 </details>
@@ -216,9 +218,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Flash</strong> : oui — <em>« la structure de la pierre va chanter en mode grotte »</em></li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/Screenshot_b766a28fc4be.avif"><source type="image/webp" srcset="img/Screenshot_b766a28fc4be.webp"><img src="img/Screenshot_b766a28fc4be.jpg" alt="5.3 - mode grotte" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1065"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/Screenshot_b766a28fc4be.avif"><source type="image/webp" srcset="img/img/Screenshot_b766a28fc4be.webp"><img src="img/img/Screenshot_b766a28fc4be.jpg" alt="5.3 - mode grotte" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1065"></picture></p>
 </div>
 </details>
 </details>
@@ -239,10 +241,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Focale</strong> : à arbitrer terrain</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1620_54358b2a6079.avif"><source type="image/webp" srcset="img/IMG_1620_54358b2a6079.webp"><img src="img/IMG_1620_54358b2a6079.jpg" alt="5.5 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1635_13b9044adfed.avif"><source type="image/webp" srcset="img/IMG_1635_13b9044adfed.webp"><img src="img/IMG_1635_13b9044adfed.jpg" alt="5.5 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1620_54358b2a6079.avif"><source type="image/webp" srcset="img/img/IMG_1620_54358b2a6079.webp"><img src="img/img/IMG_1620_54358b2a6079.jpg" alt="5.5 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1635_13b9044adfed.avif"><source type="image/webp" srcset="img/img/IMG_1635_13b9044adfed.webp"><img src="img/img/IMG_1635_13b9044adfed.jpg" alt="5.5 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -255,10 +257,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Note</strong> : refaire/varier ce qu'on a fait dans tunnel extérieur</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Références 📷📷</summary>
+<summary>🖼️ Références 📷📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1626_42993bed356f.avif"><source type="image/webp" srcset="img/IMG_1626_42993bed356f.webp"><img src="img/IMG_1626_42993bed356f.jpg" alt="5.6 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
-<picture><source type="image/avif" srcset="img/IMG_1624_aceb0b262a29.avif"><source type="image/webp" srcset="img/IMG_1624_aceb0b262a29.webp"><img src="img/IMG_1624_aceb0b262a29.jpg" alt="5.6 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_1626_42993bed356f.avif"><source type="image/webp" srcset="img/img/IMG_1626_42993bed356f.webp"><img src="img/img/IMG_1626_42993bed356f.jpg" alt="5.6 - ref 1" loading="lazy" decoding="async" class="shoot-img" width="1200" height="1600"></picture>
+<picture><source type="image/avif" srcset="img/img/IMG_1624_aceb0b262a29.avif"><source type="image/webp" srcset="img/img/IMG_1624_aceb0b262a29.webp"><img src="img/img/IMG_1624_aceb0b262a29.jpg" alt="5.6 - ref 2" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1200"></picture></p>
 </div>
 </details>
 </details>
@@ -274,7 +276,6 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details><details class="spot" id="spot-6">
 <summary><strong>Spot 6 — Garage Abbeville</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mar 23/06 20h00</span><span class="count-badge">3 photos</span></span></summary>
 <div class="body">
-<h3>🅿️ SPOT 6 — GARAGE D'ABBEVILLE</h3>
 <details class="overview-photos" id="ov-spot-6"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-6-1" class="photo-done" data-spot="6" aria-label="Photo 6.1 faite"></td><td class="ps-num"><a href="#photo-6-1">6.1</a></td><td><a href="#photo-6-1">Silhouettes télé Tour Eiffel / Montmartre depuis sommet park</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">téléobjectif (200mm+)</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-6-2" class="photo-done" data-spot="6" aria-label="Photo 6.2 faite"></td><td class="ps-num"><a href="#photo-6-2">6.2</a></td><td><a href="#photo-6-2">Enchevêtrement de toits (transition vers toit face Tour Eiff</a></td><td class="ps-status">🟡 WIP — décision Tristan à pre</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-6-3" class="photo-done" data-spot="6" aria-label="Photo 6.3 faite"></td><td class="ps-num"><a href="#photo-6-3">6.3</a></td><td><a href="#photo-6-3">Saut dévers parking → boucle voitures</a></td><td class="ps-status">✅ ACTÉE (2 axes)</td><td class="ps-focal">grand angle</td></tr></tbody></table><div class="done-counter" id="spot-6-counter" data-total="3">0/3 photos faites</div>
 </div></details>
@@ -300,9 +301,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Lumière</strong> : ombres chinoises sur fond ciel coucher de soleil</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_0734_c795d0370bbc.avif"><source type="image/webp" srcset="img/IMG_0734_c795d0370bbc.webp"><img src="img/IMG_0734_c795d0370bbc.jpg" alt="6.1 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="913" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_0734_c795d0370bbc.avif"><source type="image/webp" srcset="img/img/IMG_0734_c795d0370bbc.webp"><img src="img/img/IMG_0734_c795d0370bbc.jpg" alt="6.1 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="913" height="1600"></picture></p>
 </div>
 </details>
 </details>
@@ -317,9 +318,9 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Note importante</strong> : <em>« on pourra pas le refaire 3-4 fois, il faut le shooter à ce moment-là »</em> — pas de rejeu possible</li>
 </ul>
 <details class="inspi">
-<summary>🖼️ 🖼️ Référence 📷</summary>
+<summary>🖼️ Référence 📷</summary>
 <div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_0738_b6ce7095e78a.avif"><source type="image/webp" srcset="img/IMG_0738_b6ce7095e78a.webp"><img src="img/IMG_0738_b6ce7095e78a.jpg" alt="6.2 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="914" height="1600"></picture></p>
+<p><picture><source type="image/avif" srcset="img/img/IMG_0738_b6ce7095e78a.avif"><source type="image/webp" srcset="img/img/IMG_0738_b6ce7095e78a.webp"><img src="img/img/IMG_0738_b6ce7095e78a.jpg" alt="6.2 - ref Johan" loading="lazy" decoding="async" class="shoot-img" width="914" height="1600"></picture></p>
 </div>
 </details>
 </details>
