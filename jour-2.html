@@ -129,12 +129,15 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 @media(max-width:600px){.dashboard--compact{font-size:.85em}.dashboard--compact .stat-card{padding:5px 8px}}
 
 /* MODE EQUIPE — minimalist links (no blue, no underline by default) */
+body.mode-equipe a:not(.maps-crumb):not(.chip):not(.btn-maps){color:inherit;text-decoration:none;font-weight:500}
+body.mode-equipe details a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
-/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
-body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+/* Souligné UNIQUEMENT dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a,
+body.mode-equipe #planning-overview a{color:inherit!important;text-decoration:underline!important;text-decoration-color:var(--muted)!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -154,74 +157,14 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <main>
 <a id="top"></a>
 <header class="day-hd"><h1><span class="chip chip-day" style="background:#0a9a4f">J2</span> J2 — Mardi 23 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-3.html">J3</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(2)</span></summary><div class="body"><ul><li><a href="#spot-5"><strong>Spot 5 — MPP</strong><small>🕒 Mar 23/06 10h-13h</small></a></li><li><a href="#spot-6"><strong>Spot 6 — Garage Abbeville</strong><small>🕒 Mar 23/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-5">
-<summary><strong>Spot 5 — MPP</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mar 23/06 10h-13h</span> <span class="count-badge">6 photos</span> </span></summary>
+<summary><strong>Spot 5 — MPP</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mar 23/06 10h-13h</span><span class="count-badge">6 photos</span></span></summary>
 <div class="body">
 <h3>🏛️ SPOT 5 — MPP</h3>
-<details class="overview-photos" id="ov-spot-5" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Statut</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-5-1" class="photo-done" data-spot="5" aria-label="Photo 5.1 faite"></td>
-<td class="ps-num"><a href="#photo-5-1">5.1</a></td>
-<td><a href="#photo-5-1">Tunnel d&#x27;accès extérieur + flash contre-jour télé compressé</a></td>
-<td class="ps-status">✅ ACTÉE</td>
-<td class="ps-focal">télé compression (à arbitrer 1</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-5-2" class="photo-done" data-spot="5" aria-label="Photo 5.2 faite"></td>
-<td class="ps-num"><a href="#photo-5-2">5.2</a></td>
-<td><a href="#photo-5-2">Tunnel ext variante sans flash</a></td>
-<td class="ps-status">✅ ACTÉE (variante diversificat</td>
-<td class="ps-focal">même angle que 5.1</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-5-3" class="photo-done" data-spot="5" aria-label="Photo 5.3 faite"></td>
-<td class="ps-num"><a href="#photo-5-3">5.3</a></td>
-<td><a href="#photo-5-3">Tunnel ext 35mm + flash mode grotte</a></td>
-<td class="ps-status">✅ ACTÉE</td>
-<td class="ps-focal">35mm</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-5-4" class="photo-done" data-spot="5" aria-label="Photo 5.4 faite"></td>
-<td class="ps-num"><a href="#photo-5-4">5.4</a></td>
-<td><a href="#photo-5-4">Tunnel ext grand angle à ras du sol 🟡 WIP</a></td>
-<td class="ps-status">🟡 WIP (2-3 angles à explorer)</td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-5-5" class="photo-done" data-spot="5" aria-label="Photo 5.5 faite"></td>
-<td class="ps-num"><a href="#photo-5-5">5.5</a></td>
-<td><a href="#photo-5-5">Façade MPP escalier rambarde</a></td>
-<td class="ps-status">✅ ACTÉE</td>
-<td class="ps-focal">à arbitrer terrain</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-5-6" class="photo-done" data-spot="5" aria-label="Photo 5.6 faite"></td>
-<td class="ps-num"><a href="#photo-5-6">5.6</a></td>
-<td><a href="#photo-5-6">Tunnel intérieur bâtiment perspective + porte 🟡 WIP</a></td>
-<td class="ps-status">🟡 WIP (instinct Tristan : tunn</td>
-<td class="ps-focal">—</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-5-counter" data-total="6">0/6 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(8 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : ☀️ <strong>23/06 10H00 → 13H00</strong> (intérieur + ombre, lumière peu critique)
+<details class="overview-photos" id="ov-spot-5"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-1" class="photo-done" data-spot="5" aria-label="Photo 5.1 faite"></td><td class="ps-num"><a href="#photo-5-1">5.1</a></td><td><a href="#photo-5-1">Tunnel d&#x27;accès extérieur + flash contre-jour télé compressé</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">télé compression (à arbitrer 1</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-2" class="photo-done" data-spot="5" aria-label="Photo 5.2 faite"></td><td class="ps-num"><a href="#photo-5-2">5.2</a></td><td><a href="#photo-5-2">Tunnel ext variante sans flash</a></td><td class="ps-status">✅ ACTÉE (variante diversificat</td><td class="ps-focal">même angle que 5.1</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-3" class="photo-done" data-spot="5" aria-label="Photo 5.3 faite"></td><td class="ps-num"><a href="#photo-5-3">5.3</a></td><td><a href="#photo-5-3">Tunnel ext 35mm + flash mode grotte</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">35mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-4" class="photo-done" data-spot="5" aria-label="Photo 5.4 faite"></td><td class="ps-num"><a href="#photo-5-4">5.4</a></td><td><a href="#photo-5-4">Tunnel ext grand angle à ras du sol 🟡 WIP</a></td><td class="ps-status">🟡 WIP (2-3 angles à explorer)</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-5" class="photo-done" data-spot="5" aria-label="Photo 5.5 faite"></td><td class="ps-num"><a href="#photo-5-5">5.5</a></td><td><a href="#photo-5-5">Façade MPP escalier rambarde</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">à arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-5-6" class="photo-done" data-spot="5" aria-label="Photo 5.6 faite"></td><td class="ps-num"><a href="#photo-5-6">5.6</a></td><td><a href="#photo-5-6">Tunnel intérieur bâtiment perspective + porte 🟡 WIP</a></td><td class="ps-status">🟡 WIP (instinct Tristan : tunn</td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-5-counter" data-total="6">0/6 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(8 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : ☀️ <strong>23/06 10H00 → 13H00</strong> (intérieur + ombre, lumière peu critique)
 📍 <strong><a href="https://maps.app.goo.gl/Cd6eb6Pw2vzurwwm6">Google Maps — MPP (Médiathèque du patrimoine et de la photographie)</a></strong><br />
 📮 <em>Fort de Saint-Cyr — 12-14 Rue du Fort de Saint-Cyr, 78390 Montigny-le-Bretonneux</em> ✅ adresse confirmée Tristan</p>
 <ul>
@@ -232,14 +175,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>1ʳᵉ semaine juillet équipe japonaise</strong> → re-shooter SANS flash, tethering ordi + démo performance ISO Fuji</li>
 <li><strong>Flash</strong> : oui</li>
 <li><strong>Repérage 21/06 avec Mathurin</strong> : ❌ Non — pas de repérage MPP avec Mathurin</li>
-</ul>
-</div>
+</ul></div>
 </details>
-<details class="light">
-<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
-<div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1616_4c4564c6c875.avif"><source type="image/webp" srcset="img/IMG_1616_4c4564c6c875.webp"><img src="img/IMG_1616_4c4564c6c875.jpg" alt="MPP - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="738" height="1600"></picture></p>
-</div>
+<details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1616_4c4564c6c875.avif"><source type="image/webp" srcset="img/IMG_1616_4c4564c6c875.webp"><img src="img/IMG_1616_4c4564c6c875.jpg" alt="MPP - lecture lumière" loading="lazy" decoding="async" class="shoot-img" width="738" height="1600"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-5-1">
 <summary>📷 Photo 5.1 — Tunnel d'accès extérieur + flash contre-jour télé compressé</summary>
@@ -331,55 +270,16 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li>Workflow : trépied + ordi + tethering câble (pas wireless car contrôle qualité full)</li>
 </ul>
 <hr />
-<p></div>
-</details></p><details class="spot" id="spot-6">
-<summary><strong>Spot 6 — Garage Abbeville</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mar 23/06 20h00</span> <span class="count-badge">3 photos</span> </span></summary>
+</div>
+</details><details class="spot" id="spot-6">
+<summary><strong>Spot 6 — Garage Abbeville</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mar 23/06 20h00</span><span class="count-badge">3 photos</span></span></summary>
 <div class="body">
 <h3>🅿️ SPOT 6 — GARAGE D'ABBEVILLE</h3>
-<details class="overview-photos" id="ov-spot-6" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Statut</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-6-1" class="photo-done" data-spot="6" aria-label="Photo 6.1 faite"></td>
-<td class="ps-num"><a href="#photo-6-1">6.1</a></td>
-<td><a href="#photo-6-1">Silhouettes télé Tour Eiffel / Montmartre depuis sommet park</a></td>
-<td class="ps-status">✅ ACTÉE</td>
-<td class="ps-focal">téléobjectif (200mm+)</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-6-2" class="photo-done" data-spot="6" aria-label="Photo 6.2 faite"></td>
-<td class="ps-num"><a href="#photo-6-2">6.2</a></td>
-<td><a href="#photo-6-2">Enchevêtrement de toits (transition vers toit face Tour Eiff</a></td>
-<td class="ps-status">🟡 WIP — décision Tristan à pre</td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-6-3" class="photo-done" data-spot="6" aria-label="Photo 6.3 faite"></td>
-<td class="ps-num"><a href="#photo-6-3">6.3</a></td>
-<td><a href="#photo-6-3">Saut dévers parking → boucle voitures</a></td>
-<td class="ps-status">✅ ACTÉE (2 axes)</td>
-<td class="ps-focal">grand angle</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-6-counter" data-total="3">0/3 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(6 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : 🌇 <strong>23/06 20H00 → 23H00</strong> (coucher de soleil)
+<details class="overview-photos" id="ov-spot-6"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-6-1" class="photo-done" data-spot="6" aria-label="Photo 6.1 faite"></td><td class="ps-num"><a href="#photo-6-1">6.1</a></td><td><a href="#photo-6-1">Silhouettes télé Tour Eiffel / Montmartre depuis sommet park</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">téléobjectif (200mm+)</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-6-2" class="photo-done" data-spot="6" aria-label="Photo 6.2 faite"></td><td class="ps-num"><a href="#photo-6-2">6.2</a></td><td><a href="#photo-6-2">Enchevêtrement de toits (transition vers toit face Tour Eiff</a></td><td class="ps-status">🟡 WIP — décision Tristan à pre</td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-6-3" class="photo-done" data-spot="6" aria-label="Photo 6.3 faite"></td><td class="ps-num"><a href="#photo-6-3">6.3</a></td><td><a href="#photo-6-3">Saut dévers parking → boucle voitures</a></td><td class="ps-status">✅ ACTÉE (2 axes)</td><td class="ps-focal">grand angle</td></tr></tbody></table><div class="done-counter" id="spot-6-counter" data-total="3">0/3 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(6 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : 🌇 <strong>23/06 20H00 → 23H00</strong> (coucher de soleil)
 📍 <strong><a href="https://www.google.com/maps?q=48.8783,2.3508">Google Maps — Garage d'Abbeville</a></strong><br />
 📮 <em>9 Rue d'Abbeville, 75009 Paris</em> <em>(lien à reconfirmer terrain — pas fourni cycle 92)</em></p>
 <ul>
@@ -388,8 +288,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Flash</strong> : oui</li>
 <li><strong>Accessoires</strong> : 🚰 <strong>Jerricane d'eau</strong> (effet reflet / flaque au sol au coucher du soleil — sol valorisé)</li>
 <li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu</li>
-</ul>
-</div>
+</ul></div>
 </details>
 <details class="photo-card" id="photo-6-1">
 <summary>📷 Photo 6.1 — Silhouettes télé Tour Eiffel / Montmartre depuis sommet parking</summary>
@@ -436,8 +335,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details>
 <p><strong>Récap Garage Abbeville = 4-5 photos</strong> (1 silhouette télé + 1-2 enchevêtrement + 2 saut grand angle) — Beauty : 3-4 · Perf : 1-2 · Zone grise transverse (toits non légaux Johan)</p>
 <hr />
-<p></div>
-</details></p>
+</div>
+</details>
 </main>
 <a href="#top" class="back" aria-label="Retour haut">▲</a>
 <script>

@@ -129,12 +129,15 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 @media(max-width:600px){.dashboard--compact{font-size:.85em}.dashboard--compact .stat-card{padding:5px 8px}}
 
 /* MODE EQUIPE — minimalist links (no blue, no underline by default) */
+body.mode-equipe a:not(.maps-crumb):not(.chip):not(.btn-maps){color:inherit;text-decoration:none;font-weight:500}
+body.mode-equipe details a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
-/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
-body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+/* Souligné UNIQUEMENT dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a,
+body.mode-equipe #planning-overview a{color:inherit!important;text-decoration:underline!important;text-decoration-color:var(--muted)!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -154,43 +157,14 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <main>
 <a id="top"></a>
 <header class="day-hd"><h1><span class="chip chip-day" style="background:#c0392b">J4</span> J4 — Jeudi 25 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-3.html">J3</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(2)</span></summary><div class="body"><ul><li><a href="#spot-10"><strong>Spot 10 — Bateau</strong><small>🕒 Jeu 25/06 05h-08h</small></a></li><li><a href="#spot-11"><strong>Spot 11 — Châtelet</strong><small>🕒 Jeu 25/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-10">
-<summary><strong>Spot 10 — Bateau</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Jeu 25/06 05h-08h</span> <span class="count-badge">2 photos</span> </span></summary>
+<summary><strong>Spot 10 — Bateau</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Jeu 25/06 05h-08h</span><span class="count-badge">2 photos</span></span></summary>
 <div class="body">
 <h3>🚤 SPOT 10 — BATEAU (zone Debilly ↔ Bir-Hakeim uniquement)</h3>
-<details class="overview-photos" id="ov-spot-10" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-10-1" class="photo-done" data-spot="10" aria-label="Photo 10.1 faite"></td>
-<td class="ps-num"><a href="#photo-10-1">10.1</a></td>
-<td><a href="#photo-10-1">Travelling quais</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-10-2" class="photo-done" data-spot="10" aria-label="Photo 10.2 faite"></td>
-<td class="ps-num"><a href="#photo-10-2">10.2</a></td>
-<td><a href="#photo-10-2">Portrait Johan sur pont du bateau</a></td>
-<td class="ps-focal">—</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-10-counter" data-total="2">0/2 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : 🌅 <strong>25/06 05H00 → 08H00</strong> (lever du soleil absolu) — couvre uniquement la zone <strong>Passerelle Debilly ↔ Pont de Bir-Hakeim</strong>
+<details class="overview-photos" id="ov-spot-10"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-10-1" class="photo-done" data-spot="10" aria-label="Photo 10.1 faite"></td><td class="ps-num"><a href="#photo-10-1">10.1</a></td><td><a href="#photo-10-1">Travelling quais</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-10-2" class="photo-done" data-spot="10" aria-label="Photo 10.2 faite"></td><td class="ps-num"><a href="#photo-10-2">10.2</a></td><td><a href="#photo-10-2">Portrait Johan sur pont du bateau</a></td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-10-counter" data-total="2">0/2 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : 🌅 <strong>25/06 05H00 → 08H00</strong> (lever du soleil absolu) — couvre uniquement la zone <strong>Passerelle Debilly ↔ Pont de Bir-Hakeim</strong>
 📍 <strong>Itinéraire fluvial Seine</strong> — <a href="https://maps.app.goo.gl/SL56F57yzobR4JzB7">Pont Bir-Hakeim</a> ↔ <a href="https://maps.app.goo.gl/GMfcG8vmFwSGJQA2A">Passerelle Debilly</a></p>
 <blockquote>
 <p>⚠️ <strong>Simone-de-Beauvoir = HORS scope bateau</strong> (trop loin en aval). Toutes les photos Simone-de-Beauvoir sont désormais dans le <strong>Spot 8 (session matinée 24/06)</strong> — sol uniquement.</p>
@@ -209,8 +183,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <ol>
 <li><strong>Passerelle Debilly</strong> — voir spot 7</li>
 <li><strong>Pont de Bir-Hakeim</strong> — bonus depuis l'eau (lumière magique vs 09h sol — voir spot 3)</li>
-</ol>
-</div>
+</ol></div>
 </details>
 <details class="photo-card" id="photo-10-1">
 <summary>📷 Photo 10.1 — Travelling quais (vidéo principalement)</summary>
@@ -234,63 +207,16 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <p><strong>Récap Bateau = 2 photos identifiées + bonus angles Debilly/Bir-Hakeim depuis l'eau</strong> (travelling quais + portrait pont + angles inédits sur Debilly &amp; Bir-Hakeim couverts par leurs spots respectifs §7 &amp; §3)
 <strong>Cross-réf DR L1 complet</strong> : <code>02- MEMORY_LOGS/DEEP_RESEARCH_REPORTS/2026-06-05_olympiades_simone_beauvoir_DR_L1.md</code></p>
 <hr />
-<p></div>
-</details></p><details class="spot" id="spot-11">
-<summary><strong>Spot 11 — Châtelet</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Jeu 25/06 20h00</span> <span class="count-badge">5 photos</span> </span></summary>
+</div>
+</details><details class="spot" id="spot-11">
+<summary><strong>Spot 11 — Châtelet</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Jeu 25/06 20h00</span><span class="count-badge">5 photos</span></span></summary>
 <div class="body">
 <h3>🎭 SPOT 11 — THÉÂTRE DU CHÂTELET</h3>
-<details class="overview-photos" id="ov-spot-11" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-11-1" class="photo-done" data-spot="11" aria-label="Photo 11.1 faite"></td>
-<td class="ps-num"><a href="#photo-11-1">11.1</a></td>
-<td><a href="#photo-11-1">Depuis quai Seine en face : télé toit du théâtre</a></td>
-<td class="ps-focal">téléobjectif</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-11-2" class="photo-done" data-spot="11" aria-label="Photo 11.2 faite"></td>
-<td class="ps-num"><a href="#photo-11-2">11.2</a></td>
-<td><a href="#photo-11-2">Escalier dominant la scène</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-11-3" class="photo-done" data-spot="11" aria-label="Photo 11.3 faite"></td>
-<td class="ps-num"><a href="#photo-11-3">11.3</a></td>
-<td><a href="#photo-11-3">Passage entre 2 rambardes perpendiculaires + portraits</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-11-4" class="photo-done" data-spot="11" aria-label="Photo 11.4 faite"></td>
-<td class="ps-num"><a href="#photo-11-4">11.4</a></td>
-<td><a href="#photo-11-4">Johan sur rambarde verticale + perspective ciel</a></td>
-<td class="ps-focal">du 70-200mm au 35mm = effets p</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-11-5" class="photo-done" data-spot="11" aria-label="Photo 11.5 faite"></td>
-<td class="ps-num"><a href="#photo-11-5">11.5</a></td>
-<td><a href="#photo-11-5">Échelle bord gauche en haut du toit</a></td>
-<td class="ps-focal">—</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-11-counter" data-total="5">0/5 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(7 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : 🌇 <strong>25/06 20H00 → 23H00</strong> (coucher de soleil)
+<details class="overview-photos" id="ov-spot-11"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-1" class="photo-done" data-spot="11" aria-label="Photo 11.1 faite"></td><td class="ps-num"><a href="#photo-11-1">11.1</a></td><td><a href="#photo-11-1">Depuis quai Seine en face : télé toit du théâtre</a></td><td class="ps-focal">téléobjectif</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-2" class="photo-done" data-spot="11" aria-label="Photo 11.2 faite"></td><td class="ps-num"><a href="#photo-11-2">11.2</a></td><td><a href="#photo-11-2">Escalier dominant la scène</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-3" class="photo-done" data-spot="11" aria-label="Photo 11.3 faite"></td><td class="ps-num"><a href="#photo-11-3">11.3</a></td><td><a href="#photo-11-3">Passage entre 2 rambardes perpendiculaires + portraits</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-4" class="photo-done" data-spot="11" aria-label="Photo 11.4 faite"></td><td class="ps-num"><a href="#photo-11-4">11.4</a></td><td><a href="#photo-11-4">Johan sur rambarde verticale + perspective ciel</a></td><td class="ps-focal">du 70-200mm au 35mm = effets p</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-11-5" class="photo-done" data-spot="11" aria-label="Photo 11.5 faite"></td><td class="ps-num"><a href="#photo-11-5">11.5</a></td><td><a href="#photo-11-5">Échelle bord gauche en haut du toit</a></td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-11-counter" data-total="5">0/5 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(7 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : 🌇 <strong>25/06 20H00 → 23H00</strong> (coucher de soleil)
 📍 <strong><a href="https://maps.app.goo.gl/JbPaf94gUbs3vQPQ9">Google Maps — Position Tristan face Théâtre du Châtelet</a></strong><br />
 📮 <em>4 Quai de la Mégisserie, 75001 Paris</em> (position depuis le quai en face — le théâtre est en face sur la rive opposée)</p>
 <ul>
@@ -300,14 +226,10 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Statut historique reconquête</strong> : Tristan voulait dropper après repérage technique restrictif → <strong>équipe (Cyril/Johan) l'a convaincu</strong> <em>« t'inquiète il y a plein de zones grises, plein d'angles »</em></li>
 <li><strong>Particularité commerciale</strong> : <strong>quasi JAMAIS shooté en photo</strong> = opportunité unique</li>
 <li><strong>Sécurité</strong> : cordistes obligatoires + lignes de vie partout</li>
-</ul>
-</div>
+</ul></div>
 </details>
-<details class="light">
-<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
-<div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1724_dc9176c7adb4.avif"><source type="image/webp" srcset="img/IMG_1724_dc9176c7adb4.webp"><img src="img/IMG_1724_dc9176c7adb4.jpg" alt="Châtelet - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1069"></picture></p>
-</div>
+<details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1724_dc9176c7adb4.avif"><source type="image/webp" srcset="img/IMG_1724_dc9176c7adb4.webp"><img src="img/IMG_1724_dc9176c7adb4.jpg" alt="Châtelet - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1069"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-11-1">
 <summary>📷 Photo 11.1 — Depuis quai Seine en face : télé toit du théâtre</summary>
@@ -378,8 +300,8 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <p>📌 <strong>Autres photos à explorer sur place</strong> — au-delà des 5 identifiées ci-dessus, il y a un certain nombre d'angles non listés à découvrir le jour J (25/06 soir). <strong>En particulier : vue Notre-Dame</strong> (seul spot du shoot avec Notre-Dame en arrière-plan, axe à exploiter à fond). À arbitrer terrain avec Cyril/Johan.</p>
 </blockquote>
 <p><strong>Récap Châtelet = 5 photos identifiées + N à explorer sur place (dont vue Notre-Dame)</strong> — Beauty : 4-5 · Perf : 2 · Lifestyle/Portrait : 1 (passage rambardes)</p>
-<p></div>
-</details></p>
+</div>
+</details>
 </main>
 <a href="#top" class="back" aria-label="Retour haut">▲</a>
 <script>

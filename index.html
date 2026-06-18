@@ -129,12 +129,15 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 @media(max-width:600px){.dashboard--compact{font-size:.85em}.dashboard--compact .stat-card{padding:5px 8px}}
 
 /* MODE EQUIPE — minimalist links (no blue, no underline by default) */
+body.mode-equipe a:not(.maps-crumb):not(.chip):not(.btn-maps){color:inherit;text-decoration:none;font-weight:500}
+body.mode-equipe details a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
-/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
-body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+/* Souligné UNIQUEMENT dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a,
+body.mode-equipe #planning-overview a{color:inherit!important;text-decoration:underline!important;text-decoration-color:var(--muted)!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 

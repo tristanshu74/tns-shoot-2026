@@ -129,12 +129,15 @@ td[data-day="J3"]::before{background:var(--day-3)} td[data-day="J4"]::before{bac
 @media(max-width:600px){.dashboard--compact{font-size:.85em}.dashboard--compact .stat-card{padding:5px 8px}}
 
 /* MODE EQUIPE — minimalist links (no blue, no underline by default) */
+body.mode-equipe a:not(.maps-crumb):not(.chip):not(.btn-maps){color:inherit;text-decoration:none;font-weight:500}
+body.mode-equipe details a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe .photo-strip a,
 body.mode-equipe nav.toc a,
 body.mode-equipe section.spot a:not(.maps-crumb):not(.chip):not(.btn-maps),
 body.mode-equipe header.day-hd .crumbs a:not(.maps-crumb){color:inherit;text-decoration:none;font-weight:600}
-/* Souligné garde uniquement dans le tableau planning (clair que c'est cliquable) */
-body.mode-equipe #planning-overview td a{color:inherit;text-decoration:underline;text-decoration-color:var(--muted);text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+/* Souligné UNIQUEMENT dans le tableau planning (clair que c'est cliquable) */
+body.mode-equipe #planning-overview td a,
+body.mode-equipe #planning-overview a{color:inherit!important;text-decoration:underline!important;text-decoration-color:var(--muted)!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important;font-weight:600}
 body.mode-equipe details.overview-photos>summary{font-size:.95em}
 body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;border:0}
 
@@ -154,55 +157,14 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <main>
 <a id="top"></a>
 <header class="day-hd"><h1><span class="chip chip-day" style="background:#d97706">J3</span> J3 — Mercredi 24 juin 2026</h1><div class="crumbs"><a href="jour-1.html">J1</a> · <a href="jour-2.html">J2</a> · <a href="jour-4.html">J4</a> · <a href="https://www.google.com/maps/d/viewer?mid=182TIz9C-rw6dHB5XZxs0EwUpwVp-PC8&usp=sharing" target="_blank" class="maps-crumb">🗺️ Maps</a></div></header><div class="toolbar"><button class="primary" onclick="toggleAll(true,'details.spot')">▾ Tout déplier (spots)</button><button onclick="toggleAll(false,'details')">▸ Tout replier</button><button onclick="resetState()" title="Purger état localStorage">🔄 État frais</button></div><details class="toc" id="toc-jour" open><summary>📋 Spots du jour <span class="count-badge">(3)</span></summary><div class="body"><ul><li><a href="#spot-7"><strong>Spot 7 — Passerelle Debilly</strong><small>🕒 Mer 24/06 04h30</small></a></li><li><a href="#spot-8"><strong>Spot 8 — Olympiades + Simone-de-Beauvoir</strong><small>🕒 Mer 24/06 08h30-12h</small></a></li><li><a href="#spot-9"><strong>Spot 9 — Parking Clauzel</strong><small>🕒 Mer 24/06 20h00</small></a></li></ul></div></details><details class="spot" id="spot-7">
-<summary><strong>Spot 7 — Passerelle Debilly</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mer 24/06 04h30</span> <span class="count-badge">4 photos</span> </span></summary>
+<summary><strong>Spot 7 — Passerelle Debilly</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mer 24/06 04h30</span><span class="count-badge">4 photos</span></span></summary>
 <div class="body">
 <h3>🌉 SPOT 7 — PASSERELLE DEBILLY</h3>
-<details class="overview-photos" id="ov-spot-7" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-7-1" class="photo-done" data-spot="7" aria-label="Photo 7.1 faite"></td>
-<td class="ps-num"><a href="#photo-7-1">7.1</a></td>
-<td><a href="#photo-7-1">Johan sur la structure du pont (illégal, zone grise) ⚠️ Zone</a></td>
-<td class="ps-focal">à arbitrer</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-7-2" class="photo-done" data-spot="7" aria-label="Photo 7.2 faite"></td>
-<td class="ps-num"><a href="#photo-7-2">7.2</a></td>
-<td><a href="#photo-7-2">Depuis les quais : Péniche + Pont + Tour Eiffel</a></td>
-<td class="ps-focal">à arbitrer</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-7-3" class="photo-done" data-spot="7" aria-label="Photo 7.3 faite"></td>
-<td class="ps-num"><a href="#photo-7-3">7.3</a></td>
-<td><a href="#photo-7-3">Depuis bateau</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-7-4" class="photo-done" data-spot="7" aria-label="Photo 7.4 faite"></td>
-<td class="ps-num"><a href="#photo-7-4">7.4</a></td>
-<td><a href="#photo-7-4">Tristan sur le pont (grand angle ou autre focale) 🟡 WIP</a></td>
-<td class="ps-focal">35mm grand angle OU autre foca</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-7-counter" data-total="4">0/4 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : 🌅 <strong>24/06 04H30 → 06H00</strong> (aube) — sauf si bateau le 25
+<details class="overview-photos" id="ov-spot-7"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-7-1" class="photo-done" data-spot="7" aria-label="Photo 7.1 faite"></td><td class="ps-num"><a href="#photo-7-1">7.1</a></td><td><a href="#photo-7-1">Johan sur la structure du pont (illégal, zone grise) ⚠️ Zone</a></td><td class="ps-focal">à arbitrer</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-7-2" class="photo-done" data-spot="7" aria-label="Photo 7.2 faite"></td><td class="ps-num"><a href="#photo-7-2">7.2</a></td><td><a href="#photo-7-2">Depuis les quais : Péniche + Pont + Tour Eiffel</a></td><td class="ps-focal">à arbitrer</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-7-3" class="photo-done" data-spot="7" aria-label="Photo 7.3 faite"></td><td class="ps-num"><a href="#photo-7-3">7.3</a></td><td><a href="#photo-7-3">Depuis bateau</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-7-4" class="photo-done" data-spot="7" aria-label="Photo 7.4 faite"></td><td class="ps-num"><a href="#photo-7-4">7.4</a></td><td><a href="#photo-7-4">Tristan sur le pont (grand angle ou autre focale) 🟡 WIP</a></td><td class="ps-focal">35mm grand angle OU autre foca</td></tr></tbody></table><div class="done-counter" id="spot-7-counter" data-total="4">0/4 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(5 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : 🌅 <strong>24/06 04H30 → 06H00</strong> (aube) — sauf si bateau le 25
 📍 <strong><a href="https://maps.app.goo.gl/GMfcG8vmFwSGJQA2A">Google Maps — Passerelle Debilly</a></strong><br />
 📮 <em>Passerelle Debilly, 75007 Paris</em></p>
 <ul>
@@ -210,8 +172,7 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <li><strong>Status spot</strong> : ⚠️ <strong>Zone grise</strong> — structure rappelle Tour Eiffel, Johan monte dessus (2 secondes, complètement interdit). Demande autorisation shoot mais SANS dire que Johan monte au-dessus.</li>
 <li><strong>Statut</strong> : <strong>décor MAJEUR Tour Eiffel</strong> — pendant Bir-Hakeim sans ses contraintes</li>
 <li><strong>Repérage 21/06 avec Mathurin</strong> : ✅ prévu (sol + simulation angles bateau depuis quais)</li>
-</ul>
-</div>
+</ul></div>
 </details>
 <details class="photo-card" id="photo-7-1">
 <summary>📷 Photo 7.1 — Johan sur la structure du pont (illégal, zone grise) ⚠️ Zone grise (dangereux)</summary>
@@ -279,93 +240,16 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 </details>
 <p><strong>Récap Debilly = 3-4 photos identifiées</strong> (zone grise + quais péniche + bateau + pont grand angle) — Beauty : 2-3 · Zone grise : 1</p>
 <hr />
-<p></div>
-</details></p><details class="spot" id="spot-8">
-<summary><strong>Spot 8 — Olympiades + Simone-de-Beauvoir</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mer 24/06 08h30-12h</span> <span class="count-badge">10 photos</span> </span></summary>
+</div>
+</details><details class="spot" id="spot-8">
+<summary><strong>Spot 8 — Olympiades + Simone-de-Beauvoir</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mer 24/06 08h30-12h</span><span class="count-badge">10 photos</span></span></summary>
 <div class="body">
 <h3>🏟️ SPOT 8 — DALLE DES OLYMPIADES Paris 13ᵉ <strong>+ Passerelle Simone-de-Beauvoir</strong> (session matinale couplée)</h3>
-<details class="overview-photos" id="ov-spot-8" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-1" class="photo-done" data-spot="8" aria-label="Photo 8.1 faite"></td>
-<td class="ps-num"><a href="#photo-8-1">8.1</a></td>
-<td><a href="#photo-8-1">Saut entre 2 murets dalle + tour arrière-plan</a></td>
-<td class="ps-focal">24-35mm wide</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-2" class="photo-done" data-spot="8" aria-label="Photo 8.2 faite"></td>
-<td class="ps-num"><a href="#photo-8-2">8.2</a></td>
-<td><a href="#photo-8-2">Escalier 56 marches contre-plongée</a></td>
-<td class="ps-focal">35mm</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-3" class="photo-done" data-spot="8" aria-label="Photo 8.3 faite"></td>
-<td class="ps-num"><a href="#photo-8-3">8.3</a></td>
-<td><a href="#photo-8-3">Sous passerelle béton + silhouette + lumière rasante</a></td>
-<td class="ps-focal">50mm</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-4" class="photo-done" data-spot="8" aria-label="Photo 8.4 faite"></td>
-<td class="ps-num"><a href="#photo-8-4">8.4</a></td>
-<td><a href="#photo-8-4">Pagode concave + tour + Johan équilibre muret</a></td>
-<td class="ps-focal">24mm</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-5" class="photo-done" data-spot="8" aria-label="Photo 8.5 faite"></td>
-<td class="ps-num"><a href="#photo-8-5">8.5</a></td>
-<td><a href="#photo-8-5">Top dalle plein cadre béton vide + Johan figure courbe</a></td>
-<td class="ps-focal">35mm</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-6" class="photo-done" data-spot="8" aria-label="Photo 8.6 faite"></td>
-<td class="ps-num"><a href="#photo-8-6">8.6</a></td>
-<td><a href="#photo-8-6">Lentille silhouette contre lever soleil ⚠️ idée IA non valid</a></td>
-<td class="ps-focal">à arbitrer terrain</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-7" class="photo-done" data-spot="8" aria-label="Photo 8.7 faite"></td>
-<td class="ps-num"><a href="#photo-8-7">8.7</a></td>
-<td><a href="#photo-8-7">Johan saut entre 2 niveaux + ciel ⚠️ idée IA non validée</a></td>
-<td class="ps-focal">grand angle</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-8" class="photo-done" data-spot="8" aria-label="Photo 8.8 faite"></td>
-<td class="ps-num"><a href="#photo-8-8">8.8</a></td>
-<td><a href="#photo-8-8">Profil passerelle entière + Johan run au centre ⚠️ idée IA n</a></td>
-<td class="ps-focal">50-85mm</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-9" class="photo-done" data-spot="8" aria-label="Photo 8.9 faite"></td>
-<td class="ps-num"><a href="#photo-8-9">8.9</a></td>
-<td><a href="#photo-8-9">Johan parkour rampes inclinées + reflets Seine ⚠️ idée IA no</a></td>
-<td class="ps-focal">à arbitrer terrain</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-8-10" class="photo-done" data-spot="8" aria-label="Photo 8.10 faite"></td>
-<td class="ps-num"><a href="#photo-8-10">8.10</a></td>
-<td><a href="#photo-8-10">Johan figure courbe arches métalliques ⚠️ idée IA non validé</a></td>
-<td class="ps-focal">grand angle</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-8-counter" data-total="10">0/10 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(13 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : 🌅 <strong>24/06 08H30 → 12H00</strong> (session matinée — couvre Olympiades + Simone-de-Beauvoir à côté)
+<details class="overview-photos" id="ov-spot-8"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-1" class="photo-done" data-spot="8" aria-label="Photo 8.1 faite"></td><td class="ps-num"><a href="#photo-8-1">8.1</a></td><td><a href="#photo-8-1">Saut entre 2 murets dalle + tour arrière-plan</a></td><td class="ps-focal">24-35mm wide</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-2" class="photo-done" data-spot="8" aria-label="Photo 8.2 faite"></td><td class="ps-num"><a href="#photo-8-2">8.2</a></td><td><a href="#photo-8-2">Escalier 56 marches contre-plongée</a></td><td class="ps-focal">35mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-3" class="photo-done" data-spot="8" aria-label="Photo 8.3 faite"></td><td class="ps-num"><a href="#photo-8-3">8.3</a></td><td><a href="#photo-8-3">Sous passerelle béton + silhouette + lumière rasante</a></td><td class="ps-focal">50mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-4" class="photo-done" data-spot="8" aria-label="Photo 8.4 faite"></td><td class="ps-num"><a href="#photo-8-4">8.4</a></td><td><a href="#photo-8-4">Pagode concave + tour + Johan équilibre muret</a></td><td class="ps-focal">24mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-5" class="photo-done" data-spot="8" aria-label="Photo 8.5 faite"></td><td class="ps-num"><a href="#photo-8-5">8.5</a></td><td><a href="#photo-8-5">Top dalle plein cadre béton vide + Johan figure courbe</a></td><td class="ps-focal">35mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-6" class="photo-done" data-spot="8" aria-label="Photo 8.6 faite"></td><td class="ps-num"><a href="#photo-8-6">8.6</a></td><td><a href="#photo-8-6">Lentille silhouette contre lever soleil ⚠️ idée IA non valid</a></td><td class="ps-focal">à arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-7" class="photo-done" data-spot="8" aria-label="Photo 8.7 faite"></td><td class="ps-num"><a href="#photo-8-7">8.7</a></td><td><a href="#photo-8-7">Johan saut entre 2 niveaux + ciel ⚠️ idée IA non validée</a></td><td class="ps-focal">grand angle</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-8" class="photo-done" data-spot="8" aria-label="Photo 8.8 faite"></td><td class="ps-num"><a href="#photo-8-8">8.8</a></td><td><a href="#photo-8-8">Profil passerelle entière + Johan run au centre ⚠️ idée IA n</a></td><td class="ps-focal">50-85mm</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-9" class="photo-done" data-spot="8" aria-label="Photo 8.9 faite"></td><td class="ps-num"><a href="#photo-8-9">8.9</a></td><td><a href="#photo-8-9">Johan parkour rampes inclinées + reflets Seine ⚠️ idée IA no</a></td><td class="ps-focal">à arbitrer terrain</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-8-10" class="photo-done" data-spot="8" aria-label="Photo 8.10 faite"></td><td class="ps-num"><a href="#photo-8-10">8.10</a></td><td><a href="#photo-8-10">Johan figure courbe arches métalliques ⚠️ idée IA non validé</a></td><td class="ps-focal">grand angle</td></tr></tbody></table><div class="done-counter" id="spot-8-counter" data-total="10">0/10 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(13 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : 🌅 <strong>24/06 08H30 → 12H00</strong> (session matinée — couvre Olympiades + Simone-de-Beauvoir à côté)
 📍 <strong><a href="https://maps.app.goo.gl/9GDsCqRHAQFgtQPt6">Google Maps — Dalle des Olympiades</a></strong><br />
 📮 <em>Olympiades Esplanade — 64 Rue du Javelot 8, 75013 Paris</em>
 📍 <strong><a href="https://maps.app.goo.gl/j44tppRdB45gjYWu7">Google Maps — Passerelle Simone-de-Beauvoir</a></strong><br />
@@ -391,8 +275,7 @@ Référence Annie Leibovitz × brutalisme Tadao Ando.</p>
 <li>Escaliers <strong>56 marches + 28 marches</strong> + passerelles béton + planters cassés</li>
 <li>Accès escalators entre 2 murs rouges</li>
 <li>Vieillissement + graffitis + ambiance science-fiction brutaliste 70s</li>
-</ul>
-</div>
+</ul></div>
 </details>
 <details class="photo-card" id="photo-8-1">
 <summary>📷 Photo 8.1 — Saut entre 2 murets dalle + tour arrière-plan</summary>
@@ -518,69 +401,16 @@ Les angles <strong>depuis bateau aube</strong> restent à faire le 25/06 (cf spo
 </ul>
 <p><strong>Cross-réf DR L1 complet</strong> : <code>02- MEMORY_LOGS/DEEP_RESEARCH_REPORTS/2026-06-05_olympiades_simone_beauvoir_DR_L1.md</code></p>
 <hr />
-<p></div>
-</details></p><details class="spot" id="spot-9">
-<summary><strong>Spot 9 — Parking Clauzel</strong> <span class="summary-meta"> <span class="chip chip-status">🕒 Mer 24/06 20h00</span> <span class="count-badge">6 photos</span> </span></summary>
+</div>
+</details><details class="spot" id="spot-9">
+<summary><strong>Spot 9 — Parking Clauzel</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Mer 24/06 20h00</span><span class="count-badge">6 photos</span></span></summary>
 <div class="body">
 <h3>🅿️ SPOT 9 — PARKING CLAUZEL</h3>
-<details class="overview-photos" id="ov-spot-9" open="open">
-<summary>📋 Vue d'ensemble — photos du spot</summary>
-<div class="body">
-<table class="photo-strip">
-<thead>
-<tr>
-<th>✓</th>
-<th>#</th>
-<th>Titre</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-9-1" class="photo-done" data-spot="9" aria-label="Photo 9.1 faite"></td>
-<td class="ps-num"><a href="#photo-9-1">9.1</a></td>
-<td><a href="#photo-9-1">Tourelle blanche d&#x27;accès parking</a></td>
-<td class="ps-focal">variations multiples</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-9-2" class="photo-done" data-spot="9" aria-label="Photo 9.2 faite"></td>
-<td class="ps-num"><a href="#photo-9-2">9.2</a></td>
-<td><a href="#photo-9-2">Coin parking petit muret + reflet flaques d&#x27;eau 🎯 KEY</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-9-3" class="photo-done" data-spot="9" aria-label="Photo 9.3 faite"></td>
-<td class="ps-num"><a href="#photo-9-3">9.3</a></td>
-<td><a href="#photo-9-3">Zone centrale en hauteur</a></td>
-<td class="ps-focal">grand angle privilégié</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-9-4" class="photo-done" data-spot="9" aria-label="Photo 9.4 faite"></td>
-<td class="ps-num"><a href="#photo-9-4">9.4</a></td>
-<td><a href="#photo-9-4">Suspension cour bâtiment (pendant Terrass&#x27;Hôtel 4.1) ⚠️ Zone</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-9-5" class="photo-done" data-spot="9" aria-label="Photo 9.5 faite"></td>
-<td class="ps-num"><a href="#photo-9-5">9.5</a></td>
-<td><a href="#photo-9-5">Zone bordure parking penché + horizon volontairement non res</a></td>
-<td class="ps-focal">—</td>
-</tr>
-<tr>
-<td class="ps-check"><input type="checkbox" id="check-photo-9-6" class="photo-done" data-spot="9" aria-label="Photo 9.6 faite"></td>
-<td class="ps-num"><a href="#photo-9-6">9.6</a></td>
-<td><a href="#photo-9-6">Cheminées toits mode Assassin&#x27;s Creed Portrait Beauty 🟡 WIP</a></td>
-<td class="ps-focal">—</td>
-</tr>
-</tbody>
-</table><div class="done-counter" id="spot-9-counter" data-total="6">0/6 photos faites</div>
-</details>
-</div>
-</details>
-<details class="brief">
-<summary>📋 Brief spot <span class="count-badge">(7 infos)</span></summary>
-<div class="body">
-<p><strong>Horaire planning</strong> : 🌇 <strong>24/06 20H00 → 23H00</strong> (coucher de soleil)
+<details class="overview-photos" id="ov-spot-9"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
+<table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-9-1" class="photo-done" data-spot="9" aria-label="Photo 9.1 faite"></td><td class="ps-num"><a href="#photo-9-1">9.1</a></td><td><a href="#photo-9-1">Tourelle blanche d&#x27;accès parking</a></td><td class="ps-focal">variations multiples</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-9-2" class="photo-done" data-spot="9" aria-label="Photo 9.2 faite"></td><td class="ps-num"><a href="#photo-9-2">9.2</a></td><td><a href="#photo-9-2">Coin parking petit muret + reflet flaques d&#x27;eau 🎯 KEY</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-9-3" class="photo-done" data-spot="9" aria-label="Photo 9.3 faite"></td><td class="ps-num"><a href="#photo-9-3">9.3</a></td><td><a href="#photo-9-3">Zone centrale en hauteur</a></td><td class="ps-focal">grand angle privilégié</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-9-4" class="photo-done" data-spot="9" aria-label="Photo 9.4 faite"></td><td class="ps-num"><a href="#photo-9-4">9.4</a></td><td><a href="#photo-9-4">Suspension cour bâtiment (pendant Terrass&#x27;Hôtel 4.1) ⚠️ Zone</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-9-5" class="photo-done" data-spot="9" aria-label="Photo 9.5 faite"></td><td class="ps-num"><a href="#photo-9-5">9.5</a></td><td><a href="#photo-9-5">Zone bordure parking penché + horizon volontairement non res</a></td><td class="ps-focal">—</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-9-6" class="photo-done" data-spot="9" aria-label="Photo 9.6 faite"></td><td class="ps-num"><a href="#photo-9-6">9.6</a></td><td><a href="#photo-9-6">Cheminées toits mode Assassin&#x27;s Creed Portrait Beauty 🟡 WIP</a></td><td class="ps-focal">—</td></tr></tbody></table><div class="done-counter" id="spot-9-counter" data-total="6">0/6 photos faites</div>
+</div></details>
+<details class="brief"><summary>📋 Brief spot <span class="count-badge">(7 infos)</span></summary>
+<div class="body"><p><strong>Horaire planning</strong> : 🌇 <strong>24/06 20H00 → 23H00</strong> (coucher de soleil)
 📍 <strong><a href="https://maps.app.goo.gl/L5rvtJyubsABzbeRA">Google Maps — Parking Clauzel</a></strong><br />
 📮 <em>Saint-Georges, 75009 Paris</em></p>
 <ul>
@@ -590,14 +420,10 @@ Les angles <strong>depuis bateau aube</strong> restent à faire le 25/06 (cf spo
 <li>🚰 <strong>REQUIS</strong> : jerricans d'eau + voir avec gardiens parking pour <strong>tuyau d'arrosage</strong> → reflets flaques (sol moche valorisé)</li>
 <li>🛡️ Pas dangereux (vs Terrass'Hôtel), liberté de déplacement grand angle ↔ télé</li>
 <li><strong>Doctrine</strong> : ramener beaucoup d'eau, créer les flaques nous-mêmes pour effet miroir</li>
-</ul>
-</div>
+</ul></div>
 </details>
-<details class="light">
-<summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
-<div class="body">
-<p><picture><source type="image/avif" srcset="img/IMG_1717_e675a9f22b5c.avif"><source type="image/webp" srcset="img/IMG_1717_e675a9f22b5c.webp"><img src="img/IMG_1717_e675a9f22b5c.jpg" alt="Clauzel - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1062"></picture></p>
-</div>
+<details class="light"><summary>🌅 Lecture lumière <span class="count-badge">(1 image)</span></summary>
+<div class="body"><p><picture><source type="image/avif" srcset="img/IMG_1717_e675a9f22b5c.avif"><source type="image/webp" srcset="img/IMG_1717_e675a9f22b5c.webp"><img src="img/IMG_1717_e675a9f22b5c.jpg" alt="Clauzel - lecture lumière coucher de soleil" loading="lazy" decoding="async" class="shoot-img" width="1600" height="1062"></picture></p></div>
 </details>
 <details class="photo-card" id="photo-9-1">
 <summary>📷 Photo 9.1 — Tourelle blanche d'accès parking</summary>
@@ -675,8 +501,8 @@ Les angles <strong>depuis bateau aube</strong> restent à faire le 25/06 (cf spo
 </blockquote>
 <p><strong>Récap Clauzel = 6 photos identifiées + N à explorer sur place</strong> — Beauty : 3-4 · Perf : 2 · Zone grise : 2 · Lifestyle : 1</p>
 <hr />
-<p></div>
-</details></p>
+</div>
+</details>
 </main>
 <a href="#top" class="back" aria-label="Retour haut">▲</a>
 <script>
