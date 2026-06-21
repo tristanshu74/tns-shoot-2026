@@ -426,7 +426,42 @@ body.mode-equipe a.maps-crumb,body.mode-equipe a.btn-maps{color:#fff!important;b
 <hr />
 </div>
 </details><details class="spot" id="spot-2">
-<summary><strong>Spot 2 — Passage Camoëns</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Lun 22/06 matin</span><span class="count-badge">2 photos</span></span></summary>
+<summary><strong>Spot 2 — Passage Camoëns</strong> <span class="summary-meta"><span class="chip chip-status">🕒 Lun 22/06 matin</span><span class="count-badge">2 photos</span></span></summary><div style="margin:8px 0"><a class="lr-pill" href="https://adobe.ly/3Spx0pg" target="_blank">📚 Refs Lightroom — Camoëns</a> <a class="lr-pill parcours" href="https://adobe.ly/3QBDIb7" target="_blank">📚 Refs Parcours</a></div>
+<div class="brief-final" style="background:rgba(217,119,6,.10);border:2px solid #d97706;border-radius:10px;padding:14px 16px;margin:14px 0">
+<h3 style="margin:0 0 8px;color:#d97706;font-size:1.05em">📋 Brief final 21 juin soir — 5 photos Camoëns <span style="font-weight:400;font-size:.85em">(ordre de shoot)</span></h3>
+<p style="margin:0 0 12px;font-size:.92em">⭐ = priorité. <a href="https://adobe.ly/3Spx0pg" target="_blank" style="color:#d97706;font-weight:600">📚 Voir refs Lightroom Camoëns</a></p>
+
+<details class="phf"><summary><input type="checkbox" class="phf-chk" data-id="cam-1"> <strong>1. Action escalier bas — Johan s'élance vu de derrière</strong> ⭐</summary><div class="body">Johan va sauter sur l'escalier du bas, prise de derrière. On le voit en train de s'élancer sur cette perspective archi-classique sur-shootée par les influenceuses. <strong>Notre angle = vue de dos = anti-cliché TikTok</strong>.</div></details>
+
+<details class="phf"><summary><input type="checkbox" class="phf-chk" data-id="cam-2"> <strong>2. Grand-angle depuis le bas — Johan tout-petit sur cornes statue</strong> ⭐</summary><div class="body">Photo prise depuis le bas au grand angle. Johan tout petit, s'inscrit sur les cornes de cette statue. <strong>Éventuellement flash derrière</strong>.</div></details>
+
+<details class="phf"><summary><input type="checkbox" class="phf-chk" data-id="cam-3"> <strong>3. Grand-angle dessous — Johan saute d'un mur à l'autre</strong> ⭐</summary><div class="body">Grand angle, vue dessous Johan en train de sauter d'un mur vers l'autre. <strong>Banger assuré si bien cadré</strong>.</div></details>
+
+<details class="phf"><summary><input type="checkbox" class="phf-chk" data-id="cam-4"> <strong>4. Variante 3 — saut mur à mur, autre angle</strong></summary><div class="body">Même action que photo 3, variante d'angle/timing.</div></details>
+
+<details class="phf"><summary><input type="checkbox" class="phf-chk" data-id="cam-5"> <strong>5. Variante 2 — Johan + statue, autre coloris/lumière</strong></summary><div class="body">Reprise de la photo 2 (Johan petit sur cornes statue), variante.</div></details>
+
+</div>
+
+<script>
+(function(){
+  const KEY='camoens-brief-checked';
+  const saved=JSON.parse(localStorage.getItem(KEY)||'{}');
+  document.querySelectorAll('.brief-final .phf-chk[data-id^="cam-"]').forEach(cb=>{
+    const id=cb.dataset.id;
+    if(saved[id]) cb.checked=true;
+    cb.addEventListener('change',()=>{
+      saved[id]=cb.checked;
+      localStorage.setItem(KEY,JSON.stringify(saved));
+      const s=cb.closest('summary');
+      if(s) s.style.opacity=cb.checked?'.5':'1';
+    });
+    const s=cb.closest('summary');
+    if(s && cb.checked) s.style.opacity='.5';
+  });
+})();
+</script>
+
 <div class="body">
 <details class="overview-photos" id="ov-spot-2"><summary>📋 Vue d'ensemble — photos du spot</summary><div class="body">
 <table class="photo-strip"><thead><tr><th>✓</th><th>#</th><th>Titre</th><th>Statut</th><th>Focale</th></tr></thead><tbody><tr><td class="ps-check"><input type="checkbox" id="check-photo-2-1" class="photo-done" data-spot="2" aria-label="Photo 2.1 faite"></td><td class="ps-num"><a href="#photo-2-1">2.1</a></td><td><a href="#photo-2-1">Saut perf escaliers (muret haut → muret bas) — 2 angles</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">grand angle 16-24mm probable (</td></tr><tr><td class="ps-check"><input type="checkbox" id="check-photo-2-2" class="photo-done" data-spot="2" aria-label="Photo 2.2 faite"></td><td class="ps-num"><a href="#photo-2-2">2.2</a></td><td><a href="#photo-2-2">Artigraphique hyperfocale depuis le bas</a></td><td class="ps-status">✅ ACTÉE</td><td class="ps-focal">35mm</td></tr></tbody></table><div class="done-counter" id="spot-2-counter" data-total="2">0/2 photos faites</div>
