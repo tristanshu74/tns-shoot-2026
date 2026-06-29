@@ -46,12 +46,25 @@ th{background:var(--code);font-weight:600;font-size:.85em;color:var(--muted);tex
 tr:last-child td{border-bottom:0}
 .placeholder{color:var(--muted);font-style:italic;font-size:.9em;padding:8px 0}
 .notes{font-size:.88em;color:var(--muted);margin-top:8px}
+.featured-list{list-style:none;padding:0;margin:0 0 16px}
+.featured-list li{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;margin:0 0 8px;font-size:1em;border:2px solid var(--accent)}
+.featured-list li.fc-final{background:rgba(30,111,191,.10);border-color:var(--cat1)}
+.featured-list li.fc-making{background:rgba(217,119,6,.10);border-color:var(--cat3)}
+.featured-list .fc-icon{font-size:1.15em;flex-shrink:0;line-height:1}
+.featured-list .fc-name{flex:1;font-weight:600;line-height:1.25}
+.featured-list li.fc-final .fc-name{color:var(--cat1)}
+.featured-list li.fc-making .fc-name{color:var(--cat3)}
+.featured-list a.gallery-link{display:inline-block;color:#fff!important;text-decoration:none;padding:7px 13px;border-radius:6px;font-size:.86em;font-weight:600;white-space:nowrap;flex-shrink:0}
+.featured-list li.fc-final a.gallery-link{background:var(--cat1)}
+.featured-list li.fc-making a.gallery-link{background:var(--cat3)}
+.featured-list a.gallery-link:hover{opacity:.85}
 @media(max-width:600px){
   body{font-size:15.5px}
-  ul.gallery-list li{flex-wrap:wrap}
-  ul.gallery-list .spot-name{flex:1 1 100%;order:2}
-  ul.gallery-list .day-chip{order:1}
-  ul.gallery-list a.gallery-link{order:3;margin-top:4px}
+  ul.gallery-list li{padding:9px 0;gap:8px}
+  ul.gallery-list .spot-name{font-size:.94em}
+  ul.gallery-list a.gallery-link{padding:6px 11px;font-size:.84em}
+  .featured-list li{padding:10px 12px}
+  .featured-list .fc-name{font-size:.96em}
 }
 </style>
 </head><body>
@@ -70,15 +83,18 @@ tr:last-child td{border-bottom:0}
 <section class="cat c1">
 <h2>1. Série Johan Tonnoir</h2>
 
-<div style="background:rgba(30,111,191,.12);border:2px solid var(--cat1);border-radius:10px;padding:12px 16px;margin:0 0 12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-<div style="flex:1;min-width:200px"><strong style="font-size:1.02em;color:var(--cat1)">⭐ Sélection finale</strong><div style="font-size:.85em;color:var(--muted);margin-top:2px">Sélection définitive toutes galeries confondues</div></div>
-<a class="gallery-link" href="https://adobe.ly/4eRrF1J" target="_blank">📚 Ouvrir</a>
-</div>
-
-<div style="background:rgba(30,111,191,.06);border:2px solid var(--cat1);border-radius:10px;padding:12px 16px;margin:0 0 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-<div style="flex:1;min-width:200px"><strong style="font-size:1.02em;color:var(--cat1)">🎬 Galerie making of + pack shots</strong><div style="font-size:.85em;color:var(--muted);margin-top:2px">Coulisses du shoot &amp; visuels matériel</div></div>
-<a class="gallery-link" href="https://adobe.ly/4vFv4rB" target="_blank">📚 Ouvrir</a>
-</div>
+<ul class="featured-list">
+<li class="fc-final">
+  <span class="fc-icon">⭐</span>
+  <span class="fc-name">Sélection finale</span>
+  <a class="gallery-link" href="https://adobe.ly/4eRrF1J" target="_blank">📚 Ouvrir</a>
+</li>
+<li class="fc-making">
+  <span class="fc-icon">🎬</span>
+  <span class="fc-name">Galerie making of + pack shots</span>
+  <a class="gallery-link" href="https://adobe.ly/4vFv4rB" target="_blank">📚 Ouvrir</a>
+</li>
+</ul>
 
 <ul class="gallery-list">
 
@@ -189,30 +205,6 @@ tr:last-child td{border-bottom:0}
 
 </div>
 </details>
-
-</section>
-
-<!-- ═══════════════ CATEGORIE 2 — IMAGES BOITIER ═══════════════ -->
-<section class="cat c2">
-<h2>2. Images boîtier</h2>
-
-<ul class="gallery-list">
-<li>
-  <span class="spot-name empty">— à compléter au fil de l'edit —</span>
-</li>
-</ul>
-
-</section>
-
-<!-- ═══════════════ CATEGORIE 3 — IMAGES PHOTOGRAPHE ═══════════════ -->
-<section class="cat c3">
-<h2>3. Images photographe</h2>
-
-<ul class="gallery-list">
-<li>
-  <span class="spot-name empty">— à compléter au fil de l'edit —</span>
-</li>
-</ul>
 
 </section>
 
