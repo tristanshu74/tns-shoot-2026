@@ -32,8 +32,8 @@ header.hero .sub{font-size:19px;line-height:1.45;color:var(--muted);font-weight:
 @media(max-width:780px){.gallery{grid-template-columns:1fr;gap:36px}}
 
 figure.photo{margin:0;display:flex;flex-direction:column;gap:16px}
-figure.photo .img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:var(--bg)}
-figure.photo .img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+figure.photo .img-wrap{position:relative;background:var(--bg)}
+figure.photo .img-wrap img{display:block;width:100%;height:auto}
 figure.photo .badge{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.62);color:#fff;backdrop-filter:saturate(180%) blur(10px);-webkit-backdrop-filter:saturate(180%) blur(10px);padding:6px 12px;border-radius:980px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;line-height:1;z-index:2}
 @media(prefers-color-scheme:light){figure.photo .badge{background:rgba(0,0,0,.7)}}
 
