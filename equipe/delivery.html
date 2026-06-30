@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="theme-color" content="#000000">
-<title>X-T6 Project · Tristan Shu × Fujifilm</title>
+<title>Mbappé Project · Tristan Shu × Fujifilm</title>
 <style>
 :root{
   --bg:#fff;--fg:#1d1d1f;--muted:#6e6e73;--accent:#1d1d1f;--accent-h:#000;
@@ -43,15 +43,13 @@ header.hero .sub{font-size:21px;line-height:1.4;color:var(--muted);font-weight:4
 .intro p strong{font-weight:600}
 
 /* Timeline */
-.timeline{padding:64px 0 32px}
-.timeline h2{font-size:32px;font-weight:600;letter-spacing:-.02em;text-align:center;margin-bottom:36px}
-.timeline-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:720px){.timeline-grid{grid-template-columns:1fr}}
-.timeline-item{background:var(--card);border-radius:18px;padding:24px 22px;text-align:center}
-.timeline-item .date{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;margin-bottom:8px;text-transform:uppercase}
-.timeline-item.late .date{color:var(--prog)}
-.timeline-item .label{font-size:16px;font-weight:500;line-height:1.4;color:var(--fg)}
-.timeline-item .note{font-size:13px;color:var(--muted);margin-top:6px}
+.timeline-compact{padding:32px 0 24px;border-top:.5px solid var(--line);border-bottom:.5px solid var(--line)}
+.cal-row{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.cal-cell{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:13px}
+.cal-cell .cal-date{font-weight:600;letter-spacing:-.01em;color:var(--muted);font-size:14px}
+.cal-cell.active .cal-date{color:var(--fg)}
+.cal-cell .cal-label{color:var(--muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+@media(max-width:600px){.cal-row{gap:24px;flex-direction:column}}
 
 /* Deliverables */
 .deliverables{padding:64px 0 32px}
@@ -108,8 +106,8 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
 <div class="wrap">
   <span class="brand">Tristan Shu</span>
   <span class="sep">·</span>
-  <span>X-T6 Project</span>
-  <span class="meta">Update June 30, 2026</span>
+  <span>Mbappé Project</span>
+  <span class="meta">Updated June 30 · 14:32</span>
 </div>
 </nav>
 
@@ -117,30 +115,15 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
 
 <header class="hero">
   <div class="eyebrow">Photographer Project · Confidential under embargo</div>
-  <h1>X-T6 by Tristan Shu</h1>
+  <h1>Mbappé Project</h1>
   <p class="sub">Director's selection by Tristan Shu — tracking the ten project assets defined in Fujifilm's project roadmap.</p>
 </header>
 
-<section class="intro">
-  <p>This page summarizes the current state of the <strong>ten deliverables</strong> defined for the X-T6 photographer project. Available galleries open directly in Lightroom Web Share. Video assets, X Story article and YouTube items will follow per the production calendar.</p>
-</section>
-
-<section class="timeline">
-  <h2>Production calendar</h2>
-  <div class="timeline-grid">
-    <div class="timeline-item late">
-      <div class="date">June 29 — V1</div>
-      <div class="label">Image Works and Lifestyle V1 due</div>
-      <div class="note">Delivered June 30 — 1 day late</div>
-    </div>
-    <div class="timeline-item">
-      <div class="date">July 6 — Finals</div>
-      <div class="label">Final stills + BTS movie + Short reel V1</div>
-    </div>
-    <div class="timeline-item">
-      <div class="date">July 21 — Japan</div>
-      <div class="label">All final assets shipped to Japan</div>
-    </div>
+<section class="timeline timeline-compact">
+  <div class="cal-row">
+    <div class="cal-cell"><span class="cal-date">June 29</span><span class="cal-label">V1 stills</span></div>
+    <div class="cal-cell active"><span class="cal-date">July 6</span><span class="cal-label">Finals + BTS V1</span></div>
+    <div class="cal-cell"><span class="cal-date">July 21</span><span class="cal-label">Japan delivery</span></div>
   </div>
 </section>
 
@@ -182,7 +165,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     <div class="desc">
       <strong>Brief —</strong> At least 10 lifestyle photographs (product on location, photographer using the camera).
       <ul><li>Shot on Fujifilm bodies</li><li>Clean screen, no fingerprints, gaffer removed</li></ul>
-      17 images delivered (over-delivery +7) · "Photographer in action" frames captured by Mathurin Vauthier on the loaned X-T5.
+      17 images delivered (over-delivery +7) · "Photographer in action" frames captured by the project team across multiple Fujifilm bodies.
     </div>
     <a class="btn-open" href="https://adobe.ly/4vFv4rB" target="_blank">Open making of and pack shots</a>
   </div>
@@ -197,9 +180,9 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
       <strong>Brief —</strong> Filmed on Fujifilm system (X Series or GFX), MP4 format.
       <ul><li>Light V1 first, 4K after Japan validation</li><li>SRT subtitles in French and English</li><li>Opening and ending plates inserted (provided in December)</li></ul>
     </div>
-    <div class="note">Editing in progress with NOESYS (Cyril Vernusse). V1 targeted for July 6.</div>
+    <div class="note">Captured · post-production in progress with NOESYS (Cyril Vernusse). V1 targeted for July 6.</div>
   </div>
-  <div class="action-col"><span class="status prog">In Progress</span></div>
+  <div class="action-col"><span class="status prog">Captured</span></div>
 </div>
 
 <div class="deliverable">
@@ -210,9 +193,9 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
       <strong>Brief —</strong> Under 60 s, 16:9 format, captured on Fujifilm system.
       <ul><li>Respects the Reel Safe Zone</li><li>SRT subtitles FR + EN if voice-over</li></ul>
     </div>
-    <div class="note">Editing in progress with NOESYS. V1 targeted for July 6.</div>
+    <div class="note">Captured · post-production in progress with NOESYS. V1 targeted for July 6.</div>
   </div>
-  <div class="action-col"><span class="status prog">In Progress</span></div>
+  <div class="action-col"><span class="status prog">Captured</span></div>
 </div>
 
 <div class="deliverable">
@@ -236,9 +219,9 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
       <strong>Brief —</strong> On-camera interview, 16:9, with B-roll. No editing required on our side — Fujifilm Japan will edit alongside other photographer impression videos.
       <ul><li>SRT subtitles FR + EN</li><li>Focus on AI Autofocus / AF Algorithm (primary), Noise Reduction and FORTIA SP Film Simulation (optional)</li></ul>
     </div>
-    <div class="note">Interview and B-roll being captured with NOESYS.</div>
+    <div class="note">Interview and B-roll captured with NOESYS. Fujifilm Japan editing on their side.</div>
   </div>
-  <div class="action-col"><span class="status prog">In Progress</span></div>
+  <div class="action-col"><span class="status prog">Captured</span></div>
 </div>
 
 <div class="deliverable">
@@ -271,34 +254,9 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
   <div class="action-col"><span class="status check">To Confirm</span></div>
 </div>
 
-<div class="deliverable">
-  <div class="num">10</div>
-  <div class="content">
-    <h3>Legal documents — NDA, Music License, Model Release</h3>
-    <div class="desc">
-      <strong>Brief —</strong>
-      <ul><li>NDA signed: Tristan Shu (March 2026), Mathurin Vauthier (June 15 via Docusign), TF1 (June 19)</li><li>Model Release for Johan Tonnoir and identifiable on-camera talent</li><li>Music License: Worldwide / No Expiration / YouTube minimum (scope NOESYS for BTS and reel)</li></ul>
-    </div>
-    <div class="note">Johan Tonnoir model release to verify before final submission.</div>
-  </div>
-  <div class="action-col"><span class="status prog">In Progress</span></div>
-</div>
-
 </section>
 
-<section class="guidelines">
-  <h2>Brand guidelines reminders</h2>
-  <div class="guidelines-grid">
-    <div class="guidelines-item"><strong>FUJIFILM</strong> written in full, never "Fuji".</div>
-    <div class="guidelines-item"><strong>X-T6</strong> written in full, uppercase with hyphen.</div>
-    <div class="guidelines-item">No apparent third-party logos on clothing or accessories.</div>
-    <div class="guidelines-item">Model Release required for recognizable faces.</div>
-    <div class="guidelines-item">Music license minimum: Worldwide · No Expiration · YouTube.</div>
-    <div class="guidelines-item">License plates must be blurred where visible.</div>
-    <div class="guidelines-item">Architecture rights — commercial use confirmed for Mbappé locations.</div>
-    <div class="guidelines-item">Street photography — visible faces require a consent form.</div>
-  </div>
-</section>
+
 
 <footer>
   <strong>Tristan Shu Lebeschu</strong> · Photographer · +33 6 81 36 86 29 · shu@tristanshu.com<br>
