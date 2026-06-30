@@ -82,9 +82,10 @@ header.hero .sub{font-size:21px;line-height:1.4;color:var(--muted);font-weight:4
 .status.check{background:rgba(134,134,139,.12);color:var(--muted)}
 .status.check::before{background:var(--muted)}
 
-.btn-open{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:var(--bg)!important;padding:9px 18px;border-radius:980px;font-size:14px;font-weight:500;margin-top:12px}
-.btn-open:hover{background:var(--accent-h);color:var(--bg)!important}
-.btn-open::after{content:"→";font-size:15px}
+.btn-open{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg)!important;padding:11px 20px;border-radius:4px;font-size:14px;font-weight:500;letter-spacing:.01em;margin-top:14px;transition:background 350ms cubic-bezier(.22,1,.36,1),transform 350ms cubic-bezier(.22,1,.36,1)}
+.btn-open::after{content:"→";font-size:15px;display:inline-block;transition:transform 350ms cubic-bezier(.22,1,.36,1)}
+@media (hover:hover) and (pointer:fine){.btn-open:hover{background:var(--accent-h);color:var(--bg)!important}.btn-open:hover::after{transform:translateX(5px)}}
+.btn-open:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* Guidelines */
 .guidelines{padding:64px 0;border-top:.5px solid var(--line)}
