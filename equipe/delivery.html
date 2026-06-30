@@ -8,11 +8,11 @@
 <style>
 :root{
   --bg:#fff;--fg:#1d1d1f;--muted:#6e6e73;--accent:#0071e3;--accent-h:#0077ed;
-  --line:#d2d2d7;--card:#fbfbfd;--ok:#34c759;--prog:#ff9f0a;--todo:#ff3b30;
+  --line:#d2d2d7;--card:#fbfbfd;--ok:#00875a;--prog:#b45309;--todo:#86868b;
 }
 @media(prefers-color-scheme:dark){
   :root{--bg:#000;--fg:#f5f5f7;--muted:#86868b;--accent:#2997ff;--accent-h:#4fa5ff;
-  --line:#1d1d1f;--card:#1d1d1f;--ok:#30d158;--prog:#ff9f0a;--todo:#ff453a}
+  --line:#1d1d1f;--card:#1d1d1f;--ok:#30d158;--prog:#c9821e;--todo:#86868b}
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -73,15 +73,15 @@ header.hero .sub{font-size:21px;line-height:1.4;color:var(--muted);font-weight:4
 .deliverable .content .desc li::before{content:"·";position:absolute;left:6px;color:var(--muted)}
 .deliverable .content .note{font-size:13px;color:var(--muted);margin-top:10px;font-style:italic}
 
-.status{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:980px;font-size:12px;font-weight:600;letter-spacing:.01em;white-space:nowrap}
-.status::before{content:"";width:6px;height:6px;border-radius:50%;display:inline-block}
-.status.ok{background:rgba(52,199,89,.12);color:var(--ok)}
+.status{display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:980px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;display:inline-block}
+.status.ok{background:rgba(0,135,90,.10);color:var(--ok)}
 .status.ok::before{background:var(--ok)}
-.status.prog{background:rgba(255,159,10,.12);color:var(--prog)}
+.status.prog{background:rgba(180,83,9,.10);color:var(--prog)}
 .status.prog::before{background:var(--prog)}
-.status.todo{background:rgba(255,59,48,.12);color:var(--todo)}
+.status.todo{background:rgba(134,134,139,.12);color:var(--todo)}
 .status.todo::before{background:var(--todo)}
-.status.check{background:rgba(110,110,115,.12);color:var(--muted)}
+.status.check{background:rgba(134,134,139,.12);color:var(--muted)}
 .status.check::before{background:var(--muted)}
 
 .btn-open{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff!important;padding:9px 18px;border-radius:980px;font-size:14px;font-weight:500;margin-top:12px}
@@ -158,7 +158,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     </div>
     <a class="btn-open" href="https://adobe.ly/4eRrF1J" target="_blank">Open final selection</a>
   </div>
-  <div class="action-col"><span class="status ok">V1 Available</span></div>
+  <div class="action-col"><span class="status ok">Delivered</span></div>
 </div>
 
 <div class="deliverable">
@@ -172,7 +172,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     </div>
     <a class="btn-open" href="https://adobe.ly/4vFv4rB" target="_blank">Open making of and pack shots</a>
   </div>
-  <div class="action-col"><span class="status ok">V1 Available</span></div>
+  <div class="action-col"><span class="status ok">Delivered</span></div>
 </div>
 
 <div class="deliverable">
@@ -185,7 +185,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     </div>
     <div class="note">Editing in progress with NOESYS (Cyril Vernusse). V1 targeted for July 6.</div>
   </div>
-  <div class="action-col"><span class="status prog">In progress</span></div>
+  <div class="action-col"><span class="status prog">In Progress</span></div>
 </div>
 
 <div class="deliverable">
@@ -198,7 +198,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     </div>
     <div class="note">Editing in progress with NOESYS. V1 targeted for July 6.</div>
   </div>
-  <div class="action-col"><span class="status prog">In progress</span></div>
+  <div class="action-col"><span class="status prog">In Progress</span></div>
 </div>
 
 <div class="deliverable">
@@ -224,7 +224,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     </div>
     <div class="note">Interview and B-roll being captured with NOESYS.</div>
   </div>
-  <div class="action-col"><span class="status prog">In progress</span></div>
+  <div class="action-col"><span class="status prog">In Progress</span></div>
 </div>
 
 <div class="deliverable">
@@ -254,7 +254,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     <div class="desc"><strong>Brief —</strong> Communicate YouTube channel for Fujifilm collaboration post if accepted.</div>
     <div class="note">Account to be confirmed with Christophe and Sylvie.</div>
   </div>
-  <div class="action-col"><span class="status check">To confirm</span></div>
+  <div class="action-col"><span class="status check">To Confirm</span></div>
 </div>
 
 <div class="deliverable">
@@ -267,7 +267,7 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
     </div>
     <div class="note">Johan Tonnoir model release to verify before final submission.</div>
   </div>
-  <div class="action-col"><span class="status prog">In progress</span></div>
+  <div class="action-col"><span class="status prog">In Progress</span></div>
 </div>
 
 </section>
@@ -292,5 +292,23 @@ footer .conf{margin-top:14px;font-size:11px;text-transform:uppercase;letter-spac
 </footer>
 
 </main>
+
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.deliverable, .timeline-item, .guidelines-item');
+  els.forEach(function(el){el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)';});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.style.opacity='1';e.target.style.transform='translateY(0)';},i*80);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
 
 </body></html>
