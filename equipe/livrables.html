@@ -17,26 +17,42 @@ body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 syst
 main{max-width:920px;margin:0 auto;padding:14px 16px 60px}
 h1{font-size:1.3em;margin:8px 0 4px;line-height:1.25}
 .subtitle{color:var(--muted);font-size:.92em;margin-bottom:18px}
-.intro{background:var(--card);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:0 0 20px;font-size:.95em}
-section.deliverable{margin:14px 0;padding:16px 18px;background:var(--card);border-radius:10px;border:1px solid var(--border);border-left-width:5px}
+.intro{background:var(--card);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:0 0 16px;font-size:.95em}
+.calendar{background:rgba(192,57,43,.08);border:2px solid var(--ko);border-radius:10px;padding:14px 16px;margin:0 0 20px}
+.calendar h2{margin:0 0 8px;color:var(--ko);font-size:1.05em}
+.calendar ul{margin:0;padding-left:18px;font-size:.92em}
+.calendar li{margin:3px 0}
+.calendar .late{color:var(--ko);font-weight:600}
+section.deliverable{margin:12px 0;padding:14px 16px;background:var(--card);border-radius:10px;border:1px solid var(--border);border-left-width:5px}
 section.deliverable.s-ok{border-left-color:var(--ok)}
 section.deliverable.s-progress{border-left-color:var(--hi)}
 section.deliverable.s-todo{border-left-color:var(--ko)}
+section.deliverable.s-check{border-left-color:var(--muted)}
 section.deliverable header{display:flex;align-items:center;gap:10px;margin:0 0 8px;flex-wrap:wrap}
 section.deliverable .num{background:var(--code);color:var(--muted);font-weight:700;font-size:.85em;padding:4px 10px;border-radius:12px;flex-shrink:0}
-section.deliverable h2{margin:0;font-size:1.08em;flex:1;line-height:1.3}
-section.deliverable .status{font-size:.82em;font-weight:600;padding:3px 10px;border-radius:10px;white-space:nowrap}
+section.deliverable h2{margin:0;font-size:1.05em;flex:1;line-height:1.3}
+section.deliverable .status{font-size:.8em;font-weight:600;padding:3px 9px;border-radius:10px;white-space:nowrap}
 section.deliverable.s-ok .status{background:rgba(10,154,79,.15);color:var(--ok)}
 section.deliverable.s-progress .status{background:rgba(217,119,6,.15);color:var(--hi)}
 section.deliverable.s-todo .status{background:rgba(192,57,43,.15);color:var(--ko)}
-.spec{font-size:.92em;color:var(--muted);margin:6px 0 10px;line-height:1.5}
+section.deliverable.s-check .status{background:var(--code);color:var(--muted)}
+.spec{font-size:.91em;color:var(--muted);margin:6px 0 8px;line-height:1.55}
 .spec strong{color:var(--fg)}
-.gallery-link{display:inline-block;background:var(--accent);color:#fff!important;text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.9em;font-weight:600;margin-top:6px}
+.spec ul{margin:4px 0;padding-left:18px}
+.spec li{margin:2px 0}
+.gallery-link{display:inline-block;background:var(--accent);color:#fff!important;text-decoration:none;padding:7px 13px;border-radius:6px;font-size:.88em;font-weight:600;margin-top:6px}
 .gallery-link:hover{opacity:.85}
 .notes{font-size:.85em;color:var(--muted);margin-top:8px;font-style:italic}
-.scope-tag{display:inline-block;background:var(--code);color:var(--muted);font-size:.78em;padding:3px 8px;border-radius:8px;margin-left:6px}
-.signature{margin:32px 0 0;padding:16px;background:var(--card);border-radius:8px;border:1px dashed var(--border);font-size:.9em;color:var(--muted)}
-@media(max-width:600px){body{font-size:15.5px}section.deliverable header{gap:8px}section.deliverable h2{font-size:1em}}
+.scope-tag{display:inline-block;background:var(--code);color:var(--muted);font-size:.76em;padding:2px 7px;border-radius:8px;margin-left:4px}
+.guidelines{margin:24px 0 0;padding:14px 16px;background:var(--card);border:1px dashed var(--border);border-radius:8px;font-size:.9em}
+.guidelines h2{margin:0 0 8px;font-size:1em;color:var(--muted)}
+.guidelines ul{margin:0;padding-left:18px}
+.guidelines li{margin:3px 0;color:var(--muted)}
+.guidelines li strong{color:var(--fg)}
+.signature{margin:24px 0 0;padding:14px;background:var(--card);border-radius:8px;border:1px dashed var(--border);font-size:.85em;color:var(--muted)}
+.warning{background:rgba(217,119,6,.10);border-left:3px solid var(--hi);padding:8px 12px;margin:6px 0;font-size:.88em;border-radius:4px}
+.warning strong{color:var(--hi)}
+@media(max-width:600px){body{font-size:15.5px}section.deliverable header{gap:8px}section.deliverable h2{font-size:.98em}}
 </style>
 </head><body>
 
@@ -47,11 +63,20 @@ section.deliverable.s-todo .status{background:rgba(192,57,43,.15);color:var(--ko
 
 <main>
 
-<h1>📦 Livrables Mbappé — soumission Fuji</h1>
-<div class="subtitle">État au 30 juin 2026 · Shoot terminé 22-25 juin · Suite à brief Christophe 23 avril / Sylvie 10 juin</div>
+<h1>📦 Livrables Mbappé — feuille de route Fuji</h1>
+<div class="subtitle">Soumission V1 · 30 juin 2026 · Suite à feuille de route Sylvie MEDEIROS / Christophe EISENHUTH</div>
 
 <div class="intro">
-Cette page récapitule l'état d'avancement des <strong>5 livrables</strong> du projet Mbappé pour le X Summit 2026. Les galeries disponibles sont liées directement (Lightroom Web Share, accès libre via le lien). Les livrables vidéo et X Story article suivront dans les prochains jours.
+Récapitulatif d'avancement des <strong>10 livrables</strong> du projet Mbappé X Summit 2026 selon la feuille de route Fuji. Les galeries Lightroom Web Share sont liées directement (accès libre via lien). Films BTS, Reel court, Impression Video, X Story article et accessoires YouTube suivront selon le calendrier ci-dessous.
+</div>
+
+<div class="calendar">
+<h2>🗓️ Calendrier Fuji</h2>
+<ul>
+<li><span class="late">29 juin</span> → envoi V1 images du projet + Lifestyle <em>(léger retard 1j, soumission ce 30/06)</em></li>
+<li><strong>6 juillet AU PLUS TARD</strong> → images projet + Lifestyle finales + film BTS + Reel V1</li>
+<li><strong>21 juillet AU PLUS TARD</strong> → tous contenus finaux envoyés au Japon</li>
+</ul>
 </div>
 
 <!-- 1. Image Works -->
@@ -59,12 +84,17 @@ Cette page récapitule l'état d'avancement des <strong>5 livrables</strong> du 
 <header>
   <span class="num">1</span>
   <h2>Image Works — sélection éditoriale</h2>
-  <span class="status">✅ DISPONIBLE</span>
+  <span class="status">✅ V1 DISPONIBLE</span>
 </header>
 <div class="spec">
-  <strong>Brief :</strong> 15 photos (minimum 1 RAW + 1 SOOC) <span class="scope-tag">scope photo</span><br>
-  <strong>Livré :</strong> 20 photos sélectionnées toutes galeries confondues (over-delivery +5)
+<strong>Brief :</strong> au moins <strong>15 images</strong> du projet, dont :
+<ul>
+<li>au moins <strong>1 image RAW</strong></li>
+<li>au moins <strong>1 image SOOC</strong> (Straight Out of Camera — JPEG sorti directement du boîtier sans retouche)</li>
+</ul>
+<strong>Livré V1 :</strong> 20 photos sélectionnées toutes galeries confondues (over-delivery +5) <span class="scope-tag">scope photo</span>
 </div>
+<div class="warning">⚠️ <strong>À vérifier avant envoi finales</strong> : confirmer présence d'au moins 1 RAW + 1 SOOC dans la sélection finale.</div>
 <a class="gallery-link" href="https://adobe.ly/4eRrF1J" target="_blank">📚 Ouvrir la Sélection finale (20 photos)</a>
 </section>
 
@@ -73,63 +103,185 @@ Cette page récapitule l'état d'avancement des <strong>5 livrables</strong> du 
 <header>
   <span class="num">2</span>
   <h2>Lifestyle images — produit + photographe en action</h2>
-  <span class="status">✅ DISPONIBLE</span>
+  <span class="status">✅ V1 DISPONIBLE</span>
 </header>
 <div class="spec">
-  <strong>Brief :</strong> 10 photos (produit en situation + photographe en action) <span class="scope-tag">scope photo</span><br>
-  <strong>Livré :</strong> 17 photos making of & pack shots (over-delivery +7)<br>
-  <strong>Captation :</strong> photographe en action shootés par Mathurin sur X-T5
+<strong>Brief :</strong> au moins <strong>10 images Lifestyle</strong> :
+<ul>
+<li>photos du produit prises sur le terrain</li>
+<li>photos du photographe utilisant l'appareil</li>
+</ul>
+<strong>Contraintes techniques :</strong>
+<ul>
+<li>Capturées avec un appareil FUJIFILM</li>
+<li>Écran propre, sans traces de doigts</li>
+<li>Penser à retirer le gaffer le cas échéant</li>
+</ul>
+<strong>Livré V1 :</strong> 17 photos making of & pack shots (over-delivery +7) — captation photographe en action par Mathurin sur X-T5 prêté <span class="scope-tag">scope photo</span>
 </div>
+<div class="warning">⚠️ <strong>À vérifier</strong> : écran boîtier propre + gaffer retiré sur l'ensemble des images livrées.</div>
 <a class="gallery-link" href="https://adobe.ly/4vFv4rB" target="_blank">📚 Ouvrir le Making of & pack shots (17 photos)</a>
 </section>
 
-<!-- 3. BTS movie -->
+<!-- 3. Film BTS -->
 <section class="deliverable s-progress">
 <header>
   <span class="num">3</span>
-  <h2>BTS movie + version courte 9x16</h2>
+  <h2>Film BTS Behind the Scene + SRT</h2>
   <span class="status">⏳ EN COURS</span>
 </header>
 <div class="spec">
-  <strong>Brief :</strong> 1 BTS movie + 1 version courte < 60s format 9x16 <span class="scope-tag">scope vidéo Cyril</span>
+<strong>Brief :</strong>
+<ul>
+<li>Vidéo filmée avec système FUJIFILM (Série X ou GFX)</li>
+<li>Format MP4</li>
+<li>Recommandation : V1 « light » d'abord puis 4K après validation Japon</li>
+<li><strong>Sous-titres SRT FR + EN obligatoires</strong></li>
+<li>Opening + Ending à insérer (fichiers MPEG/MOV communiqués décembre)</li>
+</ul>
+<span class="scope-tag">scope vidéo Cyril Vernusse / NOESYS</span>
 </div>
-<div class="notes">Montage en cours par l'équipe NOESYS (Cyril Vernusse). Livraison à venir.</div>
+<div class="notes">Montage en cours équipe NOESYS. Livraison V1 visée pour 6 juillet.</div>
 </section>
 
-<!-- 4. X Story article -->
-<section class="deliverable s-todo">
+<!-- 4. Film BTS court 16x9 -->
+<section class="deliverable s-progress">
 <header>
   <span class="num">4</span>
-  <h2>X Story article</h2>
+  <h2>Film BTS court &lt; 60 s format 16x9</h2>
+  <span class="status">⏳ EN COURS</span>
+</header>
+<div class="spec">
+<strong>Brief :</strong>
+<ul>
+<li>Durée <strong>60 secondes max</strong></li>
+<li>Format <strong>16x9</strong></li>
+<li>Filmé avec systèmes FUJIFILM</li>
+<li>Respecter la <strong>Safe Zone</strong> (intégration avec interface Instagram, contenu + sous-titres dans zone safe)</li>
+<li>Si voix off : sous-titres FR + EN</li>
+</ul>
+<span class="scope-tag">scope vidéo Cyril Vernusse / NOESYS</span>
+</div>
+<div class="notes">Montage en cours équipe NOESYS. Livraison V1 visée pour 6 juillet.</div>
+</section>
+
+<!-- 5. Article X Story -->
+<section class="deliverable s-todo">
+<header>
+  <span class="num">5</span>
+  <h2>Article X Story</h2>
   <span class="status">❌ À VENIR</span>
 </header>
 <div class="spec">
-  <strong>Brief :</strong> article narratif 700-1000 mots <span class="scope-tag">scope photo</span><br>
-  <strong>Référence :</strong> exemples X Story fournis dans le brief Sylvie du 5 juin
+<strong>Brief :</strong>
+<ul>
+<li><strong>700-1000 mots</strong></li>
+<li>Document Word — texte seul, sans images</li>
+<li><strong>FR + EN</strong> obligatoires</li>
+</ul>
+<strong>Références :</strong> exemples fujifilm-x.com/fr-fr/stories/ (Guillaume Flandre / Anne Eeckeman / Jean-Michel Lenoir / Rémi Flament) <span class="scope-tag">scope photo</span>
 </div>
-<div class="notes">Rédaction prévue après finalisation des sélections photo.</div>
+<div class="notes">Rédaction prévue après finalisation des sélections photo. Livraison visée pour 21 juillet.</div>
 </section>
 
-<!-- 5. Photographer's Impression Video -->
+<!-- 6. Photographer's Impression Video -->
 <section class="deliverable s-progress">
 <header>
-  <span class="num">5</span>
+  <span class="num">6</span>
   <h2>Photographer's Impression Video</h2>
   <span class="status">⏳ EN COURS</span>
 </header>
 <div class="spec">
-  <strong>Brief :</strong> interview face caméra 16:9 + B-roll + sous-titres EN/FR <span class="scope-tag">scope vidéo Cyril</span><br>
-  <strong>Focus questions :</strong> AI Autofocus / AF Algorithm (questions principales)<br>
-  <strong>Optionnel :</strong> Noise Reduction · New Film Simulation (FORTE CHROME)<br>
-  <strong>Langue :</strong> anglais ou français (sous-titres EN finaux)<br>
-  <strong>Édition :</strong> aucune retouche à fournir, Fuji édite côté Japon avec les autres impression videos
+<strong>Brief :</strong>
+<ul>
+<li>Interview face caméra 16:9 + B-roll footage</li>
+<li>Sous-titres SRT FR + EN</li>
+<li>Pas de montage à fournir (Fuji éditera côté Japon avec autres impression videos)</li>
+<li>Cf documents « Questions X-T6 Impression Video » fournis par Sylvie : AI Autofocus / AF Algorithm (principal) · Noise Reduction · New Film Simulation FORTE CHROME (optionnel)</li>
+<li>Réponse en anglais ou français (sous-titres EN dans le final)</li>
+</ul>
+<span class="scope-tag">scope vidéo Cyril Vernusse / NOESYS</span>
 </div>
-<div class="notes">Tournage + B-roll en cours équipe NOESYS. Livraison à venir.</div>
+<div class="notes">Tournage interview + B-roll en cours équipe NOESYS.</div>
 </section>
+
+<!-- 7. Thumbnail YouTube -->
+<section class="deliverable s-todo">
+<header>
+  <span class="num">7</span>
+  <h2>Thumbnail YouTube</h2>
+  <span class="status">❌ À VENIR</span>
+</header>
+<div class="spec">
+<strong>Brief :</strong> 1 vignette <strong>format 16x9</strong> pour la vidéo YouTube <span class="scope-tag">scope photo</span>
+</div>
+<div class="notes">À produire à partir d'une image de la sélection finale.</div>
+</section>
+
+<!-- 8. Description / Liste de matériel -->
+<section class="deliverable s-todo">
+<header>
+  <span class="num">8</span>
+  <h2>Description + Liste de matériel</h2>
+  <span class="status">❌ À VENIR</span>
+</header>
+<div class="spec">
+<strong>Brief :</strong> description du projet + liste exhaustive du matériel utilisé (boîtiers, optiques, accessoires) pour la fiche YouTube <span class="scope-tag">scope photo</span>
+</div>
+<div class="notes">À rédiger en parallèle de l'article X Story.</div>
+</section>
+
+<!-- 9. YouTube account -->
+<section class="deliverable s-check">
+<header>
+  <span class="num">9</span>
+  <h2>Compte YouTube pour collaboration post</h2>
+  <span class="status">À VALIDER</span>
+</header>
+<div class="spec">
+<strong>Brief :</strong> communiquer le compte YouTube pour collaboration post Fuji (si Tristan accepte la collab)</div>
+<div class="notes">Compte : à confirmer avec Christophe / Sylvie.</div>
+</section>
+
+<!-- 10. Documents NDA / Music License / Model Release -->
+<section class="deliverable s-check">
+<header>
+  <span class="num">10</span>
+  <h2>Documents (NDA / Music License / Model Release)</h2>
+  <span class="status">⚙️ EN COURS</span>
+</header>
+<div class="spec">
+<strong>Documents requis :</strong>
+<ul>
+<li><strong>NDA</strong> : signé Tristan (mars 2026) · Mathurin (Docusign Sylvie 15/06) · TF1 (19/06)</li>
+<li><strong>Model Release</strong> : à fournir pour Johan Tonnoir + figurants identifiables · à vérifier équipe</li>
+<li><strong>Music License</strong> : Worldwide / No Expiration / YouTube (minimum) — scope NOESYS pour BTS / Reel</li>
+</ul>
+<span class="scope-tag">scope photo + vidéo Cyril</span>
+</div>
+<div class="warning">⚠️ <strong>Model Release Johan Tonnoir</strong> à vérifier avant envoi final.</div>
+</section>
+
+<!-- BRAND GUIDELINES RAPPELS -->
+<div class="guidelines">
+<h2>🛡️ Rappels brand guidelines Fuji (extrait feuille de route)</h2>
+<ul>
+<li><strong>FUJIFILM</strong> en entier, jamais « Fuji »</li>
+<li><strong>« X-T6 »</strong> en entier avec majuscules + tiret (codename « Mbappé » uniquement en interne pré-embargo)</li>
+<li>Tenue : <strong>aucune marque apparente</strong> sur vêtements / accessoires (hors FUJIFILM)</li>
+<li><strong>Model Release</strong> requis dès qu'un visage est reconnaissable</li>
+<li><strong>Music License</strong> minimum : Worldwide / No Expiration / YouTube</li>
+<li><strong>Trademark</strong> : pas de logos autres marques visibles (flouter si besoin)</li>
+<li><strong>Architecture</strong> : vérifier droits commerciaux (ex. Tour Eiffel illuminée nuit = interdit usage commercial)</li>
+<li><strong>License plates</strong> : à flouter sur les véhicules visibles</li>
+<li><strong>Street Photography</strong> : éviter visages reconnaissables sans consent form</li>
+<li>Police FUJIFILM-X.com : <strong>Fjalla One</strong> (titres) · <strong>Noto Sans</strong> (corps)</li>
+</ul>
+</div>
 
 <div class="signature">
 <strong>Tristan Shu Lebeschu</strong> · Photographe · +33 6 81 36 86 29 · shu@tristanshu.com<br>
-Document de soumission Fuji — confidentiel projet Mbappé X Summit 2026
+Document de suivi soumission Fuji — projet confidentiel Mbappé X Summit 2026 sous embargo
 </div>
 
 </main>
